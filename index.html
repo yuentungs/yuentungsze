@@ -3,26 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YT | Jewellery Market Insights</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <style>
-        .hero { text-align: center; padding: 4rem 2rem; background: #fff; }
-        .hero h1 { font-size: 3rem; margin-bottom: 1rem; color: #000; }
-        .chart-container { background: #fafafa; border: 1px solid #f0f0f0; padding: 2rem; margin: 2rem 0; border-radius: 4px; }
-        .chart-container iframe { width: 100%; height: 500px; border: none; }
-        [lang="en"] .zh { display: none !important; }
-        [lang="zh"] .en { display: none !important; }
-    </style>
+    <title>YT | 珠寶產品規劃專家</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">YT</div>
             <ul>
-                <li><a href="./index.html"><span class="zh">首頁</span><span class="en">Home</span></a></li>
-                <li><a href="./experience.html"><span class="zh">經歷</span><span class="en">Experience</span></a></li>
-                <li><a href="./insights.html"><span class="zh">分析</span><span class="en">Insights</span></a></li>
-                <li><a href="./services.html"><span class="zh">服務</span><span class="en">Services</span></a></li>
+                <li><a href="index.html"><span class="zh">首頁</span><span class="en">Home</span></a></li>
+                <li><a href="experience.html"><span class="zh">經歷</span><span class="en">Experience</span></a></li>
+                <li><a href="insights.html"><span class="zh">分析</span><span class="en">Insights</span></a></li>
+                <li><a href="services.html"><span class="zh">服務</span><span class="en">Services</span></a></li>
                 <li><button class="lang-btn" onclick="toggleLang()">English</button></li>
             </ul>
         </nav>
@@ -30,24 +22,36 @@
 
     <div class="container">
         <section class="hero">
-            <h1 class="zh">珠寶市場洞察</h1>
-            <h1 class="en">Jewellery Market Insights</h1>
-            <p class="zh">實時追蹤全球奢侈品牌搜尋趨勢，掌握市場脈動與戰略機會。</p>
-            <p class="en">Real-time data analysis of global luxury brand search trends. Discover market movements and strategic opportunities.</p>
+            <h1 class="zh">珠寶產品規劃與庫存管理專家</h1>
+            <h1 class="en">Jewellery Product Planning & Inventory Expert</h1>
+            <p class="zh">擁有超過 10 年珠寶行業經驗，擅長數據驅動的產品規劃、庫存優化及跨部門領導。致力於品牌出海與戰略性市場擴張。</p>
+            <p class="en">10+ years of expertise in jewellery product planning, inventory optimization, and leadership. Dedicated to global brand expansion and strategic growth.</p>
+            <a href="experience.html" class="btn"><span class="zh">查看專業背景</span><span class="en">View Background</span></a>
         </section>
-
-        <div class="chart-container" id="chart">
-            <iframe src="./brand_trends.html" title="Brand Trends Chart"></iframe>
-        </div>
 
         <h2 class="section-title"><span class="zh">關於我</span><span class="en">About Me</span></h2>
         <div class="card">
-            <p class="zh">我是 Yuen Tung Sze (YT)，目前擔任周生生高級經理。具備 10+ 年珠寶行業經驗，專注於產品規劃、庫存優化及品牌出海。</p>
-            <p class="en">I am Yuen Tung Sze (YT), Senior Manager at Chow Sang Sang. 10+ years of expertise in jewellery product planning, inventory optimization, and global expansion.</p>
+            <p class="zh">我是 Yuen Tung Sze (YT)，目前擔任周生生高級經理。我具備強大的組織、分析與領導能力，能壓力下高效處理多項任務。我流利使用英語、普通話及廣東話。</p>
+            <p class="en">I am Yuen Tung Sze (YT), Senior Manager at Chow Sang Sang. I possess strong organizational, analytical, and leadership skills, excelling under pressure. Fluent in English, Mandarin, and Cantonese.</p>
+            <div style="margin-top: 1.5rem;">
+                <strong><span class="zh">聯絡方式：</span><span class="en">Contact:</span></strong><br>
+                📧 <a href="mailto:yuentungsze@gmail.com">yuentungsze@gmail.com</a><br>
+                📞 +852 9884 0831
+            </div>
+        </div>
+
+        <h2 class="section-title"><span class="zh">核心技能</span><span class="en">Core Skills</span></h2>
+        <div class="skills-grid">
+            <div class="skill-tag"><span class="zh">產品規劃</span><span class="en">Product Planning</span></div>
+            <div class="skill-tag"><span class="zh">庫存管理</span><span class="en">Inventory Management</span></div>
+            <div class="skill-tag"><span class="zh">數據分析</span><span class="en">Data Analytics</span></div>
+            <div class="skill-tag"><span class="zh">品牌出海</span><span class="en">Global Expansion</span></div>
         </div>
     </div>
 
-    <footer class="footer"><p>&copy; 2026 YT. All Rights Reserved.</p></footer>
+    <footer class="footer">
+        <p>&copy; 2026 YT. All Rights Reserved.</p>
+    </footer>
 
     <script>
         function toggleLang() {
