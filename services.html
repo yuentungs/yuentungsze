@@ -1,38 +1,21 @@
 <!DOCTYPE html>
-<html lang="zh-HK">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Consulting Services - Brand Expansion, Product Planning, Inventory Optimization">
-    <title>顧問服務 | Yuen Tung Sze</title>
+    <title>服務 | YT</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <style>
-        .lang-toggle { position: absolute; top: 1rem; right: 2rem; }
-        .lang-toggle button { background: var(--accent-color); border: none; padding: 0.5rem 1rem; border-radius: 5px; cursor: pointer; font-weight: bold; }
-        .lang-toggle button:hover { opacity: 0.8; }
-        .en { display: none; }
-        .en.active { display: block; }
-        .zh { display: block; }
-        .zh.active { display: none; }
-        .service-box { background: white; border-left: 5px solid var(--primary-color); padding: 1.5rem; margin-bottom: 1.5rem; border-radius: 0 8px 8px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        .service-box h3 { color: var(--primary-color); margin-bottom: 1rem; }
-        .service-box ul { padding-left: 1.5rem; }
-        .service-box li { margin-bottom: 0.5rem; }
-    </style>
 </head>
 <body>
-    <div class="lang-toggle">
-        <button onclick="toggleLanguage()">English</button>
-    </div>
-
     <header>
         <nav>
             <div class="logo">YT</div>
             <ul>
-                <li><a href="index.html">首頁</a></li>
-                <li><a href="experience.html">專業經歷</a></li>
-                <li><a href="insights.html">每週分析</a></li>
-                <li><a href="services.html">顧問服務</a></li>
+                <li><a href="index.html"><span class="zh">首頁</span><span class="en">Home</span></a></li>
+                <li><a href="experience.html"><span class="zh">經歷</span><span class="en">Experience</span></a></li>
+                <li><a href="insights.html"><span class="zh">分析</span><span class="en">Insights</span></a></li>
+                <li><a href="services.html"><span class="zh">服務</span><span class="en">Services</span></a></li>
+                <li><button class="lang-btn" onclick="toggleLang()">English</button></li>
             </ul>
         </nav>
     </header>
@@ -40,101 +23,39 @@
     <div class="container">
         <h2 class="section-title"><span class="zh">顧問服務</span><span class="en">Consulting Services</span></h2>
         
-        <div class="card">
-            <p class="zh">基於 10+ 年的珠寶行業經驗與跨國市場洞察，我提供以下專業顧問服務，幫助品牌與企業在全球市場中實現增長。</p>
-            <p class="en">With 10+ years of jewellery industry expertise and cross-border market insights, I offer professional consulting services to help brands and enterprises achieve growth in global markets.</p>
-        </div>
-
-        <!-- 服務 1 -->
         <div class="service-box">
-            <h3><span class="zh">🌍 品牌出海策略顧問</span><span class="en">🌍 Global Brand Expansion Strategy</span></h3>
-            <p class="zh">幫助珠寶品牌與高端消費品牌進入新市場。我提供市場准入分析、競爭格局評估、本地化策略與定價模型。</p>
-            <p class="en">Help jewellery and luxury brands enter new markets. I provide market entry analysis, competitive landscape assessment, localization strategies, and pricing models.</p>
-            <ul>
-                <li class="zh">✓ 東南亞、中東、歐洲市場研究</li>
-                <li class="en">✓ Southeast Asia, Middle East, Europe market research</li>
-                <li class="zh">✓ 消費者行為與文化適配性分析</li>
-                <li class="en">✓ Consumer behavior & cultural adaptation analysis</li>
-                <li class="zh">✓ 進口/代理商選擇與談判支持</li>
-                <li class="en">✓ Distributor/agent selection & negotiation support</li>
-            </ul>
+            <h3><span class="zh">🌍 品牌出海策略</span><span class="en">🌍 Global Expansion Strategy</span></h3>
+            <p class="zh">幫助珠寶品牌進入新市場，提供市場准入分析與本地化策略。</p>
+            <p class="en">Helping jewellery brands enter new markets with entry analysis and localization strategies.</p>
         </div>
 
-        <!-- 服務 2 -->
         <div class="service-box">
-            <h3><span class="zh">📊 產品規劃與組合優化</span><span class="en">📊 Product Planning & Portfolio Optimization</span></h3>
-            <p class="zh">基於數據驅動的方法，優化你的產品組合。我分析銷售趨勢、消費者偏好、庫存效率，幫助你做出精準的產品決策。</p>
-            <p class="en">Data-driven approach to optimize your product portfolio. I analyze sales trends, consumer preferences, and inventory efficiency to support precise product decisions.</p>
-            <ul>
-                <li class="zh">✓ SKU 合理化與產品生命週期管理</li>
-                <li class="en">✓ SKU rationalization & product lifecycle management</li>
-                <li class="zh">✓ 新品開發策略與上市計劃</li>
-                <li class="en">✓ New product development strategy & launch planning</li>
-                <li class="zh">✓ 季節性與趨勢預測分析</li>
-                <li class="en">✓ Seasonality & trend forecasting analysis</li>
-            </ul>
-        </div>
-
-        <!-- 服務 3 -->
-        <div class="service-box">
-            <h3><span class="zh">📦 庫存管理與供應鏈優化</span><span class="en">📦 Inventory Management & Supply Chain Optimization</span></h3>
-            <p class="zh">通過精準的庫存預測與補貨策略，降低資金佔用率與滯銷風險。我使用高級分析工具幫助你實現最優的庫存水平。</p>
-            <p class="en">Reduce working capital and obsolescence risk through accurate inventory forecasting and replenishment strategies. I use advanced analytics to optimize inventory levels.</p>
-            <ul>
-                <li class="zh">✓ 需求預測模型開發</li>
-                <li class="en">✓ Demand forecasting model development</li>
-                <li class="zh">✓ 多渠道庫存分配策略</li>
-                <li class="en">✓ Multi-channel inventory allocation strategy</li>
-                <li class="zh">✓ 庫存成本分析與改善建議</li>
-                <li class="en">✓ Inventory cost analysis & improvement recommendations</li>
-            </ul>
-        </div>
-
-        <!-- 服務 4 -->
-        <div class="service-box">
-            <h3><span class="zh">💎 高端珠寶市場洞察</span><span class="en">💎 Luxury Jewellery Market Insights</span></h3>
-            <p class="zh">作為認證寶石學家 (DGA)，我提供珠寶行業特定的市場洞察，包括材質趨勢、消費者偏好、定價策略與品牌定位。</p>
-            <p class="en">As a certified gemologist (DGA), I provide jewellery-specific market insights including material trends, consumer preferences, pricing strategies, and brand positioning.</p>
-            <ul>
-                <li class="zh">✓ 寶石與貴金屬市場動態分析</li>
-                <li class="en">✓ Gemstone & precious metal market dynamics</li>
-                <li class="zh">✓ 消費者審美與購買決策研究</li>
-                <li class="en">✓ Consumer aesthetics & purchase decision research</li>
-                <li class="zh">✓ 品牌定位與高端市場策略</li>
-                <li class="en">✓ Brand positioning & luxury market strategy</li>
-            </ul>
-        </div>
-
-        <!-- 聯絡區塊 -->
-        <div class="card" style="background: #e8eaf6; text-align: center; margin-top: 2rem;">
-            <h3 style="color: var(--primary-color);"><span class="zh">準備開始合作？</span><span class="en">Ready to Collaborate?</span></h3>
-            <p class="zh">無論你是尋求品牌出海的珠寶企業，還是需要產品規劃支持的零售商，我都很樂意與你深入討論。</p>
-            <p class="en">Whether you're a jewellery brand seeking global expansion or a retailer needing product planning support, I'm happy to discuss your needs in detail.</p>
-            <a href="mailto:yuentungsze@gmail.com" class="btn" style="margin-top: 1rem;"><span class="zh">發送諮詢郵件</span><span class="en">Send Inquiry</span></a>
+            <h3><span class="zh">📊 產品與庫存優化</span><span class="en">📊 Product & Inventory Optimization</span></h3>
+            <p class="zh">基於數據分析優化產品組合與庫存水平。</p>
+            <p class="en">Optimizing product portfolios and inventory levels through data analytics.</p>
         </div>
     </div>
 
-    <footer class="footer">
-        <p>&copy; 2026 Yuen Tung Sze. <span class="zh">版權所有。</span><span class="en">All Rights Reserved.</span></p>
-    </footer>
-
+    <footer class="footer"><p>&copy; 2026 YT. All Rights Reserved.</p></footer>
     <script>
-        function toggleLanguage() {
-            const zhElements = document.querySelectorAll('.zh');
-            const enElements = document.querySelectorAll('.en');
-            const button = document.querySelector('.lang-toggle button');
-            
-            zhElements.forEach(el => el.classList.toggle('active'));
-            enElements.forEach(el => el.classList.toggle('active'));
-            
-            button.textContent = button.textContent === 'English' ? '中文' : 'English';
-            localStorage.setItem('language', button.textContent === '中文' ? 'en' : 'zh');
+        function toggleLang() {
+            const html = document.documentElement;
+            const btn = document.querySelector('.lang-btn');
+            if (html.getAttribute('lang') === 'zh') {
+                html.setAttribute('lang', 'en');
+                btn.textContent = '中文';
+                localStorage.setItem('pref-lang', 'en');
+            } else {
+                html.setAttribute('lang', 'zh');
+                btn.textContent = 'English';
+                localStorage.setItem('pref-lang', 'zh');
+            }
         }
-
-        window.addEventListener('load', () => {
-            const saved = localStorage.getItem('language');
-            if (saved === 'en') toggleLanguage();
-        });
+        window.onload = () => {
+            const pref = localStorage.getItem('pref-lang') || 'zh';
+            document.documentElement.setAttribute('lang', pref);
+            document.querySelector('.lang-btn').textContent = pref === 'zh' ? 'English' : '中文';
+        };
     </script>
 </body>
 </html>

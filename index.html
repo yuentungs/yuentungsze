@@ -1,37 +1,21 @@
 <!DOCTYPE html>
-<html lang="zh-HK">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Yuen Tung Sze - Senior Manager Product Planning | Jewellery Industry Expert | Global Brand Expansion Consultant">
-    <meta property="og:title" content="Yuen Tung Sze | 珠寶產品規劃與品牌出海專家">
-    <meta property="og:description" content="10+ years of expertise in product planning, inventory management, and global brand expansion in the jewellery industry.">
-    <meta property="og:image" content="https://via.placeholder.com/1200x630?text=Yuen+Tung+Sze">
     <title>YT | 珠寶產品規劃專家</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <style>
-        .lang-toggle { position: absolute; top: 1rem; right: 2rem; }
-        .lang-toggle button { background: var(--accent-color); border: none; padding: 0.5rem 1rem; border-radius: 5px; cursor: pointer; font-weight: bold; }
-        .lang-toggle button:hover { opacity: 0.8; }
-        .en { display: none; }
-        .en.active { display: block; }
-        .zh { display: block; }
-        .zh.active { display: none; }
-    </style>
 </head>
 <body>
-    <div class="lang-toggle">
-        <button onclick="toggleLanguage()">English</button>
-    </div>
-
     <header>
         <nav>
             <div class="logo">YT</div>
             <ul>
-                <li><a href="index.html" class="nav-home">首頁</a></li>
-                <li><a href="experience.html" class="nav-exp">專業經歷</a></li>
-                <li><a href="insights.html" class="nav-insights">每週分析</a></li>
-                <li><a href="services.html" class="nav-services">顧問服務</a></li>
+                <li><a href="index.html"><span class="zh">首頁</span><span class="en">Home</span></a></li>
+                <li><a href="experience.html"><span class="zh">經歷</span><span class="en">Experience</span></a></li>
+                <li><a href="insights.html"><span class="zh">分析</span><span class="en">Insights</span></a></li>
+                <li><a href="services.html"><span class="zh">服務</span><span class="en">Services</span></a></li>
+                <li><button class="lang-btn" onclick="toggleLang()">English</button></li>
             </ul>
         </nav>
     </header>
@@ -39,24 +23,20 @@
     <div class="container">
         <section class="hero">
             <h1 class="zh">珠寶產品規劃與庫存管理專家</h1>
-            <h1 class="en">Jewellery Product Planning & Global Brand Expansion Expert</h1>
-            
+            <h1 class="en">Jewellery Product Planning & Inventory Expert</h1>
             <p class="zh">擁有超過 10 年珠寶行業經驗，擅長數據驅動的產品規劃、庫存優化及跨部門領導。致力於品牌出海與戰略性市場擴張。</p>
-            <p class="en">10+ years of expertise in jewellery industry product planning, inventory optimization, and cross-functional leadership. Dedicated to global brand expansion and strategic market growth.</p>
-            
-            <a href="experience.html" class="btn"><span class="zh">查看我的專業背景</span><span class="en">View My Background</span></a>
+            <p class="en">10+ years of expertise in jewellery product planning, inventory optimization, and leadership. Dedicated to global brand expansion and strategic growth.</p>
+            <a href="experience.html" class="btn"><span class="zh">查看專業背景</span><span class="en">View Background</span></a>
         </section>
 
         <h2 class="section-title"><span class="zh">關於我</span><span class="en">About Me</span></h2>
         <div class="card">
-            <p class="zh">我是 Yuen Tung Sze (Sze)，目前擔任周生生高級經理。我具備強大的組織、分析與領導能力，能壓力下高效處理多項任務。我熱衷於創新與持續學習，並流利使用英語、普通話及廣東話。</p>
-            <p class="en">I am Yuen Tung Sze, Senior Manager at Chow Sang Sang Holdings. With strong organizational, analytical, and leadership capabilities, I excel under pressure while multitasking efficiently. I am passionate about innovation and continuous learning, fluent in English, Mandarin, and Cantonese.</p>
-            
+            <p class="zh">我是 Yuen Tung Sze (YT)，目前擔任周生生高級經理。我具備強大的組織、分析與領導能力，能壓力下高效處理多項任務。我流利使用英語、普通話及廣東話。</p>
+            <p class="en">I am Yuen Tung Sze (YT), Senior Manager at Chow Sang Sang. I possess strong organizational, analytical, and leadership skills, excelling under pressure. Fluent in English, Mandarin, and Cantonese.</p>
             <div style="margin-top: 1.5rem;">
                 <strong><span class="zh">聯絡方式：</span><span class="en">Contact:</span></strong><br>
                 📧 <a href="mailto:yuentungsze@gmail.com">yuentungsze@gmail.com</a><br>
-                📞 +852 9884 0831<br>
-                📍 <span class="zh">Kwun Tong, Kowloon, Hong Kong</span><span class="en">Kwun Tong, Kowloon, Hong Kong</span>
+                📞 +852 9884 0831
             </div>
         </div>
 
@@ -66,33 +46,32 @@
             <div class="skill-tag"><span class="zh">庫存管理</span><span class="en">Inventory Management</span></div>
             <div class="skill-tag"><span class="zh">數據分析</span><span class="en">Data Analytics</span></div>
             <div class="skill-tag"><span class="zh">品牌出海</span><span class="en">Global Expansion</span></div>
-            <div class="skill-tag"><span class="zh">團隊領導</span><span class="en">Leadership</span></div>
-            <div class="skill-tag"><span class="zh">商務談判</span><span class="en">Negotiation</span></div>
         </div>
     </div>
 
     <footer class="footer">
-        <p>&copy; 2026 Yuen Tung Sze. <span class="zh">版權所有。</span><span class="en">All Rights Reserved.</span></p>
+        <p>&copy; 2026 YT. All Rights Reserved.</p>
     </footer>
 
     <script>
-        function toggleLanguage() {
-            const zhElements = document.querySelectorAll('.zh');
-            const enElements = document.querySelectorAll('.en');
-            const button = document.querySelector('.lang-toggle button');
-            
-            zhElements.forEach(el => el.classList.toggle('active'));
-            enElements.forEach(el => el.classList.toggle('active'));
-            
-            button.textContent = button.textContent === 'English' ? '中文' : 'English';
-            localStorage.setItem('language', button.textContent === '中文' ? 'en' : 'zh');
+        function toggleLang() {
+            const html = document.documentElement;
+            const btn = document.querySelector('.lang-btn');
+            if (html.getAttribute('lang') === 'zh') {
+                html.setAttribute('lang', 'en');
+                btn.textContent = '中文';
+                localStorage.setItem('pref-lang', 'en');
+            } else {
+                html.setAttribute('lang', 'zh');
+                btn.textContent = 'English';
+                localStorage.setItem('pref-lang', 'zh');
+            }
         }
-
-        // 保存語言偏好
-        window.addEventListener('load', () => {
-            const saved = localStorage.getItem('language');
-            if (saved === 'en') toggleLanguage();
-        });
+        window.onload = () => {
+            const pref = localStorage.getItem('pref-lang') || 'zh';
+            document.documentElement.setAttribute('lang', pref);
+            document.querySelector('.lang-btn').textContent = pref === 'zh' ? 'English' : '中文';
+        };
     </script>
 </body>
 </html>
