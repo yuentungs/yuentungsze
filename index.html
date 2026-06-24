@@ -14,8 +14,8 @@
         .insight-section { margin-top: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
         .insight-card { background: #fff; border-left: 4px solid #26619c; padding: 1.5rem; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
         .insight-card h3 { margin-top: 0; color: #26619c; font-size: 1.2rem; }
-        .linkedin-btn { display: inline-flex; align-items: center; background: #0077b5; color: white; padding: 0.6rem 1.2rem; border-radius: 4px; text-decoration: none; font-size: 0.9rem; margin-top: 1rem; }
-        .linkedin-btn:hover { background: #005582; }
+        .contact-info { margin-top: 2rem; padding: 2rem; background: #f9f9f9; border-radius: 8px; text-align: center; }
+        .contact-link { color: #26619c; text-decoration: none; font-weight: bold; margin: 0 1rem; }
         [lang="en"] .zh { display: none !important; }
         [lang="zh"] .en { display: none !important; }
     </style>
@@ -38,11 +38,8 @@
         <section class="hero">
             <h1 class="zh">珠寶市場數據洞察</h1>
             <h1 class="en">Jewellery Market Insights</h1>
-            <p class="zh">透過季度平均數據監測全球頂級珠寶品牌趨勢。</p>
-            <p class="en">Monitoring global luxury jewellery brand trends via quarterly average data.</p>
-            <a href="https://www.linkedin.com/in/yuen-tung-sze-81488275/" target="_blank" class="linkedin-btn">
-                LinkedIn Profile
-            </a>
+            <p class="zh">透過季度平均數據監測全球頂級珠寶品牌趨勢，從數據中發現戰略價值。</p>
+            <p class="en">Monitoring global luxury jewellery brand trends via quarterly average data. Discovering strategic value from insights.</p>
         </section>
 
         <div class="chart-wrapper">
@@ -63,9 +60,17 @@
                 <p class="en">Digital experience and sustainability will drive brand growth post-2026.</p>
             </div>
         </div>
+
+        <div class="contact-info">
+            <h3 class="zh">聯絡我</h3><h3 class="en">Contact Me</h3>
+            <p>Email: <a href="mailto:yuentungsze@gmail.com" class="contact-link">yuentungsze@gmail.com</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/yuen-tung-sze-81488275/" target="_blank" class="contact-link">YT LinkedIn Profile</a></p>
+        </div>
     </div>
 
-    <footer class="footer"><p>&copy; 2026 YT. <a href="https://www.linkedin.com/in/yuen-tung-sze-81488275/" target="_blank" style="color:white; margin-left:10px;">Connect on LinkedIn</a></p></footer>
+    <footer class="footer">
+        <p>&copy; 2026 YT. <span class="zh">珠寶產品規劃與數據分析專家</span><span class="en">Jewellery Product Planning & Data Specialist</span></p>
+    </footer>
 
     <script>
         function toggleLang() {
