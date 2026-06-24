@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YT | Jewellery Market Insights</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <style>
+        .hero { text-align: center; padding: 4rem 2rem; background: #fff; }
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; color: #000; letter-spacing: -1px; }
+        .hero p { color: #666; max-width: 700px; margin: 0 auto; font-size: 1.1rem; }
+        
+        .chart-wrapper { 
+            background: #fafafa; 
+            border: 1px solid #f0f0f0; 
+            margin-top: 3rem; 
+            border-radius: 8px;
+            position: relative;
+            min-height: 500px;
+        }
+        
+        .chart-wrapper iframe { width: 100%; height: 550px; border: none; display: block; }
+
+        .insight-section { margin-top: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        .insight-card { background: #fff; border-left: 4px solid #26619c; padding: 1.5rem; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .insight-card h3 { margin-top: 0; color: #26619c; font-size: 1.2rem; }
+        .insight-card p { font-size: 0.95rem; line-height: 1.6; color: #444; }
+
+        .data-guide { background: #f9f9f9; padding: 1rem; border-radius: 4px; font-size: 0.85rem; color: #777; margin-bottom: 3rem; }
+
+        @media (max-width: 768px) {
+            .insight-section { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.2rem; }
+        }
+
+        [lang="en"] .zh { display: none !important; }
+        [lang="zh"] .en { display: none !important; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">YT</div>
+            <ul>
+                <li><a href="./index.html"><span class="zh">首頁</span><span class="en">Home</span></a></li>
+                <li><a href="./experience.html"><span class="zh">經歷</span><span class="en">Experience</span></a></li>
+                <li><a href="./insights.html"><span class="zh">分析</span><span class="en">Insights</span></a></li>
+                <li><a href="./services.html"><span class="zh">服務</span><span class="en">Services</span></a></li>
+                <li><button class="lang-btn" onclick="toggleLang()">English</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section class="hero">
+            <h1 class="zh">珠寶市場數據洞察</h1>
+            <h1 class="en">Jewellery Market Insights</h1>
+            <p class="zh">透過 Google Trends 實時監測全球頂級珠寶品牌的搜尋熱度，從數據中提煉商業價值。</p>
+            <p class="en">Real-time monitoring of global luxury jewellery brand search interest via Google Trends, distilling business value from data.</p>
+        </section>
+
+        <div class="chart-wrapper">
+            <iframe src="brand_trends.html" title="Brand Trends Chart"></iframe>
+        </div>
+
+        <div class="data-guide">
+            <p class="zh">💡 <strong>如何閱讀數值：</strong> 圖表顯示的是「搜尋興趣比率」。數值 100 代表該關鍵字在特定時間內的搜尋熱度最高點；數值 50 代表熱度減半。這並非絕對搜尋次數，而是相對受歡迎程度。</p>
+            <p class="en">💡 <strong>How to read values:</strong> The chart shows "Search Interest Index". A value of 100 is the peak popularity for the term; 50 means the term is half as popular. These are relative values, not absolute search volumes.</p>
+        </div>
+
+        <div class="insight-section">
+            <div class="insight-card">
+                <h3 class="zh">📈 市場總結 (Summary)</h3>
+                <h3 class="en">📈 Market Summary</h3>
+                <p class="zh">
+                    <strong>卡地亞 (Cartier)</strong> 展現了最強的品牌基底，搜尋熱度長期領先，特別是在節日季（如 12 月）呈現爆發式增長。
+                    <strong>蒂芙尼 (Tiffany & Co.)</strong> 的波動性較大，受聯名合作與行銷活動影響明顯。
+                    <strong>寶格麗 (Bvlgari)</strong> 則在亞太地區展現出極高的品牌忠誠度與穩定增長。
+                </p>
+                <p class="en">
+                    <strong>Cartier</strong> demonstrates the strongest brand equity with consistent leadership, peaking during holiday seasons. 
+                    <strong>Tiffany & Co.</strong> shows higher volatility influenced by collaborations. 
+                    <strong>Bvlgari</strong> exhibits high brand loyalty and steady growth, particularly in the APAC region.
+                </p>
+            </div>
+            <div class="insight-card">
+                <h3 class="zh">🔮 行業預測 (2026-2027)</h3>
+                <h3 class="en">🔮 Industry Forecast</h3>
+                <p class="zh">
+                    1. <strong>數位化體驗革命</strong>：AR 試戴與 AI 個性化推薦將成為提升線上轉化率的關鍵。<br>
+                    2. <strong>可持續珠寶</strong>：消費者對「來源透明化」的需求將驅動品牌在供應鏈數據上的公開。<br>
+                    3. <strong>品牌出海新路徑</strong>：中國品牌將透過數據驅動的精準行銷，在東南亞與中東市場尋求突破。
+                </p>
+                <p class="en">
+                    1. <strong>Digital Experience</strong>: AR try-ons and AI personalization will be key to online conversion.<br>
+                    2. <strong>Sustainability</strong>: Demand for transparency will drive supply chain data disclosure.<br>
+                    3. <strong>Global Expansion</strong>: Chinese brands will seek breakthroughs in SEA and Middle East markets via data-driven precision marketing.
+                </p>
+            </div>
+        </div>
+
+        <h2 class="section-title" style="margin-top: 4rem;"><span class="zh">專業背景</span><span class="en">About Me</span></h2>
+        <div class="card">
+            <p class="zh">我是 Yuen Tung Sze (YT)，目前擔任周生生高級經理。專注於產品規劃、庫存優化及品牌出海。致力於透過數據分析提升商業決策效率。</p>
+            <p class="en">I am Yuen Tung Sze (YT), Senior Manager at Chow Sang Sang. Focused on product planning, inventory optimization, and global expansion through data-driven insights.</p>
+        </div>
+    </div>
+
+    <footer class="footer"><p>&copy; 2026 YT. All Rights Reserved.</p></footer>
+
+    <script>
+        function toggleLang() {
+            const html = document.documentElement;
+            const btn = document.querySelector('.lang-btn');
+            if (html.getAttribute('lang') === 'zh') {
+                html.setAttribute('lang', 'en');
+                btn.textContent = '中文';
+                localStorage.setItem('pref-lang', 'en');
+            } else {
+                html.setAttribute('lang', 'zh');
+                btn.textContent = 'English';
+                localStorage.setItem('pref-lang', 'zh');
+            }
+        }
+        window.onload = () => {
+            const pref = localStorage.getItem('pref-lang') || 'zh';
+            document.documentElement.setAttribute('lang', pref);
+            document.querySelector('.lang-btn').textContent = pref === 'zh' ? 'English' : '中文';
+        };
+    </script>
+</body>
+</html>
