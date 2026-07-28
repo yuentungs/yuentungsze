@@ -4,39 +4,187 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title class="zh">AI 與成本結構重組：重新審視 2026 年「一人公司」與電商生態的深層邏輯</title>
-    <title class="en">AI and Cost Structure Reconfiguration: Re-examining the Deep Logic of 'Solopreneurship' and E-commerce Ecosystem in 2026</title>
+    <title class="en">AI and Cost Structure Reconfiguration: Re-examining the Deep Logic of Solopreneurship and E-commerce Ecosystem in 2026</title>
     <meta name="description" content="Comprehensively revise causal inferences and survivor bias, starting from cost structure reconfiguration, to deeply analyze how AI, SaaS, AWS, and the global freelancer ecosystem jointly foster solopreneurship. Objectively discuss market dynamics, counter-challenges, practical advice for current store openings, and pitfalls to avoid, using first-hand industry data from Etsy, Shopify, and Amazon.">
     <meta name="keywords" content="Solopreneur, Cost Structure, Shopify, Etsy, Amazon, AI Ecommerce, DTC Strategy, CAC, GMV">
     <link rel="stylesheet" href="./assets/css/style.css">
     <style>
-        [lang="en"] .zh { display: none !important; }
-        [lang="zh"] .en { display: none !important; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; line-height: 1.6; color: #333; background-color: #f9f9f9; }
-        .container { max-width: 900px; margin: 20px auto; padding: 20px; background-color: #fff; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        h1, h2, h3, h4, h5, h6 { color: #2c3e50; margin-top: 1.5em; margin-bottom: 0.8em; line-height: 1.3; }
-        h1 { font-size: 2.2em; text-align: center; }
-        h2 { font-size: 1.8em; border-bottom: 2px solid #eee; padding-bottom: 0.5em; }
-        h3 { font-size: 1.4em; }
-        p { margin-bottom: 1em; }
-        table { width: 100%; border-collapse: collapse; margin: 1.5em 0; font-size: 0.95em; }
-        th, td { border: 1px solid #ddd; padding: 12px 15px; text-align: left; }
-        th { background-color: #f0f0f0; font-weight: bold; color: #555; }
-        tr:nth-child(even) { background-color: #fdfdfd; }
-        tr:hover { background-color: #f5f5f5; }
-        .lang-btn { background-color: #007bff; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-size: 0.9em; }
-        .lang-btn:hover { background-color: #0056b3; }
-        .footer { text-align: center; padding: 20px; margin-top: 30px; color: #777; font-size: 0.9em; border-top: 1px solid #eee; }
-        .logo { font-weight: bold; font-size: 1.5em; color: #2c3e50; }
-        nav ul { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; }
-        nav ul li { margin-left: 20px; }
-        nav ul li a { text-decoration: none; color: #2c3e50; font-weight: 500; }
-        nav ul li a:hover { color: #007bff; }
-        header { background-color: #fff; padding: 15px 0; border-bottom: 1px solid #eee; box-shadow: 0 1px 5px rgba(0,0,0,0.02); }
-        header nav { max-width: 900px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-        .data-support { font-style: italic; color: #666; margin-top: 1em; border-left: 3px solid #ccc; padding-left: 10px; }
-        .references { font-size: 0.9em; color: #555; margin-top: 2em; }
-        .references ul { list-style: none; padding: 0; }
-        .references li { margin-bottom: 0.5em; }
+        /* 基礎樣式，確保與用戶現有頁面一致 */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            line-height: 1.8;
+            color: #333;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        /* 導航欄樣式 */
+        header {
+            background-color: #fff;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.02);
+        }
+
+        header nav {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 1.5em;
+            color: #2c3e50;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: #007bff;
+        }
+
+        /* 語言切換按鈕 */
+        .lang-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+
+        .lang-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* 標題樣式 */
+        h1 {
+            font-size: 2.2em;
+            text-align: left;
+            color: #2c3e50;
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            line-height: 1.3;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.5em;
+            color: #2c3e50;
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            line-height: 1.3;
+        }
+
+        h3 {
+            font-size: 1.4em;
+            color: #2c3e50;
+            margin-top: 1.5em;
+            margin-bottom: 0.8em;
+            line-height: 1.3;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        /* 數據支撐和參考文獻 */
+        .data-support {
+            font-style: italic;
+            color: #666;
+            margin-top: 1em;
+            border-left: 3px solid #ccc;
+            padding-left: 10px;
+        }
+
+        .references {
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 2em;
+        }
+
+        .references ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .references li {
+            margin-bottom: 0.5em;
+        }
+
+        /* 表格樣式 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5em 0;
+            font-size: 0.95em;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f0f0f0;
+            font-weight: bold;
+            color: #555;
+        }
+
+        tr:nth-child(even) {
+            background-color: #fdfdfd;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        /* 頁腳 */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            color: #777;
+            font-size: 0.9em;
+            border-top: 1px solid #eee;
+        }
+
+        /* 語言切換顯示/隱藏 */
+        [lang="en"] .zh { display: none; }
+        [lang="zh"] .en { display: none; }
     </style>
 </head>
 <body>
@@ -54,163 +202,163 @@
     </header>
     <div class="container">
         <h1 class="zh">AI 與成本結構重組：重新審視 2026 年「一人公司」與電商生態的深層邏輯</h1>
-        <h1 class="en">AI and Cost Structure Reconfiguration: Re-examining the Deep Logic of 'Solopreneurship' and E-commerce Ecosystem in 2026</h1>
+        <h1 class="en">AI and Cost Structure Reconfiguration: Re-examining the Deep Logic of Solopreneurship and E-commerce Ecosystem in 2026</h1>
 
         <h2 class="zh">【核心名詞與完整因果鏈定義】</h2>
         <h2 class="en">【Core Terms and Complete Causal Chain Definition】</h2>
-        <p class="zh"><p><strong>Leverage（槓桿）</strong>：本文定義為「在 AI 與數位工具賦能下，單位人力所能創造的營收與營運產出規模」。</p></p>
-        <p class="en"><p><strong>Leverage</strong>: Defined in this article as "the scale of revenue and operational output that a unit of human effort can generate, empowered by AI and digital tools."</p></p>
-        <p class="zh"><p><strong>完整因果鏈</strong>：AI 普及 ➔ 固定與試錯成本下降 ➔ 創業門檻降低 ➔ 獨立品牌（Solopreneur）數量增加 ➔ 市場競爭加劇與內捲 ➔ 品牌信任與洞察（Insight）成為最終勝負關鍵。</p></p>
-        <p class="en"><p><strong>Complete Causal Chain</strong>: AI Popularization ➔ Decrease in Fixed and Trial-and-Error Costs ➔ Lower Entry Barriers for Entrepreneurship ➔ Increase in Solopreneur Brands ➔ Intensified Market Competition and "Involution" ➔ Brand Trust and Insight Become the Ultimate Key to Success.</p></p>
+        <div class="zh"><p><strong>Leverage（槓桿）</strong>：本文定義為「在 AI 與數位工具賦能下，單位人力所能創造的營收與營運產出規模」。</p></div>
+        <div class="en"><p><strong>Leverage</strong>: Defined in this article as 'the scale of revenue and operational output that a unit of human effort can generate, empowered by AI and digital tools.'</p></div>
+        <div class="zh"><p><strong>完整因果鏈</strong>：AI 普及 ➔ 固定與試錯成本下降 ➔ 創業門檻降低 ➔ 獨立品牌（Solopreneur）數量增加 ➔ 市場競爭加劇與內捲 ➔ 品牌信任與洞察（Insight）成為最終勝負關鍵。</p></div>
+        <div class="en"><p><strong>Complete Causal Chain</strong>: AI Popularization ➔ Decrease in Fixed and Trial-and-Error Costs ➔ Lower Entry Barriers for Entrepreneurship ➔ Increase in Solopreneur Brands ➔ Intensified Market Competition and 'Involution' ➔ Brand Trust and Insight Become the Ultimate Key to Success.</p></div>
 
         <h2 class="zh">前言：超越「AI 決定論」的宏觀視角</h2>
-        <h2 class="en">Preface: A Macro Perspective Beyond 'AI Determinism'</h2>
-        <div class="zh"><p>在探討當前電商變局時，我們必須避免落入單一因果推論的陷阱。AI 的普及與「一人公司（Solopreneur）」的增加雖然在時間軸上同步發生，但若將其簡化為「AI 直接造就了一人公司」，則忽略了過去十年間全球數位基礎設施累積的厚積薄發。
+        <h2 class="en">Preface: A Macro Perspective Beyond AI Determinism</h2>
+        <div class="zh"><p>在探討當前電商變局時，我們必須避免落入單一因果推論的陷阱。AI 的普及與「一人公司（Solopreneur）」的增加雖然在時間軸上同步發生，但若將其簡化為「AI 直接造就了一人公司」，則忽略了過去十年間全球數位基礎設施累積的厚積薄發。<br />
 真正精確的邏輯是：AI 與 SaaS（如 Notion、Zoom）、雲端基礎設施（AWS）、全球金流（Stripe）、遠距工作（Remote Work）以及全球自由工作者平台的成熟共同交織，徹底重組了現代企業的「成本結構」。AI 是其中的最強催化劑，而非唯一推手。</p></div>
-        <div class="en"><p>When discussing the current changes in e-commerce, we must avoid the trap of single causal inference. Although the popularization of AI and the increase in "solopreneurs" have occurred simultaneously, simplifying this to "AI directly created solopreneurship" ignores the accumulated breakthroughs in global digital infrastructure over the past decade.
-The truly precise logic is: AI, along with the maturity of SaaS (e.g., Notion, Zoom), cloud infrastructure (AWS), global payment gateways (Stripe), remote work, and global freelancer platforms, has fundamentally reconfigured the "cost structure" of modern enterprises. AI is the strongest catalyst among them, not the sole driver.</p></div>
-        <p class="data-support zh"><p><strong>數據支撐</strong>： 全球自由工作者經濟規模已達約 1.5 兆美元；其中 Upwork 單一平台的年度服務總量（GSV）即超過 40 億美元，串連約 1,800 萬名註冊自由工作者與 78.5 萬名活躍客戶（Upwork 2025 年度數據；Passive Secrets, 2026），印證跨國遠距協作基礎設施已成熟到足以支撐個人獨立營運全球業務。</p></p>
-        <p class="data-support en"><p><strong>Data Support</strong>: The global freelance economy has reached approximately $1.5 trillion; among which, Upwork alone has an annual Gross Services Volume (GSV) exceeding $4 billion, connecting approximately 18 million registered freelancers with 785,000 active clients (Upwork 2025 Annual Data; Passive Secrets, 2026), confirming that cross-border remote collaboration infrastructure is mature enough to support individual independent global operations.</p></p>
+        <div class="en"><p>When discussing the current changes in e-commerce, we must avoid the trap of single causal inference. Although the popularization of AI and the increase in solopreneurs have occurred simultaneously, simplifying this to 'AI directly created solopreneurship' ignores the accumulated breakthroughs in global digital infrastructure over the past decade.<br />
+The truly precise logic is: AI, along with the maturity of SaaS (e.g., Notion, Zoom), cloud infrastructure (AWS), global payment gateways (Stripe), remote work, and freelancer platforms, has fundamentally reconfigured the cost structure of modern enterprises. AI is the strongest catalyst among them, not the sole driver.</p></div>
+        <div class="data-support zh"><p><strong>數據支撐</strong>： 全球自由工作者經濟規模已達約 1.5 兆美元；其中 Upwork 單一平台的年度服務總量（GSV）即超過 40 億美元，串連約 1,800 萬名註冊自由工作者與 78.5 萬名活躍客戶（Upwork 2025 年度數據；Passive Secrets, 2026），印證跨國遠距協作基礎設施已成熟到足以支撐個人獨立營運全球業務。</p></div>
+        <div class="data-support en"><p><strong>Data Support</strong>: The global freelance economy has reached approximately $1.5 trillion; among which, Upwork alone has an annual Gross Services Volume (GSV) exceeding $4 billion, connecting approximately 18 million registered freelancers with 785,000 active clients (Upwork 2025 Annual Data; Passive Secrets, 2026), confirming that cross-border remote collaboration infrastructure is mature enough to support individual independent global operations.</p></div>
 
         <h2 class="zh">第一章：成本結構的重組：AI 如何改變商業底層邏輯？</h2>
         <h2 class="en">Chapter 1: Cost Structure Reconfiguration: How AI Changes the Underlying Logic of Business?</h2>
-        <div class="zh"><p>過去，企業規模經濟（Economies of Scale）與組織人數緊密綁定。一個能夠穩定營運並行銷全球的品牌，背後必然需要設計師、前端工程師、客服與行銷團隊的協作。
-但在 2026 年的今天，成本結構發生了根本性轉變：
-以前：固定成本高（需聘雇多人團隊）➔ 試錯成本高 ➔ 創業門檻極高
-現在：固定成本被 AI 與 SaaS 壓縮 ➔ 試錯成本大幅降低 ➔ 微型跨國企業快速萌芽
+        <div class="zh"><p>過去，企業規模經濟（Economies of Scale）與組織人數緊密綁定。一個能夠穩定營運並行銷全球的品牌，背後必然需要設計師、前端工程師、客服與行銷團隊的協作。<br />
+但在 2026 年的今天，成本結構發生了根本性轉變：<br />
+以前：固定成本高（需聘雇多人團隊）➔ 試錯成本高 ➔ 創業門檻極高<br />
+現在：固定成本被 AI 與 SaaS 壓縮 ➔ 試錯成本大幅降低 ➔ 微型跨國企業快速萌芽<br />
 這正是一人公司能夠具備企業級 Leverage 的根本原因。公司規模（Company Size）不再是衡量商業能力的絕對門檻。</p></div>
-        <div class="en"><p>In the past, economies of scale were closely tied to organizational headcount. A brand capable of stable operation and global marketing inevitably required the collaboration of designers, front-end engineers, customer service, and marketing teams.
-But today, in 2026, the cost structure has undergone a fundamental shift:
-Before: High fixed costs (requiring a large team) ➔ High trial-and-error costs ➔ Extremely high entry barriers for entrepreneurship
-Now: Fixed costs compressed by AI and SaaS ➔ Significantly reduced trial-and-error costs ➔ Rapid emergence of micro-multinational enterprises
+        <div class="en"><p>In the past, economies of scale were closely tied to organizational headcount. A brand capable of stable operation and global marketing inevitably required the collaboration of designers, front-end engineers, customer service, and marketing teams.<br />
+But today, in 2026, the cost structure has undergone a fundamental shift:<br />
+Before: High fixed costs (requiring a large team) ➔ High trial-and-error costs ➔ Extremely high entry barriers for entrepreneurship<br />
+Now: Fixed costs compressed by AI and SaaS ➔ Significantly reduced trial-and-error costs ➔ Rapid emergence of micro-multinational enterprises<br />
 This is the fundamental reason why solopreneurs can possess enterprise-level Leverage. Company size is no longer an absolute barrier to measuring business capability.</p></div>
-        <p class="data-support zh"><p><strong>數據支撐</strong>： 一套完整的「一人公司」AI 工具組合，年成本約落在 3,000 至 1.2 萬美元之間，相較於聘用對應職能的全職團隊，成本降幅高達 95% 至 98%；這使不少一人公司得以維持 60% 至 80% 的營運利潤率（GreyJournal／Solo Hub, 2026）。</p></p>
-        <p class="data-support en"><p><strong>Data Support</strong>: A complete "solopreneur" AI tool suite costs approximately $3,000 to $12,000 annually. Compared to hiring a full-time team for corresponding functions, the cost reduction is as high as 95% to 98%; this allows many solopreneurs to maintain operating profit margins of 60% to 80% (GreyJournal / Solo Hub, 2026).</p></p>
-        <p class="data-support zh"><p><strong>數據支撐</strong>： 美國目前約有 2,980 萬名「一人公司」經營者，合計創造 1.7 兆美元營收，占全美 GDP 約 6.8%；在所有美國小型企業中，高達 81.9% 屬於零僱員的獨資型態（U.S. Census Bureau；Founder Reports, 2026）。與此同時，由單一創辦人設立的新創公司占比，也從 2019 年的 23.7% 攀升至 2025 年中的 36.3%（Carta 數據，經 Bloomberg 引用），顯示「一人可成軍」已從個案演變為結構性現象。</p></p>
-        <p class="data-support en"><p><strong>Data Support</strong>: There are currently approximately 29.8 million "solopreneur" operators in the United States, collectively generating $1.7 trillion in revenue, accounting for about 6.8% of the total U.S. GDP; among all U.S. small businesses, as many as 81.9% are sole proprietorships with zero employees (U.S. Census Bureau; Founder Reports, 2026). At the same time, the proportion of startups founded by a single founder has also risen from 23.7% in 2019 to 36.3% in mid-2025 (Carta data, cited by Bloomberg), indicating that "one person can form an army" has evolved from an isolated case to a structural phenomenon.</p></p>
+        <div class="data-support zh"><p><strong>數據支撐</strong>： 一套完整的「一人公司」AI 工具組合，年成本約落在 3,000 至 1.2 萬美元之間，相較於聘用對應職能的全職團隊，成本降幅高達 95% 至 98%；這使不少一人公司得以維持 60% 至 80% 的營運利潤率（GreyJournal／Solo Hub, 2026）。</p></div>
+        <div class="data-support en"><p><strong>Data Support</strong>: A complete solopreneur AI tool suite costs approximately $3,000 to $12,000 annually. Compared to hiring a full-time team for corresponding functions, the cost reduction is as high as 95% to 98%; this allows many solopreneurs to maintain operating profit margins of 60% to 80% (GreyJournal / Solo Hub, 2026).</p></div>
+        <div class="data-support zh"><p><strong>數據支撐</strong>： 美國目前約有 2,980 萬名「一人公司」經營者，合計創造 1.7 兆美元營收，占全美 GDP 約 6.8%；在所有美國小型企業中，高達 81.9% 屬於零僱員的獨資型態（U.S. Census Bureau；Founder Reports, 2026）。與此同時，由單一創辦人設立的新創公司占比，也從 2019 年的 23.7% 攀升至 2025 年中的 36.3%（Carta 數據，經 Bloomberg 引用），顯示「一人可成軍」已從個案演變為結構性現象。</p></div>
+        <div class="data-support en"><p><strong>Data Support</strong>: There are currently approximately 29.8 million solopreneur operators in the United States, collectively generating $1.7 trillion in revenue, accounting for about 6.8% of the total U.S. GDP; among all U.S. small businesses, as many as 81.9% are sole proprietorships with zero employees (U.S. Census Bureau; Founder Reports, 2026). At the same time, the proportion of startups founded by a single founder has also risen from 23.7% in 2019 to 36.3% in mid-2025 (Carta data, cited by Bloomberg), indicating that 'one person can form an army' has evolved from an isolated case to a structural phenomenon.</p></div>
 
         <h2 class="zh">第二章：Shopify 與基礎建設的連鎖效應</h2>
         <h2 class="en">Chapter 2: Shopify and the Ripple Effect of Infrastructure</h2>
         <div class="zh"><p>在探討 Shopify 的角色時，必須釐清其因果傳導路徑：AI 普及 ➔ 建立網站與視覺內容的成本下降 ➔ 更多創業者得以低成本建立品牌 ➔ Shopify 等基礎設施因此受惠並擴大生態系。</p></div>
         <div class="en"><p>When discussing Shopify's role, its causal transmission path must be clarified: AI popularization ➔ Reduced cost of building websites and visual content ➔ More entrepreneurs can build brands at low cost ➔ Shopify and other infrastructures benefit and expand their ecosystems.</p></div>
-        <p class="data-support zh"><p><strong>數據支撐</strong>： 這股受惠效應具體反映在平台規模上：Shopify 2025 年全年營收達 115.5 億美元，年增約 30%；全年商品交易總額（GMV）約 3,780 億美元，平台累計 GMV 已突破 1.6 兆美元里程碑；目前 Shopify 在美國電商市場的份額已超過 14%（Shopify SEC 申報文件；DemandSage／Axis Intelligence, 2026）。
-Shopify 的核心價值在於提供 Ownership（所有權），讓創業者掌握第一方客戶數據、Email 名單與 CRM，擺脫對單一流量平台的過度依附。</p></p>
-        <p class="data-support en"><p><strong>Data Support</strong>: This beneficial effect is specifically reflected in platform scale: Shopify's full-year revenue in 2025 reached $11.55 billion, an annual increase of approximately 30%; full-year Gross Merchandise Volume (GMV) was approximately $378 billion, and the platform's cumulative GMV has exceeded the $1.6 trillion milestone; Shopify's share in the U.S. e-commerce market currently exceeds 14% (Shopify SEC filings; DemandSage / Axis Intelligence, 2026).
-Shopify's core value lies in providing Ownership, allowing entrepreneurs to control first-party customer data, email lists, and CRM, breaking away from excessive reliance on single traffic platforms.</p></p>
+        <div class="data-support zh"><p><strong>數據支撐</strong>： 這股受惠效應具體反映在平台規模上：Shopify 2025 年全年營收達 115.5 億美元，年增約 30%；全年商品交易總額（GMV）約 3,780 億美元，平台累計 GMV 已突破 1.6 兆美元里程碑；目前 Shopify 在美國電商市場的份額已超過 14%（Shopify SEC 申報文件；DemandSage／Axis Intelligence, 2026）。<br />
+Shopify 的核心價值在於提供 Ownership（所有權），讓創業者掌握第一方客戶數據、Email 名單與 CRM，擺脫對單一流量平台的過度依附。</p></div>
+        <div class="data-support en"><p><strong>Data Support</strong>: This beneficial effect is specifically reflected in platform scale: Shopify's full-year revenue in 2025 reached $11.55 billion, an annual increase of approximately 30%; full-year Gross Merchandise Volume (GMV) was approximately $378 billion, and the platform's cumulative GMV has exceeded the $1.6 trillion milestone; Shopify's share in the U.S. e-commerce market currently exceeds 14% (Shopify SEC filings; DemandSage / Axis Intelligence, 2026).<br />
+Shopify's core value lies in providing Ownership, allowing entrepreneurs to control first-party customer data, email lists, and CRM, breaking away from excessive reliance on single traffic platforms.</p></div>
 
         <h2 class="zh">第三章：Etsy 的紅利與「原創性」的真實面貌</h2>
-        <h2 class="en">Chapter 3: Etsy's Dividends and the True Face of 'Originality'</h2>
+        <h2 class="en">Chapter 3: Etsy's Dividends and the True Face of Originality</h2>
         <div class="zh"><p>針對 Etsy 生態系的觀察，必須保持客觀與審慎。目前 Etsy 官方並未直接公布平台整體「原創性（Original）」下降的具體數據；然而，從大量賣家社群（如 Reddit Seller Forum 與 Etsy Community）的實務討論中確實反映出：AI 生成圖片（Midjourney／DALL-E）、虛擬展示圖（Mockup）與自動化文案的氾濫，確實造成了商品搜尋結果的同質化與買家決策疲勞。</p></div>
-        <div class="en"><p>Observations of the Etsy ecosystem must remain objective and cautious. Currently, Etsy officially has not directly released specific data on the overall decline in "originality" on the platform; however, practical discussions from numerous seller communities (such as Reddit Seller Forum and Etsy Community) indeed reflect that the proliferation of AI-generated images (Midjourney / DALL-E), virtual mockups, and automated copywriting has led to homogenization of product search results and buyer decision fatigue.</p></div>
-        <p class="data-support zh"><p><strong>數據支撐</strong>： 儘管缺乏官方「原創性」下降的直接統計，Etsy 近年整體營運數據仍值得參照：2025 全年 GMS（商品交易總額）為 104.2 億美元，較 2024 年的 109.0 億美元下滑約 4%；活躍賣家數為 560 萬，年減 1.5%；活躍買家數約 8,650 萬人，每位活躍買家的年化 GMS 降至 121 美元（Etsy 2025 年第四季暨全年財報；Marketplace Pulse, 2026）。買氣成長趨緩的同時賣家與商品供給仍持續增加，正是造成同質化競爭加劇的結構性背景。</p></p>
-        <p class="data-support en"><p><strong>Data Support</strong>: Despite the lack of official statistics on the decline of "originality," Etsy's overall operational data in recent years is still worth referencing: full-year GMS (Gross Merchandise Sales) in 2025 was $10.42 billion, a decrease of approximately 4% from $10.90 billion in 2024; active sellers were 5.6 million, a year-on-year decrease of 1.5%; active buyers were approximately 86.5 million, and the annualized GMS per active buyer decreased to $121 (Etsy Q4 and Full-Year 2025 Earnings Report; Marketplace Pulse, 2026). The slowdown in sales growth while seller and product supply continue to increase is precisely the structural background causing intensified homogeneous competition.</p></p>
-        <p class="data-support zh"><p><strong>數據支撐</strong>： 聚焦於 Etsy 生態中占比極高的 Print-on-Demand（POD）品類，市場規模仍在快速擴張：全球 POD 市場於 2025 年約值 121.5 億美元，預估將以 25.05% 的年複合成長率（CAGR）擴張至 2031 年的 464.3 億美元；然而在目前約 22.8 萬個活躍 POD 商店中，三年存活率僅約 24%（Mordor Intelligence, 2026）。市場總量高速成長，與個別賣家的高淘汰率同時並存，正是「創業門檻降低」與「內捲加劇」同步發生的具體例證。
-因此，更嚴謹的推論是：部分賣家觀察顯示 AI 商品造成搜尋結果同質化現象加劇，促使市場重新評估「真實信任（Trust）」與獨特品牌故事的稀缺性。</p></p>
-        <p class="data-support en"><p><strong>Data Support</strong>: Focusing on the Print-on-Demand (POD) category, which accounts for a very high proportion of the Etsy ecosystem, the market size is still rapidly expanding: the global POD market was valued at approximately $12.15 billion in 2025 and is expected to expand at a compound annual growth rate (CAGR) of 25.05% to $46.43 billion by 2031; however, among the approximately 228,000 active POD stores, the three-year survival rate is only about 24% (Mordor Intelligence, 2026). The rapid growth of the total market and the high elimination rate of individual sellers coexist, which is a concrete example of "lower entry barriers" and "intensified involution" occurring simultaneously.
-Therefore, a more rigorous inference is: observations from some sellers indicate that AI products have exacerbated the homogenization of search results, prompting the market to re-evaluate the scarcity of "genuine trust" and unique brand stories.</p></p>
+        <div class="en"><p>Observations of the Etsy ecosystem must remain objective and cautious. Currently, Etsy officially has not directly released specific data on the overall decline in originality on the platform; however, practical discussions from numerous seller communities (such as Reddit Seller Forum and Etsy Community) indeed reflect that the proliferation of AI-generated images (Midjourney / DALL-E), virtual mockups, and automated copywriting has led to homogenization of product search results and buyer decision fatigue.</p></div>
+        <div class="data-support zh"><p><strong>數據支撐</strong>： 儘管缺乏官方「原創性」下降的直接統計，Etsy 近年整體營運數據仍值得參照：2025 全年 GMS（商品交易總額）為 104.2 億美元，較 2024 年的 109.0 億美元下滑約 4%；活躍賣家數為 560 萬，年減 1.5%；活躍買家數約 8,650 萬人，每位活躍買家的年化 GMS 降至 121 美元（Etsy 2025 年第四季暨全年財報；Marketplace Pulse, 2026）。買氣成長趨緩的同時賣家與商品供給仍持續增加，正是造成同質化競爭加劇的結構性背景。</p></div>
+        <div class="data-support en"><p><strong>Data Support</strong>: Despite the lack of official statistics on the decline of originality, Etsy's overall operational data in recent years is still worth referencing: full-year GMS (Gross Merchandise Sales) in 2025 was $10.42 billion, a decrease of approximately 4% from $10.90 billion in 2024; active sellers were 5.6 million, a year-on-year decrease of 1.5%; active buyers were approximately 86.5 million, and the annualized GMS per active buyer decreased to $121 (Etsy Q4 and Full-Year 2025 Earnings Report; Marketplace Pulse, 2026). The slowdown in sales growth while seller and product supply continue to increase is precisely the structural background causing intensified homogeneous competition.</p></div>
+        <div class="data-support zh"><p><strong>數據支撐</strong>： 聚焦於 Etsy 生態中占比極高的 Print-on-Demand（POD）品類，市場規模仍在快速擴張：全球 POD 市場於 2025 約值 121.5 億美元，預估將以 25.05% 的年複合成長率（CAGR）擴張至 2031 年的 464.3 億美元；然而在目前約 22.8 萬個活躍 POD 商店中，三年存活率僅約 24%（Mordor Intelligence, 2026）。市場總量高速成長，與個別賣家的高淘汰率同時並存，正是「創業門檻降低」與「內捲加劇」同步發生的具體例證。<br />
+因此，更嚴謹的推論是：部分賣家觀察顯示 AI 商品造成搜尋結果同質化現象加劇，促使市場重新評估「真實信任（Trust）」與獨特品牌故事的稀缺性。</p></div>
+        <div class="data-support en"><p><strong>Data Support</strong>: Focusing on the Print-on-Demand (POD) category, which accounts for a very high proportion of the Etsy ecosystem, the market size is still rapidly expanding: the global POD market was valued at approximately $12.15 billion in 2025 and is expected to expand at a compound annual growth rate (CAGR) of 25.05% to $46.43 billion by 2031; however, among the approximately 228,000 active POD stores, the three-year survival rate is only about 24% (Mordor Intelligence, 2026). The rapid growth of the total market and the high elimination rate of individual sellers coexist, which is a concrete example of 'lower entry barriers' and 'intensified involution' occurring simultaneously.<br />
+Therefore, a more rigorous inference is: observations from some sellers indicate that AI products have exacerbated the homogenization of search results, prompting the market to re-evaluate the scarcity of 'genuine trust' and unique brand stories.</p></div>
 
         <h2 class="zh">第四章：Amazon 與 DTC 品牌的生存矛盾（兼論倖存者偏差）</h2>
         <h2 class="en">Chapter 4: Amazon and the Survival Paradox of DTC Brands (Also Discussing Survivor Bias)</h2>
         <div class="zh"><p>提到 DTC（Direct-to-Consumer）品牌，過去人們常引用 Gymshark、Allbirds 或 Warby Parker 的成功案例。然而，這背後存在明顯的「倖存者偏差」——市面上同時有成千上萬家未被報導的 DTC 品牌因獲客成本（CAC）攀升、現金流斷裂而黯然退場。因此，品牌自主並非成功的絕對保證。</p></div>
-        <div class="en"><p>When it comes to DTC (Direct-to-Consumer) brands, people often cite the success stories of Gymshark, Allbirds, or Warby Parker. However, there is a clear "survivor bias" behind this—at the same time, tens of thousands of unreported DTC brands have quietly exited due to rising customer acquisition costs (CAC) and cash flow disruptions. Therefore, brand autonomy is not an absolute guarantee of success.</p></div>
-        <p class="data-support zh"><p><strong>數據支撐</strong>： 獲客成本攀升的規模可被具體量化：目前電商品牌的平均 CAC（顧客獲取成本）約落在 68 至 84 美元之間，較 2023 年上漲逾 40%；主要廣告平台成本同步走高，Meta 於 2025 年第四季的平均 CPM 達 22.98 美元，黑色星期五當週一度衝上 25.22 美元，Google 購物廣告 CPC 則於 2025 全年上漲 33.72%（Ringly／Mobiloud, 2026）。</p></p>
-        <p class="data-support en"><p><strong>Data Support</strong>: The scale of rising customer acquisition costs can be quantified: the average CAC (Customer Acquisition Cost) for e-commerce brands currently ranges from $68 to $84, an increase of over 40% compared to 2023; advertising costs on major platforms have also risen, with Meta's average CPM reaching $22.98 in Q4 2025, peaking at $25.22 during Black Friday week, and Google Shopping Ads CPC increasing by 33.72% throughout 2025 (Ringly / Mobiloud, 2026).</p></p>
-        <p class="data-support zh"><p><strong>數據支撐</strong>： 「倖存者偏差」亦有明確的對照數據：擁有共同創辦人的新創公司，成功機率約為單一創辦人新創的 3 倍；就整體新創而言，約 20% 在成立兩年內即告失敗，長期來看失敗率可高達 90%（DesignRush；U.S. Bureau of Labor Statistics, 2025-2026）。這提醒創業者，「一人公司」的低試錯成本降低了創業門檻，卻不必然降低失敗率本身。
-Amazon 在分銷與物流（Distribution）上無人能敵，極度適合標準化、泛用型的標品（Generic Product）；而 Shopify 則適合需要深度溢價與情感連結的品牌官網。兩者構成互補的消費者旅程，而非絕對的零和競爭。</p></p>
-        <p class="data-support en"><p><strong>Data Support</strong>: "Survivor bias" also has clear comparative data: startups with co-founders are approximately 3 times more likely to succeed than single-founder startups; for startups overall, about 20% fail within two years of establishment, and the long-term failure rate can be as high as 90% (DesignRush; U.S. Bureau of Labor Statistics, 2025-2026). This reminds entrepreneurs that the low trial-and-error cost of "solopreneurship" lowers the entry barrier but does not necessarily reduce the failure rate itself.
-Amazon is unrivaled in distribution and logistics, making it extremely suitable for standardized, generic products; while Shopify is suitable for brand official websites that require deep premium and emotional connection. The two form a complementary consumer journey, rather than an absolute zero-sum competition.</p></p>
-        <p class="data-support zh"><p><strong>數據支撐</strong>： Amazon 在分銷規模上的優勢同樣有數據支撐：其 2025 年全球商品交易總額（GMV）約達 8,300 億美元，其中第三方賣家貢獻約 5,750 億美元，占比達 69%，較 2019 年的 60% 持續攀升；然而活躍賣家數已從 2021 年的 240 萬家降至 2025 年的約 190 萬家，目前已有逾 10 萬名 Amazon 賣家的年營收突破 100 萬美元（Marketplace Pulse；SmartScout, 2026）。這顯示市場正走向「贏家集中」的整併階段，而非單純的門檻降低、人人得利。</p></p>
-        <p class="data-support en"><p><strong>Data Support</strong>: Amazon's advantage in distribution scale is also supported by data: its global Gross Merchandise Volume (GMV) in 2025 reached approximately $830 billion, of which third-party sellers contributed approximately $575 billion, accounting for 69%, a continuous increase from 60% in 2019; however, the number of active sellers has decreased from 2.4 million in 2021 to approximately 1.9 million in 2025, and currently over 100,000 Amazon sellers have annual revenues exceeding $1 million (Marketplace Pulse; SmartScout, 2026). This indicates that the market is moving towards a consolidation phase of "winner takes all," rather than simply lower barriers and universal benefits.</p></p>
+        <div class="en"><p>When it comes to DTC (Direct-to-Consumer) brands, people often cite the success stories of Gymshark, Allbirds, or Warby Parker. However, there is a clear 'survivor bias' behind this—at the same time, tens of thousands of unreported DTC brands have quietly exited due to rising customer acquisition costs (CAC) and cash flow disruptions. Therefore, brand autonomy is not an absolute guarantee of success.</p></div>
+        <div class="data-support zh"><p><strong>數據支撐</strong>： 獲客成本攀升的規模可被具體量化：目前電商品牌的平均 CAC（顧客獲取成本）約落在 68 至 84 美元之間，較 2023 年上漲逾 40%；主要廣告平台成本同步走高，Meta 於 2025 年第四季的平均 CPM 達 22.98 美元，黑色星期五當週一度衝上 25.22 美元，Google 購物廣告 CPC 則於 2025 全年上漲 33.72%（Ringly／Mobiloud, 2026）。</p></div>
+        <div class="data-support en"><p><strong>Data Support</strong>: The scale of rising customer acquisition costs can be quantified: the average CAC (Customer Acquisition Cost) for e-commerce brands currently ranges from $68 to $84, an increase of over 40% compared to 2023; advertising costs on major platforms have also risen, with Meta's average CPM reaching $22.98 in Q4 2025, peaking at $25.22 during Black Friday week, and Google Shopping Ads CPC increasing by 33.72% throughout 2025 (Ringly / Mobiloud, 2026).</p></div>
+        <div class="data-support zh"><p><strong>數據支撐</strong>： 「倖存者偏差」亦有明確的對照數據：擁有共同創辦人的新創公司，成功機率約為單一創辦人新創的 3 倍；就整體新創而言，約 20% 在成立兩年內即告失敗，長期來看失敗率可高達 90%（DesignRush；U.S. Bureau of Labor Statistics, 2025-2026）。這提醒創業者，「一人公司」的低試錯成本降低了創業門檻，卻不必然降低失敗率本身。<br />
+Amazon 在分銷與物流（Distribution）上無人能敵，極度適合標準化、泛用型的標品（Generic Product）；而 Shopify 則適合需要深度溢價與情感連結的品牌官網。兩者構成互補的消費者旅程，而非絕對的零和競爭。</p></div>
+        <div class="data-support en"><p><strong>Data Support</strong>: 'Survivor bias' also has clear comparative data: startups with co-founders are approximately 3 times more likely to succeed than single-founder startups; for startups overall, about 20% fail within two years of establishment, and the long-term failure rate can be as high as 90% (DesignRush; U.S. Bureau of Labor Statistics, 2025-2026). This reminds entrepreneurs that the low trial-and-error cost of solopreneurship lowers the entry barrier but does not necessarily reduce the failure rate itself.<br />
+Amazon is unrivaled in distribution and logistics, making it extremely suitable for standardized, generic products; while Shopify is suitable for brand official websites that require deep premium and emotional connection. The two form a complementary consumer journey, rather than an absolute zero-sum competition.</p></div>
+        <div class="data-support zh"><p><strong>數據支撐</strong>： Amazon 在分銷規模上的優勢同樣有數據支撐：其 2025 年全球商品交易總額（GMV）約達 8,300 億美元，其中第三方賣家貢獻約 5,750 億美元，占比達 69%，較 2019 年的 60% 持續攀升；然而活躍賣家數已從 2021 年的 240 萬家降至 2025 年的約 190 萬家，目前已有逾 10 萬名 Amazon 賣家的年營收突破 100 萬美元（Marketplace Pulse；SmartScout, 2026）。這顯示市場正走向「贏家集中」的整併階段，而非單純的門檻降低、人人得利。</p></div>
+        <div class="data-support en"><p><strong>Data Support</strong>: Amazon's advantage in distribution scale is also supported by data: its global Gross Merchandise Volume (GMV) in 2025 reached approximately $830 billion, of which third-party sellers contributed approximately $575 billion, accounting for 69%, a continuous increase from 60% in 2019; however, the number of active sellers has decreased from 2.4 million in 2021 to approximately 1.9 million in 2025, and currently over 100,000 Amazon sellers have annual revenues exceeding $1 million (Marketplace Pulse; SmartScout, 2026). This indicates that the market is moving towards a consolidation phase of 'winner takes all,' rather than simply lower barriers and universal benefits.</p></div>
 
         <h2 class="zh">第五章：AI 時代的多元競爭要素與「選品決策」</h2>
-        <h2 class="en">Chapter 5: Diverse Competitive Factors and 'Product Selection Decisions' in the AI Era</h2>
-        <div class="zh"><p>商業成功從來不是二分法（例如 Design vs. Trust）。真實情況是：
-Good Design + Trust + SEO + Product Market Fit + Price + Review 缺一不可。
+        <h2 class="en">Chapter 5: Diverse Competitive Factors and Product Selection Decisions in the AI Era</h2>
+        <div class="zh"><p>商業成功從來不是二分法（例如 Design vs. Trust）。真實情況是：<br />
+Good Design + Trust + SEO + Product Market Fit + Price + Review 缺一不可。<br />
 當 AI 把設計與內容的產出成本降到接近零時，真正稀缺的技能是 Decision（決策能力）與 Insight（市場洞察）。創業者花最多時間的往往不是畫圖，而是進行精準的關鍵字研究、SEO 布局與損益評估。</p></div>
-        <div class="en"><p>Business success is never a dichotomy (e.g., Design vs. Trust). The reality is:
-Good Design + Trust + SEO + Product Market Fit + Price + Review are all indispensable.
-When AI reduces the cost of design and content production to near zero, the truly scarce skills are Decision-making and Insight. Entrepreneurs often spend most of their time not on drawing, but on precise keyword research, SEO layout, and profit and loss evaluation.</p></div>
+        <div class="en"><p>Business success is never a dichotomy (e.g., Design vs. Trust). The reality is:<br />
+Good Design + Trust + SEO + Product Market Fit + Price + Review are all indispensable.<br />
+When AI reduces the cost of design and content production to near zero, the truly scarce skills are Decision (decision-making ability) and Insight (market insight). Entrepreneurs often spend most of their time not on drawing, but on precise keyword research, SEO layout, and profit and loss evaluation.</p></div>
 
         <h2 class="zh">第六章（反方論證）：AI 時代創業者的殘酷現實與挑戰</h2>
         <h2 class="en">Chapter 6 (Counter-Argument): The Cruel Reality and Challenges for Entrepreneurs in the AI Era</h2>
-        <div class="zh"><p>高品質的商業分析必須具備自我反駁（Self-Refutation）的能力。我們必須正視以下反方論證：
-• AI 工具人人可用，導致商品與內容的「同質化」反而加劇，差異化更難建立。
-• 隨著大量創業者湧入，各大平台的廣告成本（Ad Spend／CAC）持續攀升，利潤遭到嚴重擠壓。
+        <div class="zh"><p>高品質的商業分析必須具備自我反駁（Self-Refutation）的能力。我們必須正視以下反方論證：<br />
+• AI 工具人人可用，導致商品與內容的「同質化」反而加劇，差異化更難建立。<br />
+• 隨著大量創業者湧入，各大平台的廣告成本（Ad Spend／CAC）持續攀升，利潤遭到嚴重擠壓。<br />
 • Etsy 的內捲與 Google SEO 演算法的日益嚴格，讓新進創業者面臨更高的冷啟動門檻。</p></div>
-        <div class="en"><p>High-quality business analysis must possess the ability of self-refutation. We must confront the following counter-arguments:
-• AI tools are available to everyone, leading to increased "homogenization" of products and content, making differentiation harder to establish.
-• As a large number of entrepreneurs pour in, advertising costs (Ad Spend / CAC) on major platforms continue to rise, severely squeezing profits.
-• Etsy's "involution" and the increasingly strict Google SEO algorithms create higher cold-start barriers for new entrepreneurs.</p></div>
-        <p class="data-support zh"><p><strong>數據支撐</strong>： 上述三項挑戰在前文的 CAC、Etsy GMS 與 POD 存活率數據中已有具體印證：CAC 三年內上漲逾 40%、Etsy 活躍賣家與買氣同步走弱、POD 商店三年存活率僅約 24%，三組數據共同指向同一結論——低門檻與高淘汰率是一體兩面。
-儘管面臨上述挑戰，一人公司之所以依然值得嘗試，關鍵在於「低試錯成本」讓個人能在多個利基市場中快速驗證，以極小的資本槓桿撬動可能回報。</p></p>
-        <p class="data-support en"><p><strong>Data Support</strong>: The three challenges mentioned above have been concretely verified in the CAC, Etsy GMS, and POD survival rate data: CAC increased by over 40% within three years, Etsy's active sellers and sales growth weakened simultaneously, and the three-year survival rate of POD stores is only about 24%. These three sets of data collectively point to the same conclusion—low barriers and high elimination rates are two sides of the same coin.
-Despite these challenges, solopreneurship is still worth trying because "low trial-and-error costs" allow individuals to quickly validate in multiple niche markets, leveraging minimal capital for potentially high returns.</p></p>
+        <div class="en"><p>High-quality business analysis must possess the ability of self-refutation. We must confront the following counter-arguments:<br />
+• AI tools are available to everyone, leading to increased homogenization of products and content, making differentiation harder to establish.<br />
+• As a large number of entrepreneurs pour in, advertising costs (Ad Spend / CAC) continue to rise on major platforms, severely squeezing profits.<br />
+• Etsy's involution and the increasingly strict Google SEO algorithms create higher cold-start barriers for new entrepreneurs.</p></div>
+        <div class="data-support zh"><p><strong>數據支撐</strong>： 上述三項挑戰在前文的 CAC、Etsy GMS 與 POD 存活率數據中已有具體印證：CAC 三年內上漲逾 40%、Etsy 活躍賣家與買氣同步走弱、POD 商店三年存活率僅約 24%，三組數據共同指向同一結論——低門檻與高淘汰率是一體兩面。<br />
+儘管面臨上述挑戰，一人公司之所以依然值得嘗試，關鍵在於「低試錯成本」讓個人能在多個利基市場中快速驗證，以極小的資本槓桿撬動可能回報。</p></div>
+        <div class="data-support en"><p><strong>Data Support</strong>: The three challenges mentioned above have been concretely verified in the CAC, Etsy GMS, and POD survival rate data: CAC increased by over 40% within three years, Etsy's active sellers and sales growth weakened simultaneously, and the three-year survival rate of POD stores is only about 24%. These three sets of data collectively point to the same conclusion—low barriers and high elimination rates are two sides of the same coin.<br />
+Despite these challenges, solopreneurship is still worth trying because 'low trial-and-error costs' allow individuals to quickly validate in multiple niche markets, leveraging minimal capital for potentially high returns.</p></div>
 
         <h2 class="zh">第七章：現時一人小店開店建議與應避免的陷阱</h2>
         <h2 class="en">Chapter 7: Advice for Opening a Solopreneur Store and Pitfalls to Avoid</h2>
         <div class="zh"><p>綜合前述數據，「低門檻」與「高淘汰率」是同一枚硬幣的兩面。以下建議並非空泛的成功學，而是直接對應本文已引用的產業數據，協助創業者把資源放在真正影響存活率的位置上。</p></div>
-        <div class="en"><p>Based on the aforementioned data, "low barriers" and "high elimination rates" are two sides of the same coin. The following advice is not empty success philosophy, but directly corresponds to the industry data cited in this article, helping entrepreneurs allocate resources to positions that truly impact survival rates.</p></div>
+        <div class="en"><p>Based on the aforementioned data, 'low barriers' and 'high elimination rates' are two sides of the same coin. The following advice is not empty success philosophy, but directly corresponds to the industry data cited in this article, helping entrepreneurs allocate resources to positions that truly impact survival rates.</p></div>
 
         <h3 class="zh">（一）開店建議</h3>
         <h3 class="en">(I) Store Opening Advice</h3>
-        <p class="zh"><ol>
+        <div class="zh"><ol>
 <li>選擇「高複購率＋窄利基」品類，而非追逐紅海熱品：POD 市場雖以 25.05% 的 CAGR 高速擴張，但三年存活率僅約 24%，代表單靠市場成長無法保證個別賣家存活，選品必須以差異化與複購率為優先。</li>
-</ol></p>
-        <p class="en"><ol>
-<li>Choose "high repurchase rate + narrow niche" categories, rather than chasing red ocean hot products: Although the POD market is expanding rapidly with a CAGR of 25.05%, the three-year survival rate is only about 24%, meaning market growth alone cannot guarantee individual seller survival. Product selection must prioritize differentiation and repurchase rate.</li>
-</ol></p>
-        <p class="zh"><ol>
+</ol></div>
+        <div class="en"><ol>
+<li>Choose 'high repurchase rate + narrow niche' categories, rather than chasing red ocean hot products: Although the POD market is expanding rapidly with a CAGR of 25.05%, the three-year survival rate is only about 24%, meaning market growth alone cannot guarantee individual seller survival. Product selection must prioritize differentiation and repurchase rate.</li>
+</ol></div>
+        <div class="zh"><ol>
 <li>從第一筆訂單就佈局自有渠道（Email／SMS）：Email 行銷平均投資報酬率約為每花費 1 美元回收 36 至 42 美元，SMS 更可達 21 至 71 美元；同時使用兩個渠道的品牌，顧客留存率較單一渠道品牌高出約 47%（Omnisend；Klaviyo 2026 年度報告）。這是抵銷 CAC 持續上升最直接的手段。</li>
-</ol></p>
-        <p class="en"><ol>
+</ol></div>
+        <div class="en"><ol>
 <li>Lay out your own channels (Email / SMS) from the first order: Email marketing has an average ROI of approximately $36 to $42 for every $1 spent, and SMS can reach $21 to $71; brands using both channels have approximately 47% higher customer retention rates than single-channel brands (Omnisend; Klaviyo 2026 Annual Report). This is the most direct way to offset continuously rising CAC.</li>
-</ol></p>
-        <p class="zh"><ol>
+</ol></div>
+        <div class="zh"><ol>
 <li>嚴守單位經濟紀律，而非只看流量成長：業界研究指出，電商品牌平均每獲取一位新客戶即虧損約 29 美元（計入行銷與退貨成本），須靠回購才能拉高至每筆約 39 美元的獲利；建議將 LTV：CAC 比率控制在 3：1 以上，並以本文提及的 68 至 84 美元 CAC 區間作為預算校準基準。</li>
-</ol></p>
-        <p class="en"><ol>
+</ol></div>
+        <div class="en"><ol>
 <li>Strictly adhere to unit economics discipline, rather than just focusing on traffic growth: Industry research indicates that e-commerce brands on average lose approximately $29 for each new customer acquired (including marketing and return costs), and rely on repeat purchases to increase profit to approximately $39 per transaction; it is recommended to control the LTV:CAC ratio above 3:1, and use the $68 to $84 CAC range mentioned in this article as a budget calibration benchmark.</li>
-</ol></p>
-        <p class="zh"><ol>
+</ol></div>
+        <div class="zh"><ol>
 <li>多平台曝光、但集中資源深耕一至兩個主力渠道：Etsy、Amazon、Shopify 的角色互補而非互斥，但同時攤薄行銷與客服心力容易導致每個渠道都做不深；建議先以單一渠道驗證商業模式，再逐步擴張。</li>
-</ol></p>
-        <p class="en"><ol>
+</ol></div>
+        <div class="en"><ol>
 <li>Multi-platform exposure, but concentrate resources on one or two main channels: Etsy, Amazon, and Shopify are complementary rather than mutually exclusive, but spreading marketing and customer service efforts too thin can lead to superficial engagement on each channel; it is recommended to first validate the business model on a single channel and then gradually expand.</li>
-</ol></p>
-        <p class="zh"><ol>
-<li>善用 AI 提高效率，但保留可辨識的品牌真人敘事：當設計與文案成本被壓到接近零，Insight（市場洞察）與 Trust（信任）才是稀缺資源；建議把 AI 省下的時間，重新投入在買家評論經營、品牌故事與售後溝通上。</li>
-</ol></p>
-        <p class="en"><ol>
-<li>Make good use of AI to improve efficiency, but retain recognizable brand human narrative: When the cost of design and copywriting is compressed to near zero, Insight and Trust become scarce resources; it is recommended to reinvest the time saved by AI into managing buyer reviews, brand storytelling, and after-sales communication.</li>
-</ol></p>
-        <p class="zh"><ol>
+</ol></div>
+        <div class="zh"><ol>
+<li>善用 AI 提高效率，但保留可辨識的品牌真人敘事：當設計與文案成本被壓到接近零時，Insight（市場洞察）與 Trust（信任）才是稀缺資源；建議把 AI 省下的時間，重新投入在買家評論經營、品牌故事與售後溝通上。</li>
+</ol></div>
+        <div class="en"><ol>
+<li>Make good use of AI to improve efficiency, but retain recognizable brand human narrative: When the cost of design and copywriting is compressed to near zero, Insight (market insight) and Trust (trust) become scarce resources; it is recommended to reinvest the time saved by AI into managing buyer reviews, brand storytelling, and after-sales communication.</li>
+</ol></div>
+        <div class="zh"><ol>
 <li>預留現金流緩衝，因應退換貨與旺季獲客成本尖峰：Meta 廣告 CPM 在黑色星期五當週可衝上 25.22 美元的年度高點，遠高於平日均值，旺季前務必提前規劃行銷預算與庫存周轉金。</li>
-</ol></p>
-        <p class="en"><ol>
+</ol></div>
+        <div class="en"><ol>
 <li>Reserve cash flow buffer to cope with returns and peak season customer acquisition cost spikes: Meta ad CPM can surge to an annual high of $25.22 during Black Friday week, far exceeding the daily average. It is essential to plan marketing budgets and inventory turnover in advance before peak season.</li>
-</ol></p>
+</ol></div>
 
         <h3 class="zh">（二）應避免的陷阱</h3>
         <h3 class="en">(II) Pitfalls to Avoid</h3>
-        <p class="data-support zh"><p><strong>數據支撐</strong>： 智慧財產權與合規風險：Etsy 於 2024 年單年即因智慧財產權違規下架超過 150 萬筆商品；2026 年起，未依規定揭露「AI 生成內容」已成為新的停權高風險項目，且平台正加強以圖像辨識與第三方採購驗證追查冒充手作商品的賣家（Marmalead；ShieldMyShop, 2026）。使用 AI 生成圖像或文案前，務必確認素材授權範圍並如實揭露，避免商品下架甚至永久停權。</p></p>
-        <p class="data-support en"><p><strong>Data Support</strong>: Intellectual property and compliance risks: Etsy delisted over 1.5 million items due to intellectual property violations in 2024 alone; starting in 2026, failure to disclose "AI-generated content" as required has become a new high-risk item for suspension, and platforms are strengthening efforts to track sellers impersonating handmade goods using image recognition and third-party procurement verification (Marmalead; ShieldMyShop, 2026). Before using AI to generate images or text, be sure to confirm the scope of material authorization and disclose it truthfully to avoid product delisting or even permanent suspension.</p></p>
-        <p class="zh"><p>• 過度依賴單一流量平台或單一廣告管道：一旦演算法或政策變動，營收可能瞬間歸零，這也是本文一再強調「Ownership（自有渠道所有權）」的原因。</p></p>
-        <p class="en"><p>• Over-reliance on a single traffic platform or single advertising channel: Once algorithms or policies change, revenue can instantly drop to zero, which is why this article repeatedly emphasizes "Ownership (of proprietary channels)."</p></p>
-        <p class="zh"><p>• 只追求流量與訂單量，忽視留存與 LTV：在 CAC 三年內上漲逾 40% 的環境下，「首單即獲利」的模式已越來越難成立，忽視回購率等於放棄唯一能穩定攤平獲客成本的槓桿。</p></p>
-        <p class="en"><p>• Only pursuing traffic and order volume, neglecting retention and LTV: In an environment where CAC has increased by over 40% within three years, the "profit from the first order" model is becoming increasingly difficult to establish. Neglecting repurchase rates means giving up the only leverage that can stably offset customer acquisition costs.</p></p>
-        <p class="zh"><p>• 低估品類淘汰率、缺乏差異化準備：進入 POD、飾品等高度同質化品類前，若沒有清楚的品牌故事或垂直利基，很容易成為三年存活率僅 24% 中的淘汰者。</p></p>
-        <p class="en"><p>• Underestimating category elimination rates and lacking differentiation preparation: Before entering highly homogeneous categories such as POD and jewelry, if there is no clear brand story or vertical niche, it is easy to become one of the eliminated in the 24% three-year survival rate.</p></p>
-        <p class="zh"><p>• 現金流規劃失衡：多數一人公司並無團隊分攤風險，一旦遇上旺季廣告成本尖峰、退換貨潮或平台延遲撥款，就可能出現本文第四章所述的「現金流斷裂」危機。</p></p>
-        <p class="en"><p>• Imbalanced cash flow planning: Most solopreneurs do not have a team to share risks. Once they encounter peak season advertising cost spikes, return waves, or delayed platform payments, the "cash flow disruption" crisis described in Chapter 4 of this article may occur.</p></p>
-        <p class="zh"><p>• AI 產出過度同質化、品牌「人味」流失：當人人都能用同樣的工具生成設計與文案，過度依賴模板化 AI 產出反而會加速同質化，稀釋掉原本最應建立的品牌信任與差異化優勢。</p></p>
-        <p class="en"><p>• Excessive homogenization of AI output, loss of brand "human touch": When everyone can use the same tools to generate designs and copywriting, over-reliance on templated AI output will accelerate homogenization, diluting the brand trust and differentiation advantages that should have been established.</p></p>
+        <div class="data-support zh"><p><strong>數據支撐</strong>： 智慧財產權與合規風險：Etsy 於 2024 年單年即因智慧財產權違規下架超過 150 萬筆商品；2026 年起，未依規定揭露「AI 生成內容」已成為新的停權高風險項目，且平台正加強以圖像辨識與第三方採購驗證追查冒充手作商品的賣家（Marmalead；ShieldMyShop, 2026）。使用 AI 生成圖像或文案前，務必確認素材授權範圍並如實揭露，避免商品下架甚至永久停權。</p></div>
+        <div class="data-support en"><p><strong>Data Support</strong>: Intellectual property and compliance risks: Etsy delisted over 1.5 million items due to intellectual property violations in 2024 alone; starting in 2026, failure to disclose 'AI-generated content' as required has become a new high-risk item for suspension, and platforms are strengthening efforts to track sellers impersonating handmade goods using image recognition and third-party procurement verification (Marmalead; ShieldMyShop, 2026). Before using AI to generate images or text, be sure to confirm the scope of material authorization and disclose it truthfully to avoid product delisting or even permanent suspension.</p></div>
+        <div class="zh"><p>• 過度依賴單一流量平台或單一廣告管道：一旦演算法或政策變動，營收可能瞬間歸零，這也是本文一再強調「Ownership（自有渠道所有權）」的原因。</p></div>
+        <div class="en"><p>• Over-reliance on a single traffic platform or single advertising channel: Once algorithms or policies change, revenue can instantly drop to zero, which is why this article repeatedly emphasizes 'Ownership (of proprietary channels).'</p></div>
+        <div class="zh"><p>• 只追求流量與訂單量，忽視留存與 LTV：在 CAC 三年內上漲逾 40% 的環境下，「首單即獲利」的模式已越來越難成立，忽視回購率等於放棄唯一能穩定攤平獲客成本的槓桿。</p></div>
+        <div class="en"><p>• Only pursuing traffic and order volume, neglecting retention and LTV: In an environment where CAC has increased by over 40% within three years, the 'profit from the first order' model is becoming increasingly difficult to establish. Neglecting repurchase rates means giving up the only leverage that can stably offset customer acquisition costs.</p></div>
+        <div class="zh"><p>• 低估品類淘汰率、缺乏差異化準備：進入 POD、飾品等高度同質化品類前，若沒有清楚的品牌故事或垂直利基，很容易成為三年存活率僅 24% 中的淘汰者。</p></div>
+        <div class="en"><p>• Underestimating category elimination rates and lacking differentiation preparation: Before entering highly homogeneous categories such as POD and jewelry, if there is no clear brand story or vertical niche, it is easy to become one of the eliminated in the 24% three-year survival rate.</p></div>
+        <div class="zh"><p>• 現金流規劃失衡：多數一人公司並無團隊分攤風險，一旦遇上旺季廣告成本尖峰、退換貨潮或平台延遲撥款，就可能出現本文第四章所述的「現金流斷裂」危機。</p></div>
+        <div class="en"><p>• Imbalanced cash flow planning: Most solopreneurs do not have a team to share risks. Once they encounter peak season advertising cost spikes, return waves, or delayed platform payments, the 'cash flow disruption' crisis described in Chapter 4 of this article may occur.</p></div>
+        <div class="zh"><p>• AI 產出過度同質化、品牌「人味」流失：當人人都能用同樣的工具生成設計與文案，過度依賴模板化 AI 產出反而會加速同質化，稀釋掉原本最應建立的品牌信任與差異化優勢。</p></div>
+        <div class="en"><p>• Excessive homogenization of AI output, loss of brand 'human touch': When everyone can use the same tools to generate designs and copywriting, over-reliance on templated AI output will accelerate homogenization, diluting the brand trust and differentiation advantages that should have been established.</p></div>
 
         <h2 class="zh">第八章：結語與未來十年展望</h2>
         <h2 class="en">Chapter 8: Conclusion and Outlook for the Next Decade</h2>
         <div class="zh"><p>綜上所述，AI 正在深刻重組全球電商的成本結構。若 AI Agent 與自動化技術在未來持續成熟，年營收超過 100 萬美元的一人微型企業比例確實可能加速增加。然而，這絕非躺賺的紅利，而是對創業者「洞察策展力（Insight Curator）」與綜合運營能力的最高考驗。</p></div>
-        <div class="en"><p>In summary, AI is profoundly reconfiguring the cost structure of global e-commerce. If AI Agent and automation technologies continue to mature in the future, the proportion of solopreneur micro-enterprises with annual revenues exceeding $1 million may indeed accelerate. However, this is by no means an easy dividend, but the ultimate test of entrepreneurs' "Insight Curator" and comprehensive operational capabilities.</p></div>
-        <p class="data-support zh"><p><strong>數據支撐</strong>： 從長期資料觀察，「一人公司」邁向百萬美元營收的路徑正在加速，但仍屬少數：美國人口普查局統計顯示，2023 年已有 117,060 家零僱員企業的年營收突破 100 萬美元，較 2021 年幾乎翻倍；但另一方面，仍有超過 99.8% 的一人公司經營者從未跨過百萬美元門檻（U.S. Census Bureau；Founder Reports, 2026）。這組數據精確呼應本文論點：AI 降低的是「入場門檻」與「試錯成本」，而非保證「規模化成功」，最終的分水嶺仍在於創業者的洞察與執行能力。</p></p>
-        <p class="data-support en"><p><strong>Data Support</strong>: From long-term data observation, the path for "solopreneurs" to reach $1 million in annual revenue is accelerating, but still a minority: U.S. Census Bureau statistics show that in 2023, 117,060 non-employer businesses had annual revenues exceeding $1 million, almost doubling from 2021; but on the other hand, over 99.8% of solopreneurs have never crossed the $1 million threshold (U.S. Census Bureau; Founder Reports, 2026). This set of data precisely echoes the argument of this article: AI lowers the "entry barrier" and "trial-and-error cost," but does not guarantee "scaled success." The ultimate watershed still lies in the entrepreneur's insight and execution capabilities.</p></p>
+        <div class="en"><p>In summary, AI is profoundly reconfiguring the cost structure of global e-commerce. If AI Agent and automation technologies continue to mature in the future, the proportion of solopreneur micro-enterprises with annual revenues exceeding $1 million may indeed accelerate. However, this is by no means an easy dividend, but the ultimate test of entrepreneurs' Insight Curator and comprehensive operational capabilities.</p></div>
+        <div class="data-support zh"><p><strong>數據支撐</strong>： 從長期資料觀察，「一人公司」邁向百萬美元營收的路徑正在加速，但仍屬少數：美國人口普查局統計顯示，2023 年已有 117,060 家零僱員企業的年營收突破 100 萬美元，較 2021 年幾乎翻倍；但另一方面，仍有超過 99.8% 的一人公司經營者從未跨過百萬美元門檻（U.S. Census Bureau；Founder Reports, 2026）。這組數據精確呼應本文論點：AI 降低的是「入場門檻」與「試錯成本」，而非保證「規模化成功」，最終的分水嶺仍在於創業者的洞察與執行能力。</p></div>
+        <div class="data-support en"><p><strong>Data Support</strong>: From long-term data observation, the path for solopreneurs to reach $1 million in annual revenue is accelerating, but still a minority: U.S. Census Bureau statistics show that in 2023, 117,060 non-employer businesses had annual revenues exceeding $1 million, almost doubling from 2021; but on the other hand, over 99.8% of solopreneurs have never crossed the $1 million threshold (U.S. Census Bureau; Founder Reports, 2026). This set of data precisely echoes the argument of this article: AI lowers the 'entry barrier' and 'trial-and-error cost,' but does not guarantee 'scaled success.' The ultimate watershed still lies in the entrepreneur's insight and execution capabilities.</p></div>
 
         <h2 class="zh">附錄：獨家指標 —— Solopreneur Index（SI 指數分析框架）</h2>
         <h2 class="en">Appendix: Exclusive Indicator — Solopreneur Index (SI Index Analysis Framework)</h2>
@@ -256,22 +404,22 @@ Despite these challenges, solopreneurship is still worth trying because "low tri
 <li>DesignRush,《Startup Failure Rate Statistics》；U.S. Bureau of Labor Statistics</li>
 <li>Reddit Seller Communities &amp; Etsy Forum Qualitative Data Insights</li>
 <li>Harvard Business Review &amp; McKinsey Insights on Cost Structure Transformation</li>
-<li>Omnisend／Klaviyo,《Email &amp; SMS Marketing Statistics 2026》</li>
+<li>Omnisend / Klaviyo,《Email &amp; SMS Marketing Statistics 2026》</li>
 </ul></div>
         <div class="references en"><ul>
 <li>Microsoft Work Trend Index (2025/2026 Reports)</li>
 <li>Stripe &amp; Anthropic Ecosystem &amp; Agent Reports</li>
 <li>Shopify AI Whitepaper, Shopify Inc. SEC Form 10-Q / 10-K Filings (sec.gov)</li>
 <li>Etsy, Inc. Q4 and Full-Year 2025 Earnings Report (investors.etsy.com); Marketplace Pulse Etsy GMS/GMV Database</li>
-<li>Mordor Intelligence, "Print On Demand Market Size, Share &amp; Research 2026-2031"</li>
-<li>Ringly / Mobiloud, "Ecommerce Customer Acquisition Cost Statistics 2026"</li>
-<li>Marketplace Pulse, "Amazon GMV Surpassed $800 Billion in 2025"; SmartScout, "Amazon Seller Statistics 2026"</li>
-<li>U.S. Census Bureau Nonemployer Statistics; Founder Reports, "Solopreneur Statistics 2026"; GreyJournal / Solo Hub</li>
+<li>Mordor Intelligence, 'Print On Demand Market Size, Share &amp; Research 2026-2031'</li>
+<li>Ringly / Mobiloud, 'Ecommerce Customer Acquisition Cost Statistics 2026'</li>
+<li>Marketplace Pulse, 'Amazon GMV Surpassed $800 Billion in 2025'; SmartScout, 'Amazon Seller Statistics 2026'</li>
+<li>U.S. Census Bureau Nonemployer Statistics; Founder Reports, 'Solopreneur Statistics 2026'; GreyJournal / Solo Hub</li>
 <li>Upwork Inc. Platform Financial Reports and Statistics (2025-2026)</li>
-<li>DesignRush, "Startup Failure Rate Statistics"; U.S. Bureau of Labor Statistics</li>
+<li>DesignRush, 'Startup Failure Rate Statistics'; U.S. Bureau of Labor Statistics</li>
 <li>Reddit Seller Communities &amp; Etsy Forum Qualitative Data Insights</li>
 <li>Harvard Business Review &amp; McKinsey Insights on Cost Structure Transformation</li>
-<li>Omnisend / Klaviyo, "Email &amp; SMS Marketing Statistics 2026"</li>
+<li>Omnisend / Klaviyo, 'Email &amp; SMS Marketing Statistics 2026'</li>
 </ul></div>
 
     </div>
@@ -296,10 +444,12 @@ Despite these challenges, solopreneurship is still worth trying because "low tri
             const html = document.documentElement;
             const zhTitle = document.querySelector("head title.zh");
             const enTitle = document.querySelector("head title.en");
-            if (html.getAttribute("lang") === "zh") {
-                if (zhTitle) document.title = zhTitle.textContent;
-            } else {
-                if (enTitle) document.title = enTitle.textContent;
+            if (html) {
+                if (html.getAttribute("lang") === "zh") {
+                    if (zhTitle) document.title = zhTitle.textContent;
+                } else {
+                    if (enTitle) document.title = enTitle.textContent;
+                }
             }
         }
 
