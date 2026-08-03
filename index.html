@@ -3,27 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YT | Jewellery Market Insights</title>
+    <title>YT | Jewellery Market Insights & AI Strategy</title>
     <link rel="stylesheet" href="./assets/css/style.css">
-    <style>
-        .hero { text-align: center; padding: 4rem 2rem; background: #fff; }
-        .hero h1 { font-size: 3rem; margin-bottom: 1rem; color: #000; letter-spacing: -1px; }
-        .hero p { color: #666; max-width: 700px; margin: 0 auto; font-size: 1.1rem; }
-        .chart-wrapper { background: #fafafa; border: 1px solid #f0f0f0; margin-top: 3rem; border-radius: 8px; position: relative; min-height: 500px; }
-        .chart-wrapper iframe { width: 100%; height: 550px; border: none; display: block; }
-        .insight-section { margin-top: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-        .insight-card { background: #fff; border-left: 4px solid #26619c; padding: 1.5rem; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        .insight-card h3 { margin-top: 0; color: #26619c; font-size: 1.2rem; }
-        .contact-info { margin-top: 2rem; padding: 2rem; background: #f9f9f9; border-radius: 8px; text-align: center; }
-        .contact-link { color: #26619c; text-decoration: none; font-weight: bold; margin: 0 1rem; }
-        [lang="en"] .zh { display: none !important; }
-        [lang="zh"] .en { display: none !important; }
-    </style>
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">YT</div>
+            <div class="featured-link">
+                <span class="zh">專題分析：/AI 與成本結構重組：重新審視 2026 年「一人公司」與電商生態的深層邏輯/</span>
+                <span class="en">Feature: /AI & Cost Restructuring: Re-examining 2026 "One-Person Company" Logic/</span>
+            </div>
             <ul>
                 <li><a href="./index.html"><span class="zh">首頁</span><span class="en">Home</span></a></li>
                 <li><a href="./experience.html"><span class="zh">經歷</span><span class="en">Experience</span></a></li>
@@ -32,39 +22,61 @@
                 <li><button class="lang-btn" onclick="toggleLang()">English</button></li>
             </ul>
         </nav>
+        <div class="progress-container">
+            <div class="progress-bar" id="myBar"></div>
+        </div>
     </header>
 
     <div class="container">
         <section class="hero">
-            <h1 class="zh">珠寶市場數據洞察</h1>
-            <h1 class="en">Jewellery Market Insights</h1>
-            <p class="zh">透過季度平均數據監測全球頂級珠寶品牌趨勢，從數據中發現戰略價值。</p>
-            <p class="en">Monitoring global luxury jewellery brand trends via quarterly average data. Discovering strategic value from insights.</p>
+            <h1 class="zh">珠寶市場數據洞察與 AI 戰略</h1>
+            <h1 class="en">Jewellery Market Insights & AI Strategy</h1>
+            <p class="zh">深耕東南亞珠寶市場，透過數據解構品牌價值，並探索 AI 如何重組生產工序與成本結構，賦能新世代「一人公司」。</p>
+            <p class="en">Specializing in SE Asia jewellery markets, deconstructing brand value through data, and exploring how AI restructures production and cost models for the "One-Person Company" era.</p>
         </section>
 
-        <div class="chart-wrapper">
-            <iframe src="brand_trends.html" title="Brand Trends Chart"></iframe>
+        <div class="chart-wrapper" style="margin: 3rem 0;">
+            <div style="width:100%; height:400px; background:#f0f4f8; border-radius:12px; display:flex; align-items:center; justify-content:center; color:#888; border:1px dashed #ccc;">
+                <span class="zh">📊 2026 季度市場數據圖表載入中...</span>
+                <span class="en">📊 Loading 2026 Quarterly Market Data Chart...</span>
+            </div>
         </div>
 
         <div class="insight-section">
             <div class="insight-card">
-                <h3 class="zh">📈 市場總結</h3>
-                <h3 class="en">📈 Market Summary</h3>
-                <p class="zh">Cartier 展現最強領先地位，特別是在 Q4 節日季。Tiffany 波動性較大，受行銷活動影響明顯。</p>
-                <p class="en">Cartier shows strong leadership especially in Q4. Tiffany exhibits higher volatility influenced by marketing.</p>
+                <h3 class="zh">📈 2026 市場趨勢總結</h3>
+                <h3 class="en">📈 2026 Market Summary</h3>
+                <p class="zh">
+                    <strong>市場規模</strong>：受惠於印尼與越南中產階級崛起，東南亞珠寶市場規模在 2026 年已突破 136 億美元。<br>
+                    <strong>品牌價值</strong>：Cartier 憑藉其「藝術資產化」策略，轉售價值持續領先；Tiffany 則在數位原生代中佔據較高份額。<br>
+                    <strong>成本重組</strong>：AI 輔助設計與自動化排產使新品研發週期縮短 40%，大幅降低了品牌進入門檻。
+                </p>
+                <p class="en">
+                    <strong>Market Scale</strong>: Driven by the rise of the middle class in Indonesia and Vietnam, the SE Asia market has surpassed $13.6B in 2026.<br>
+                    <strong>Brand Value</strong>: Cartier leads in resale value through its "art-as-asset" strategy; Tiffany captures higher share among digital natives.<br>
+                    <strong>Cost Restructuring</strong>: AI-assisted design and automated scheduling have cut R&D cycles by 40%, lowering barriers to entry.
+                </p>
             </div>
             <div class="insight-card">
-                <h3 class="zh">🔮 行業預測</h3>
-                <h3 class="en">🔮 Industry Forecast</h3>
-                <p class="zh">數位化體驗與可持續性將成為 2026 年後品牌增長的核心驅動力。</p>
-                <p class="en">Digital experience and sustainability will drive brand growth post-2026.</p>
+                <h3 class="zh">🔮 「一人公司」與電商邏輯</h3>
+                <h3 class="en">🔮 "One-Person Co" & E-commerce</h3>
+                <p class="zh">
+                    <strong>去中心化生產</strong>：2026 年的「一人公司」利用 AI 智能體協調全球供應鏈，實現了極低固定成本的運作模式。<br>
+                    <strong>電商新生態</strong>：從「流量驅動」轉向「算力驅動」，AI 實現了千人千面的珠寶定製，重塑了電商的獲客邏輯。<br>
+                    <strong>可持續性</strong>：區塊鏈溯源已成為高端珠寶的標配，透明度成為品牌溢價的核心來源。
+                </p>
+                <p class="en">
+                    <strong>Decentralized Production</strong>: 2026 "One-Person Companies" use AI agents to coordinate global supply chains with minimal fixed costs.<br>
+                    <strong>New E-commerce</strong>: Shifting from "traffic-driven" to "compute-driven," AI enables hyper-personalized jewellery customization.<br>
+                    <strong>Sustainability</strong>: Blockchain traceability is now standard for luxury jewellery, with transparency driving brand premiums.
+                </p>
             </div>
         </div>
 
-        <div class="contact-info">
+        <div class="card" style="margin-top: 4rem; text-align: center;">
             <h3 class="zh">聯絡我</h3><h3 class="en">Contact Me</h3>
-            <p>Email: <a href="mailto:yuentungsze@gmail.com" class="contact-link">yuentungsze@gmail.com</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/yuen-tung-sze-81488275/" target="_blank" class="contact-link">YT LinkedIn Profile</a></p>
+            <p style="margin: 1rem 0;">Email: <a href="mailto:yuentungsze@gmail.com" style="color: var(--primary-color); font-weight: bold; text-decoration: none;">yuentungsze@gmail.com</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/yuen-tung-sze-81488275/" target="_blank" style="color: var(--primary-color); font-weight: bold; text-decoration: none;">YT LinkedIn Profile</a></p>
         </div>
     </div>
 
@@ -86,6 +98,15 @@
                 localStorage.setItem('pref-lang', 'zh');
             }
         }
+
+        window.onscroll = function() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            var myBar = document.getElementById("myBar");
+            if (myBar) myBar.style.width = scrolled + "%";
+        };
+
         window.onload = () => {
             const pref = localStorage.getItem('pref-lang') || 'zh';
             document.documentElement.setAttribute('lang', pref);

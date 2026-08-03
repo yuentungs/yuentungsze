@@ -5,17 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>經歷 | YT</title>
     <link rel="stylesheet" href="./assets/css/style.css">
-    <style>
-        .contact-footer { margin-top: 3rem; padding: 2rem; border-top: 1px solid #eee; text-align: center; }
-        .contact-link { color: #26619c; text-decoration: none; font-weight: bold; margin: 0 1rem; }
-        [lang="en"] .zh { display: none !important; }
-        [lang="zh"] .en { display: none !important; }
-    </style>
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">YT</div>
+            <div class="featured-link">
+                <span class="zh">專題分析：/AI 與成本結構重組：重新審視 2026 年「一人公司」與電商生態的深層邏輯/</span>
+                <span class="en">Feature: /AI & Cost Restructuring: Re-examining 2026 "One-Person Company" Logic/</span>
+            </div>
             <ul>
                 <li><a href="./index.html"><span class="zh">首頁</span><span class="en">Home</span></a></li>
                 <li><a href="./experience.html"><span class="zh">經歷</span><span class="en">Experience</span></a></li>
@@ -24,33 +22,55 @@
                 <li><button class="lang-btn" onclick="toggleLang()">English</button></li>
             </ul>
         </nav>
+        <div class="progress-container">
+            <div class="progress-bar" id="myBar"></div>
+        </div>
     </header>
 
     <div class="container">
-        <h2 class="section-title"><span class="zh">專業背景</span><span class="en">Experience</span></h2>
+        <h2 class="section-title"><span class="zh">專業背景</span><span class="en">Professional Experience</span></h2>
+        
         <div class="card">
-            <div class="experience-item">
-                <div class="job-title">Senior Manager – Product Planning</div>
-                <div class="company-date"><span>周生生 (Chow Sang Sang)</span><span>2024 – Present</span></div>
-                <ul class="zh">
-                    <li>領導戰略性產品組合規劃，對齊不同店鋪品牌的營銷策略。</li>
-                    <li>監督產品組合表現評估及生命週期管理，以優化獲利。</li>
+            <div class="experience-item" style="margin-bottom: 3rem; border-bottom: 1px solid #eee; padding-bottom: 2rem;">
+                <div style="font-weight: bold; color: var(--secondary-color); font-size: 1.3rem; margin-bottom: 0.5rem;">Senior Manager – Product Planning</div>
+                <div style="display: flex; justify-content: space-between; color: #777; font-size: 0.95rem; margin-bottom: 1.5rem;">
+                    <span>周生生 (Chow Sang Sang)</span>
+                    <span>2024 – Present</span>
+                </div>
+                <ul class="zh" style="padding-left: 1.5rem; color: #555;">
+                    <li>領導戰略性產品組合規劃，確保產品線與品牌營銷策略及東南亞市場需求高度對齊。</li>
+                    <li>監督產品生命週期管理，利用數據驅動的評估機制優化庫存周轉率與獲利表現。</li>
+                    <li>推動生產工序優化，探索 AI 技術在供應鏈管理中的應用，以提升組織敏捷度。</li>
                 </ul>
-                <ul class="en">
-                    <li>Lead strategic product assortment planning aligned with brand marketing strategies.</li>
-                    <li>Oversee product mix performance reviews and lifecycle management.</li>
+                <ul class="en" style="padding-left: 1.5rem; color: #555;">
+                    <li>Lead strategic product assortment planning, aligning product lines with brand marketing and SE Asia market demands.</li>
+                    <li>Oversee product lifecycle management, utilizing data-driven reviews to optimize inventory turnover and profitability.</li>
+                    <li>Drive production process optimization, exploring AI applications in supply chain management to enhance organizational agility.</li>
                 </ul>
             </div>
-            <!-- 其他經歷省略以保持簡潔 -->
+
+            <div class="experience-item" style="margin-bottom: 0;">
+                <div style="font-weight: bold; color: var(--secondary-color); font-size: 1.3rem; margin-bottom: 0.5rem;">Product Manager / Senior Analyst</div>
+                <div style="display: flex; justify-content: space-between; color: #777; font-size: 0.95rem; margin-bottom: 1.5rem;">
+                    <span>Luxury Jewelry Industry</span>
+                    <span>2016 – 2024</span>
+                </div>
+                <p class="zh" style="color: #555;">擁有超過十年珠寶行業經驗，專注於東南亞市場的數據分析、消費者行為研究及產品開發流程優化。擅長將複雜的市場數據轉化為可執行的商業決策。</p>
+                <p class="en" style="color: #555;">Over a decade of experience in the jewelry industry, focusing on SE Asia market data analysis, consumer behavior research, and product development optimization. Expert in translating complex data into actionable business decisions.</p>
+            </div>
         </div>
 
-        <div class="contact-footer">
-            <p>Email: <a href="mailto:yuentungsze@gmail.com" class="contact-link">yuentungsze@gmail.com</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/yuen-tung-sze-81488275/" target="_blank" class="contact-link">Connect with me</a></p>
+        <div class="card" style="margin-top: 3rem; text-align: center;">
+            <h3 class="zh">聯絡我</h3><h3 class="en">Contact Me</h3>
+            <p style="margin: 1rem 0;">Email: <a href="mailto:yuentungsze@gmail.com" style="color: var(--primary-color); font-weight: bold; text-decoration: none;">yuentungsze@gmail.com</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/yuen-tung-sze-81488275/" target="_blank" style="color: var(--primary-color); font-weight: bold; text-decoration: none;">YT LinkedIn Profile</a></p>
         </div>
     </div>
 
-    <footer class="footer"><p>&copy; 2026 YT. All Rights Reserved.</p></footer>
+    <footer class="footer">
+        <p>&copy; 2026 YT. <span class="zh">珠寶產品規劃與數據分析專家</span><span class="en">Jewellery Product Planning & Data Specialist</span></p>
+    </footer>
+
     <script>
         function toggleLang() {
             const html = document.documentElement;
@@ -65,6 +85,15 @@
                 localStorage.setItem('pref-lang', 'zh');
             }
         }
+
+        window.onscroll = function() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            var myBar = document.getElementById("myBar");
+            if (myBar) myBar.style.width = scrolled + "%";
+        };
+
         window.onload = () => {
             const pref = localStorage.getItem('pref-lang') || 'zh';
             document.documentElement.setAttribute('lang', pref);
