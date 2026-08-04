@@ -25,22 +25,22 @@
 
     <div class="container">
         <section class="hero">
-           
-                </div>
-                <div class="hero-text">
-                    <h1 class="zh">珠寶市場數據洞察與 AI 戰略</h1>
-                    <h1 class="en">Jewellery Market Insights & AI Strategy</h1>
-                    <p class="zh">深耕東南亞珠寶市場，透過數據解構品牌價值，並探索 AI 如何重組生產工序與成本結構，賦能新世代「一人公司」。</p>
-                    <p class="en">Specializing in SE Asia jewellery markets, deconstructing brand value through data, and exploring how AI restructures production and cost models for the "One-Person Company" era.</p>
-                </div>
+            <div class="hero-text">
+                <h1 class="zh">珠寶市場數據洞察與 AI 戰略</h1>
+                <h1 class="en">Jewellery Market Insights & AI Strategy</h1>
+                <p class="zh">深耕東南亞珠寶市場，透過數據解構品牌價值，並探索 AI 如何重組生產工序與成本結構，賦能新世代「一人公司」。</p>
+                <p class="en">Specializing in SE Asia jewellery markets, deconstructing brand value through data, and exploring how AI restructures production and cost models for the "One-Person Company" era.</p>
             </div>
         </section>
 
-        <div class="chart-wrapper" style="margin: 3rem 0;">
-            <div style="width:100%; height:400px; background:#f0f4f8; border-radius:12px; display:flex; align-items:center; justify-content:center; color:#888; border:1px dashed #ccc;">
-                <span class="zh">📊 2026 季度市場數據圖表載入中...</span>
-                <span class="en">📊 Loading 2026 Quarterly Market Data Chart...</span>
+        <div class="chart-wrapper card" style="margin: 3rem 0; padding: 2.5rem;">
+            <h3 class="zh" style="font-family:'Georgia', serif; color: var(--primary-color); text-align:center; margin-bottom:1.5rem;">📊 2022–2026 東南亞珠寶市場規模趨勢（預估，十億美元）</h3>
+            <h3 class="en" style="font-family:'Georgia', serif; color: var(--primary-color); text-align:center; margin-bottom:1.5rem;">📊 SE Asia Jewellery Market Size Trend, 2022–2026 (Est., USD Billion)</h3>
+            <div style="position:relative; height:360px;">
+                <canvas id="marketChart"></canvas>
             </div>
+            <p class="zh" style="font-size:0.8rem; color:#999; text-align:center; margin-top:1.2rem;">數據為市場趨勢預估，僅供參考，不構成投資建議。</p>
+            <p class="en" style="font-size:0.8rem; color:#999; text-align:center; margin-top:1.2rem;">Figures are estimated market trends for illustrative purposes only and do not constitute investment advice.</p>
         </div>
 
         <div class="insight-section">
@@ -85,19 +85,24 @@
         <p>&copy; 2026 YT. <span class="zh">珠寶產品規劃與數據分析專家</span><span class="en">Jewellery Product Planning & Data Specialist</span></p>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
     <script>
         function toggleLang() {
             const html = document.documentElement;
             const btn = document.querySelector(".lang-btn");
+            let newLang;
             if (html.getAttribute("lang") === "zh") {
+                newLang = "en";
                 html.setAttribute("lang", "en");
                 btn.textContent = "中文";
                 localStorage.setItem("pref-lang", "en");
             } else {
+                newLang = "zh";
                 html.setAttribute("lang", "zh");
                 btn.textContent = "English";
                 localStorage.setItem("pref-lang", "zh");
             }
+            renderMarketChart(newLang);
         }
 
         window.onscroll = function() {
@@ -108,10 +113,56 @@
             if (myBar) myBar.style.width = scrolled + "%";
         };
 
+        let marketChart;
+        function renderMarketChart(lang) {
+            const ctx = document.getElementById("marketChart");
+            if (!ctx || typeof Chart === "undefined") return;
+            const isZh = lang === "zh";
+            const datasetLabel = isZh ? "市場規模（十億美元）" : "Market Size (USD Billion)";
+            const axisLabel = isZh ? "十億美元" : "USD Billion";
+            const data = {
+                labels: ["2022", "2023", "2024", "2025", "2026"],
+                datasets: [{
+                    label: datasetLabel,
+                    data: [8.9, 9.8, 10.9, 12.1, 13.6],
+                    backgroundColor: "#26619c",
+                    borderRadius: 6,
+                    maxBarThickness: 60
+                }]
+            };
+            if (marketChart) {
+                marketChart.data = data;
+                marketChart.options.scales.y.title.text = axisLabel;
+                marketChart.update();
+                return;
+            }
+            marketChart = new Chart(ctx, {
+                type: "bar",
+                data: data,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { callbacks: { label: (item) => `$${item.parsed.y}B` } }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: { display: true, text: axisLabel },
+                            grid: { color: "#eef1f4" }
+                        },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+        }
+
         window.onload = () => {
             const pref = localStorage.getItem("pref-lang") || "zh";
             document.documentElement.setAttribute("lang", pref);
             document.querySelector(".lang-btn").textContent = pref === "zh" ? "English" : "中文";
+            renderMarketChart(pref);
         };
     </script>
 </body>

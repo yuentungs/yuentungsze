@@ -23,16 +23,7 @@
         th { background-color: #f0f0f0; font-weight: bold; color: #555; }
         tr:nth-child(even) { background-color: #fdfdfd; }
         tr:hover { background-color: #f5f5f5; }
-        .lang-btn { background-color: #ffd400; color: #000; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; font-size: 0.9em; font-weight: 600; }
-        .lang-btn:hover { filter: brightness(0.95); }
         .footer { text-align: center; padding: 20px; margin-top: 30px; color: #777; font-size: 0.9em; border-top: 1px solid #eee; }
-        .logo { font-weight: bold; font-size: 1.5em; color: #fff; }
-        nav ul { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; }
-        nav ul li { margin-left: 20px; }
-        nav ul li a { text-decoration: none; color: #fff; font-weight: 500; opacity: 0.9; }
-        nav ul li a:hover { opacity: 1; text-decoration: underline; }
-        header { background-color: #0a1f44; padding: 15px 0; border-bottom: 1px solid #0a1f44; box-shadow: 0 1px 5px rgba(0,0,0,0.02); }
-        header nav { max-width: 900px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
         /* 本篇文章專用：數據支撐與參考文獻樣式（原格式參考頁未包含，沿用原有必要功能） */
         .data-support { font-style: italic; color: #666; margin-top: 1em; border-left: 3px solid #ccc; padding-left: 10px; }
         .references { font-size: 0.9em; color: #555; margin-top: 2em; }
@@ -52,6 +43,9 @@
                 <li><button class="lang-btn" onclick="toggleLang()">English</button></li>
             </ul>
         </nav>
+        <div class="progress-container">
+            <div class="progress-bar" id="myBar"></div>
+        </div>
     </header>
     <div class="container">
         <h1 class="zh">AI 與成本結構重組：重新審視 2026 年「一人公司」與電商生態的深層邏輯</h1>
@@ -303,6 +297,14 @@ Despite these challenges, solopreneurship is still worth trying because 'low tri
                 if (enTitle) document.title = enTitle.textContent;
             }
         }
+
+        window.onscroll = function() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            var myBar = document.getElementById("myBar");
+            if (myBar) myBar.style.width = scrolled + "%";
+        };
 
         window.onload = () => {
             const pref = localStorage.getItem("pref-lang") || "zh";
