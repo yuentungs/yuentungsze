@@ -10,10 +10,6 @@
     <header>
         <nav>
             <div class="logo">YT</div>
-            <div class="featured-link">
-                <span class="zh">專題分析：/AI 與成本結構重組：重新審視 2026 年「一人公司」與電商生態的深層邏輯/</span>
-                <span class="en">Feature: /AI & Cost Restructuring: Re-examining 2026 "One-Person Company" Logic/</span>
-            </div>
             <ul>
                 <li><a href="./index.html"><span class="zh">首頁</span><span class="en">Home</span></a></li>
                 <li><a href="./experience.html"><span class="zh">經歷</span><span class="en">Experience</span></a></li>
@@ -29,10 +25,17 @@
 
     <div class="container">
         <section class="hero">
-            <h1 class="zh">珠寶市場數據洞察與 AI 戰略</h1>
-            <h1 class="en">Jewellery Market Insights & AI Strategy</h1>
-            <p class="zh">深耕東南亞珠寶市場，透過數據解構品牌價值，並探索 AI 如何重組生產工序與成本結構，賦能新世代「一人公司」。</p>
-            <p class="en">Specializing in SE Asia jewellery markets, deconstructing brand value through data, and exploring how AI restructures production and cost models for the "One-Person Company" era.</p>
+            <div class="hero-content">
+                <div class="hero-mascot">
+                    <img src="./assets/images/raccoon_modified.png" alt="Raccoon Mascot" class="mascot-img">
+                </div>
+                <div class="hero-text">
+                    <h1 class="zh">珠寶市場數據洞察與 AI 戰略</h1>
+                    <h1 class="en">Jewellery Market Insights & AI Strategy</h1>
+                    <p class="zh">深耕東南亞珠寶市場，透過數據解構品牌價值，並探索 AI 如何重組生產工序與成本結構，賦能新世代「一人公司」。</p>
+                    <p class="en">Specializing in SE Asia jewellery markets, deconstructing brand value through data, and exploring how AI restructures production and cost models for the "One-Person Company" era.</p>
+                </div>
+            </div>
         </section>
 
         <div class="chart-wrapper" style="margin: 3rem 0;">
@@ -87,15 +90,15 @@
     <script>
         function toggleLang() {
             const html = document.documentElement;
-            const btn = document.querySelector('.lang-btn');
-            if (html.getAttribute('lang') === 'zh') {
-                html.setAttribute('lang', 'en');
-                btn.textContent = '中文';
-                localStorage.setItem('pref-lang', 'en');
+            const btn = document.querySelector(".lang-btn");
+            if (html.getAttribute("lang") === "zh") {
+                html.setAttribute("lang", "en");
+                btn.textContent = "中文";
+                localStorage.setItem("pref-lang", "en");
             } else {
-                html.setAttribute('lang', 'zh');
-                btn.textContent = 'English';
-                localStorage.setItem('pref-lang', 'zh');
+                html.setAttribute("lang", "zh");
+                btn.textContent = "English";
+                localStorage.setItem("pref-lang", "zh");
             }
         }
 
@@ -108,9 +111,9 @@
         };
 
         window.onload = () => {
-            const pref = localStorage.getItem('pref-lang') || 'zh';
-            document.documentElement.setAttribute('lang', pref);
-            document.querySelector('.lang-btn').textContent = pref === 'zh' ? 'English' : '中文';
+            const pref = localStorage.getItem("pref-lang") || "zh";
+            document.documentElement.setAttribute("lang", pref);
+            document.querySelector(".lang-btn").textContent = pref === "zh" ? "English" : "中文";
         };
     </script>
 </body>
