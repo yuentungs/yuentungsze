@@ -117,11 +117,15 @@ nav ul li a:hover {
 .hero-content {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 3rem;
+    justify-content: space-between;
+    gap: 2rem;
     max-width: 1000px;
     margin: 0 auto;
     text-align: left;
+}
+
+.hero-text {
+    flex: 2;
 }
 
 .hero-mascot {
@@ -131,19 +135,17 @@ nav ul li a:hover {
     align-items: center;
 }
 
-.hero-text {
-    flex: 2;
-}
-
 .mascot-img {
-    max-width: 220px;
+    max-width: 200px;
     height: auto;
-    animation: float 3.5s ease-in-out infinite;
+    border-radius: 50%;
+    /* Optional: add a subtle float animation */
+    animation: float 3s ease-in-out infinite;
 }
 
 @keyframes float {
     0% { transform: translateY(0px); }
-    50% { transform: translateY(-12px); }
+    50% { transform: translateY(-10px); }
     100% { transform: translateY(0px); }
 }
 
@@ -222,7 +224,7 @@ nav ul li a:hover {
     nav { flex-direction: column; padding: 1rem; }
     nav ul { margin-top: 1rem; flex-wrap: wrap; justify-content: center; }
     nav ul li { margin: 0.5rem; }
-    .hero-content { flex-direction: column-reverse; text-align: center; }
+    .hero-content { flex-direction: column; text-align: center; }
     .hero h1 { font-size: 2.2rem; }
-    .mascot-img { max-width: 160px; }
+    .mascot-img { max-width: 150px; }
 }
