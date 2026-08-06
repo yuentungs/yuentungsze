@@ -3,7 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YT | Jewellery Market Insights & AI Strategy</title>
+    
+    <!-- SEO 優化：Meta 標籤 -->
+    <title>YT | 珠寶市場洞察與 AI 戰略 - 東南亞市場數據分析專家</title>
+    <meta name="description" content="YT 是資深珠寶產品經理，專注東南亞珠寶市場數據分析、AI 戰略應用與成本結構優化。提供珠寶品牌出海策略、產品組合優化及 AI 轉型顧問服務。">
+    <meta name="keywords" content="珠寶市場,東南亞,AI戰略,產品管理,數據分析,珠寶行業,一人公司,電商,供應鏈優化,品牌策略">
+    <meta name="author" content="Yuen Tung Sze">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Chinese, English">
+    
+    <!-- Open Graph 標籤（用於社交媒體分享） -->
+    <meta property="og:title" content="YT | 珠寶市場洞察與 AI 戰略">
+    <meta property="og:description" content="深耕東南亞珠寶市場，透過數據解構品牌價值，並探索 AI 如何重組生產工序與成本結構。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yuentungs.github.io/yuentungsze/index.html">
+    <meta property="og:image" content="https://yuentungs.github.io/yuentungsze/assets/images/og-image.jpg">
+    <meta property="og:site_name" content="YT - Jewellery Market Insights & AI Strategy">
+    
+    <!-- Twitter 卡片標籤 -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="YT | 珠寶市場洞察與 AI 戰略">
+    <meta name="twitter:description" content="東南亞珠寶市場數據分析與 AI 戰略專家。">
+    <meta name="twitter:image" content="https://yuentungs.github.io/yuentungsze/assets/images/twitter-image.jpg">
+    
+    <!-- 規範 URL（避免重複內容問題） -->
+    <link rel="canonical" href="https://yuentungs.github.io/yuentungsze/index.html">
+    
+    <!-- 多語言 hreflang 標籤 -->
+    <link rel="alternate" hreflang="zh" href="https://yuentungs.github.io/yuentungsze/index.html">
+    <link rel="alternate" hreflang="en" href="https://yuentungs.github.io/yuentungsze/index.html">
+    <link rel="alternate" hreflang="x-default" href="https://yuentungs.github.io/yuentungsze/index.html">
+    
+    <!-- 結構化數據（Schema.org） -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Yuen Tung Sze",
+      "title": "Senior Product Manager - Jewellery Market Insights & AI Strategy",
+      "description": "資深珠寶產品經理，專注東南亞市場數據分析、AI 戰略應用與成本結構優化。",
+      "url": "https://yuentungs.github.io/yuentungsze/",
+      "sameAs": [
+        "https://www.linkedin.com/in/yuen-tung-sze-81488275/"
+      ],
+      "email": "yuentungsze@gmail.com",
+      "jobTitle": "Senior Product Manager",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Chow Sang Sang"
+      },
+      "expertise": [
+        "Jewellery Market Analysis",
+        "Southeast Asia Market",
+        "AI Strategy",
+        "Product Management",
+        "Data Analysis",
+        "Supply Chain Optimization"
+      ]
+    }
+    </script>
+    
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
@@ -82,10 +141,10 @@
     </div>
 
     <footer class="footer">
-        <p>&copy; 2026 YT. <span class="zh">珠寶產品規劃與數據分析專家</span><span class="en">Jewellery Product Planning & Data Specialist</span></p>
+        <p>© 2026 YT. <span class="zh">珠寶產品規劃與數據分析專家</span><span class="en">Jewellery Product Planning & Data Specialist</span></p>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
     <script>
         function toggleLang() {
             const html = document.documentElement;
@@ -116,26 +175,35 @@
         let marketChart;
         function renderMarketChart(lang) {
             const ctx = document.getElementById("marketChart");
-            if (!ctx || typeof Chart === "undefined") return;
+            if (!ctx || typeof Chart === "undefined") {
+                console.error("Chart.js failed to load or canvas not found.");
+                return;
+            }
             const isZh = lang === "zh";
             const datasetLabel = isZh ? "市場規模（十億美元）" : "Market Size (USD Billion)";
             const axisLabel = isZh ? "十億美元" : "USD Billion";
+            
             const data = {
                 labels: ["2022", "2023", "2024", "2025", "2026"],
                 datasets: [{
                     label: datasetLabel,
                     data: [8.9, 9.8, 10.9, 12.1, 13.6],
-                    backgroundColor: "#26619c",
+                    backgroundColor: "rgba(38, 97, 156, 0.8)",
+                    borderColor: "#26619c",
+                    borderWidth: 1,
                     borderRadius: 6,
-                    maxBarThickness: 60
+                    maxBarThickness: 60,
+                    hoverBackgroundColor: "rgba(38, 97, 156, 1)"
                 }]
             };
+
             if (marketChart) {
                 marketChart.data = data;
                 marketChart.options.scales.y.title.text = axisLabel;
                 marketChart.update();
                 return;
             }
+
             marketChart = new Chart(ctx, {
                 type: "bar",
                 data: data,
@@ -144,15 +212,32 @@
                     maintainAspectRatio: false,
                     plugins: {
                         legend: { display: false },
-                        tooltip: { callbacks: { label: (item) => `$${item.parsed.y}B` } }
+                        tooltip: { 
+                            backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                            titleColor: '#333',
+                            bodyColor: '#333',
+                            borderColor: '#ddd',
+                            borderWidth: 1,
+                            padding: 10,
+                            callbacks: { 
+                                label: (item) => `${datasetLabel}: $${item.parsed.y}B` 
+                            } 
+                        }
                     },
                     scales: {
                         y: {
                             beginAtZero: true,
-                            title: { display: true, text: axisLabel },
-                            grid: { color: "#eef1f4" }
+                            title: { 
+                                display: true, 
+                                text: axisLabel,
+                                font: { weight: 'bold' }
+                            },
+                            grid: { color: "#f0f0f0" }
                         },
-                        x: { grid: { display: false } }
+                        x: { 
+                            grid: { display: false },
+                            ticks: { font: { weight: 'bold' } }
+                        }
                     }
                 }
             });
@@ -161,7 +246,8 @@
         window.onload = () => {
             const pref = localStorage.getItem("pref-lang") || "zh";
             document.documentElement.setAttribute("lang", pref);
-            document.querySelector(".lang-btn").textContent = pref === "zh" ? "English" : "中文";
+            const btn = document.querySelector(".lang-btn");
+            if (btn) btn.textContent = pref === "zh" ? "English" : "中文";
             renderMarketChart(pref);
         };
     </script>
