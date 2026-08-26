@@ -13,3 +13,4 @@
 | Public Market Dashboard | GitHub Pages serves the standalone dashboard and the 2022–2026 market-size bar chart correctly from commit `75beef7`. | Passed publicly |
 | Chinese typography — Home | Computed styles confirm `JF Open Huninn` for the Chinese editorial title and `Noto Sans TC` for body copy. | Passed locally |
 | Chinese typography — Case Studies | Computed styles confirm `JF Open Huninn` for Chinese case titles and `Noto Sans TC` for analytical body copy. English editorial typography remains available after language switching. | Passed locally |
+| Chinese typography — Public Home | GitHub Pages computed styles confirm `JF Open Huninn` for the Chinese Hero title and `Noto Sans TC` for body copy from commit `45e2952`. | Passed publicly |
