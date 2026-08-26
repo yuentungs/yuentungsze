@@ -1,13 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap");
 
-@font-face {
-  font-family: "JF Open Huninn";
-  src: url("../fonts/jf-openhuninn-2.1.ttf") format("truetype");
-  font-display: swap;
-  font-style: normal;
-  font-weight: 400;
-}
-
 :root {
   --primary-color: #26619c;
   --secondary-color: #1e4d7b;
@@ -29,7 +21,7 @@ em, i { font-style: normal !important; }
 html { scroll-behavior: smooth; background: var(--bg-color); }
 body {
   margin: 0;
-  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Noto Sans TC", "Source Han Sans TC", sans-serif;
   font-size: 16px;
   line-height: 1.6;
   color: var(--text-color);
@@ -60,8 +52,8 @@ button { cursor: pointer; }
   gap: 22px;
 }
 .wordmark { display: flex; align-items: baseline; gap: 10px; text-decoration: none; }
-.wordmark-mark { font-family: Georgia, serif; font-size: 1.6rem; font-weight: 700; letter-spacing: 1px; color: var(--primary-color); }
-.wordmark-copy { color: #888; font-size: .72rem; font-style: italic; letter-spacing: .02em; }
+.wordmark-mark { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1.6rem; font-weight: 700; letter-spacing: 1px; color: var(--primary-color); }
+.wordmark-copy { color: #888; font-size: .72rem; font-style: normal; letter-spacing: .02em; }
 .portfolio-nav { display: flex; align-items: center; gap: 1.15rem; }
 .portfolio-nav a { color: #555; text-decoration: none; font-weight: 500; font-size: .84rem; transition: color .2s var(--ease-out); }
 .portfolio-nav-toggle { display: none; border: 1px solid var(--border-color); border-radius: 4px; padding: .42rem .68rem; color: var(--primary-color); background: transparent; font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
@@ -97,11 +89,11 @@ button { cursor: pointer; }
 .eyebrow::before { content: ''; width: 27px; height: 2px; background: var(--accent-color); }
 .hero-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(260px, .7fr); gap: 48px; margin-top: 28px; align-items: end; }
 .hero-title, .section-title, .brand-name, .architecture-panel h3, .recommendation h3, .control-card h3, .simulator-headline h3, .sources-panel h3 {
-  font-family: Georgia, serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 700;
 }
 .hero-title { max-width: 720px; margin: 0; color: #1a1a1a; font-size: clamp(3.1rem, 5.6vw, 5.35rem); letter-spacing: -.045em; line-height: .95; }
-.hero-title em, .section-title em { color: var(--primary-color); font-style: italic; }
+.hero-title em, .section-title em { color: var(--primary-color); font-style: normal; }
 .hero-summary { max-width: 620px; margin: 1.45rem 0 0; color: #444; font-size: 1.08rem; line-height: 1.8; }
 .hero-summary strong { color: var(--secondary-color); }
 .hero-side { padding: 1.2rem 0 1.2rem 1.45rem; border-left: 3px solid var(--accent-color); }
@@ -113,7 +105,7 @@ button { cursor: pointer; }
 .case-index a:last-child { border-right: 0; }
 .case-index a:hover { background: #e5f0f8; }
 .case-number { display: block; color: var(--primary-color); font-size: .68rem; font-weight: 700; letter-spacing: .12em; }
-.case-index strong { display: block; margin-top: 7px; color: var(--primary-color); font-family: Georgia, serif; font-size: 1.2rem; line-height: 1.12; }
+.case-index strong { display: block; margin-top: 7px; color: var(--primary-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1.2rem; line-height: 1.12; }
 
 /* Shared page rhythm, title and cards */
 .section { padding: 0 2rem 4rem; background: var(--bg-color); color: var(--text-color); }
@@ -127,7 +119,7 @@ button { cursor: pointer; }
 .metric-strip { display: grid; grid-template-columns: repeat(4, 1fr); margin-bottom: 2.4rem; overflow: hidden; border: 1px solid var(--border-color); border-radius: var(--radius); background: var(--white); box-shadow: 0 10px 30px rgba(0,0,0,.04); }
 .metric-item { min-height: 140px; padding: 1.55rem 1.35rem; border-right: 1px solid var(--border-color); }
 .metric-item:last-child { border-right: 0; }
-.metric-value { display: block; color: var(--primary-color); font-family: Georgia, serif; font-size: 2.45rem; font-weight: 700; line-height: 1; }
+.metric-value { display: block; color: var(--primary-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 2.45rem; font-weight: 700; line-height: 1; }
 .metric-label { display: block; margin-top: 9px; color: #666; font-size: .76rem; font-weight: 600; line-height: 1.5; }
 
 .assortment-board { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8rem; }
@@ -163,10 +155,10 @@ button { cursor: pointer; }
 .architecture-map { display: grid; grid-template-columns: repeat(3, 1fr); gap: .9rem; }
 .arch-node { min-height: 140px; padding: 1.1rem; border: 1px solid #deebf4; border-radius: 9px; background: #f8fbfd; }
 .arch-node strong { display: block; color: var(--primary-color); font-size: .68rem; letter-spacing: .07em; }
-.arch-node span { display: block; margin-top: .45rem; color: #333; font-family: Georgia, serif; font-size: 1.17rem; font-weight: 700; line-height: 1.15; }
+.arch-node span { display: block; margin-top: .45rem; color: #333; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1.17rem; font-weight: 700; line-height: 1.15; }
 .arch-node small { display: block; margin-top: .6rem; color: #666; font-size: .7rem; line-height: 1.5; }
 .key-takeaway { display: grid; grid-template-columns: 36px 1fr; gap: 1rem; margin-top: 1.5rem; padding-top: 1.35rem; border-top: 1px solid var(--border-color); }
-.takeaway-number { color: var(--accent-color); font-family: Georgia, serif; font-size: 2.3rem; line-height: .8; }
+.takeaway-number { color: var(--accent-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 2.3rem; line-height: .8; }
 .key-takeaway p { margin: 0; color: #555; font-size: .87rem; }
 
 /* Market comparison is a light card instead of a separate dark visual world */
@@ -175,7 +167,7 @@ button { cursor: pointer; }
 .market-table th { padding: 1rem 1.1rem; color: var(--primary-color); background: var(--soft-blue); font-size: .67rem; font-weight: 700; letter-spacing: .06em; text-align: left; text-transform: uppercase; }
 .market-table td { padding: 1.05rem 1.1rem; border-top: 1px solid var(--border-color); color: #555; vertical-align: top; }
 .market-table .country { color: var(--primary-color); font-weight: 700; white-space: nowrap; }
-.market-table .numeric { color: var(--primary-color); font-family: Georgia, serif; font-size: 1.3rem; font-weight: 700; line-height: 1; }
+.market-table .numeric { color: var(--primary-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1.3rem; font-weight: 700; line-height: 1; }
 .market-table small { display: block; margin-top: 3px; color: #888; font-size: .64rem; }
 .badge { display: inline-flex; padding: 4px 8px; border-radius: 999px; color: var(--primary-color); background: #eef4f9; font-size: .62rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; }
 .badge-high { background: #fff8da; color: #8a6900; }
@@ -184,7 +176,7 @@ button { cursor: pointer; }
 .market-lenses { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; margin-top: 1.4rem; }
 .lens-card { padding: 1.2rem; }
 .lens-card .lens-code { color: var(--primary-color); font-size: .63rem; font-weight: 700; letter-spacing: .09em; }
-.lens-card h4 { margin: .55rem 0 .45rem; color: var(--primary-color); font-family: Georgia, serif; font-size: 1.35rem; line-height: 1.05; }
+.lens-card h4 { margin: .55rem 0 .45rem; color: var(--primary-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1.35rem; line-height: 1.05; }
 .lens-card p { margin: 0; color: #666; font-size: .74rem; line-height: 1.55; }
 .recommendation { display: grid; grid-template-columns: minmax(0,1fr) 250px; gap: 2.4rem; align-items: end; margin-top: 1.8rem; padding: 2rem; border-radius: var(--radius); background: var(--white); border-left: 5px solid var(--accent-color); box-shadow: 0 10px 30px rgba(0,0,0,.04); }
 .recommendation h3 { margin: .65rem 0 0; color: #1a1a1a; font-size: clamp(2rem, 3.5vw, 3.05rem); line-height: 1; }
@@ -192,7 +184,7 @@ button { cursor: pointer; }
 .recommendation p { max-width: 720px; margin: 1rem 0 0; color: #555; font-size: .88rem; }
 .recommendation-score { padding: 1rem 0 1rem 1.25rem; border-left: 1px solid var(--border-color); }
 .recommendation-score span { display: block; color: #777; font-size: .65rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
-.recommendation-score strong { display: block; margin-top: .5rem; color: var(--primary-color); font-family: Georgia, serif; font-size: 1.7rem; line-height: 1; }
+.recommendation-score strong { display: block; margin-top: .5rem; color: var(--primary-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1.7rem; line-height: 1; }
 
 /* Pricing simulator uses the same white card vocabulary */
 .pricing-layout { display: grid; grid-template-columns: minmax(290px,.72fr) minmax(0,1.28fr); gap: 1.8rem; align-items: start; }
@@ -220,12 +212,12 @@ input[type=range]::-moz-range-thumb { width: 12px; height: 12px; border: 3px sol
 .pnl-line { display: flex; justify-content: space-between; gap: 1rem; padding: .7rem 0; border-bottom: 1px solid #f1f1f1; color: #666; font-size: .77rem; }
 .pnl-line span:last-child { color: #333; font-variant-numeric: tabular-nums; font-weight: 700; }
 .pnl-line.total { margin-top: .45rem; border: 0; color: var(--primary-color); font-weight: 700; }
-.pnl-line.total span:last-child { color: var(--primary-color); font-family: Georgia, serif; font-size: 1.62rem; line-height: .8; }
+.pnl-line.total span:last-child { color: var(--primary-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1.62rem; line-height: .8; }
 .simulator-footer { display: grid; grid-template-columns: repeat(3,1fr); border-top: 1px solid var(--border-color); background: #f8fbfd; }
 .result-stat { padding: 1rem 1.2rem; border-right: 1px solid var(--border-color); }
 .result-stat:last-child { border-right: 0; }
 .result-stat span { display: block; color: #777; font-size: .62rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
-.result-stat strong { display: block; margin-top: 3px; color: var(--primary-color); font-family: Georgia, serif; font-size: 1.55rem; line-height: 1; }
+.result-stat strong { display: block; margin-top: 3px; color: var(--primary-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1.55rem; line-height: 1; }
 .model-annotation { margin-top: 1rem; padding: .9rem 1rem; border-left: 3px solid var(--accent-color); background: #fffdf1; color: #625d4f; font-size: .76rem; }
 
 .sources-panel { display: grid; grid-template-columns: .8fr 1.2fr; gap: 2rem; padding: 2rem; border-radius: var(--radius); background: var(--white); box-shadow: 0 10px 30px rgba(0,0,0,.04); }
@@ -240,16 +232,16 @@ input[type=range]::-moz-range-thumb { width: 12px; height: 12px; border: 3px sol
 
 .portfolio-footer { margin-top: 0; padding: 3rem 2rem; background: var(--primary-color); color: var(--white); font-size: .75rem; }
 .footer-inner { display: flex; justify-content: space-between; gap: 2rem; max-width: 1100px; margin: 0 auto; }
-.footer-inner strong { color: var(--accent-color); font-family: Georgia, serif; }
+.footer-inner strong { color: var(--accent-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
-/* Chinese typography: Source Han Sans for detailed analysis, Open Huninn for display headings. */
+/* Chinese typography: Source Han Sans / Noto Sans TC throughout. */
 html[lang^="zh"] body,
 html[lang^="zh"] .zh {
   font-family: "Noto Sans TC", "Source Han Sans TC", "Source Han Sans", sans-serif;
 }
 html[lang^="zh"] :is(.hero-title.zh, .section-title.zh, h1.zh, h2.zh, h3.zh, h4.zh) {
-  font-family: "JF Open Huninn", "Noto Sans TC", sans-serif;
-  font-weight: 400;
+  font-family: "Noto Sans TC", "Source Han Sans TC", "Source Han Sans", sans-serif;
+  font-weight: 700;
   letter-spacing: 0.015em;
 }
 
