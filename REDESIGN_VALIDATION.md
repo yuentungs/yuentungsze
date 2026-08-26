@@ -19,3 +19,4 @@
 | Upright titles — Public Home | GitHub Pages from commit `d8b510f` shows Hero and case-spotlight titles without terminal full stops; computed title styles are `normal`. | Passed publicly |
 | Unified fonts — Local Home | All existing homepage insight, case-study and market content remains present. Computed styles confirm `Noto Sans TC` / Source Han Sans for Chinese title and body text, and Helvetica for English titles. | Passed locally |
 | Unified fonts — Local Case Studies | All three cases and 7 pricing-simulator controls remain present. Computed styles confirm `Noto Sans TC` / Source Han Sans for Chinese case text and Helvetica for English titles. | Passed locally |
+| Unified fonts — Public Home | GitHub Pages from commit `f277842` retains 3 insight cards, 3 case links and the market chart. Computed styles confirm `Noto Sans TC` / Source Han Sans for Chinese and Helvetica for English. | Passed publicly |
