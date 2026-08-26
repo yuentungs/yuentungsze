@@ -33,23 +33,32 @@
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">YT</div>
-            <ul>
-                <li><a href="./index.html"><span class="zh">首頁</span><span class="en">Home</span></a></li>
-                <li><a href="./experience.html"><span class="zh">經歷</span><span class="en">Experience</span></a></li>
-                <li><a href="./insights.html"><span class="zh">分析</span><span class="en">Insights</span></a></li>
-                <li><a href="./services.html"><span class="zh">服務</span><span class="en">Services</span></a></li>
+        <nav class="site-nav" aria-label="Primary navigation">
+            <a class="logo" href="./index.html" aria-label="YT Home">YT</a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
+            <ul id="site-menu" class="nav-menu">
+                <li><a href="./insights.html" aria-current="page"><span class="zh">洞察</span><span class="en">Insights</span></a></li>
+                <li><a href="./portfolio.html"><span class="zh">案例</span><span class="en">Case Studies</span></a></li>
+                <li><a href="./market-dashboard.html"><span class="zh">市場看板</span><span class="en">Market Dashboard</span></a></li>
+                <li><a href="./experience.html"><span class="zh">關於作者</span><span class="en">About</span></a></li>
+                <li><a href="./services.html"><span class="zh">合作</span><span class="en">Work With Me</span></a></li>
                 <li><button class="lang-btn" onclick="toggleLang()">English</button></li>
             </ul>
         </nav>
-        <div class="progress-container">
-            <div class="progress-bar" id="myBar"></div>
-        </div>
+        <div class="progress-container"><div class="progress-bar" id="myBar"></div></div>
     </header>
-    <div class="container">
+    <main class="article-shell">
+      <section class="article-header">
+        <span class="eyebrow">Consumer Analysis / AI &amp; Operating Model</span>
+        <div class="article-meta"><span>8 min read</span><span>Updated 2026</span><span class="zh">中英雙語</span><span class="en">Bilingual</span></div>
         <h1 class="zh">AI 與成本結構重組：重新審視 2026 年「一人公司」與電商生態的深層邏輯</h1>
         <h1 class="en">AI and Cost Structure Reconfiguration: Re-examining the Deep Logic of Solopreneurship and E-commerce Ecosystem in 2026</h1>
+        <p class="article-deck zh">從成本結構，而不是單一技術決定論，重新理解 AI、平台基礎設施與一人公司的競爭現實。</p>
+        <p class="article-deck en">A reading of AI, platform infrastructure and solopreneur competition through cost structure rather than technological determinism.</p>
+      </section>
+      <div class="article-layout">
+        <aside class="article-toc" id="articleToc" aria-label="Table of contents"></aside>
+        <article class="article-body">
 
         <h2 class="zh">【核心名詞與完整因果鏈定義】</h2>
         <h2 class="en">【Core Terms and Complete Causal Chain Definition】</h2>
@@ -269,8 +278,20 @@ Despite these challenges, solopreneurship is still worth trying because 'low tri
 <li>Omnisend / Klaviyo, 'Email &amp; SMS Marketing Statistics 2026'</li>
 </ul></div>
 
-    </div>
-    <footer class="footer"><p>&copy; 2026 YT. All Rights Reserved.</p></footer>
+        </article>
+      </div>
+      <aside class="article-author">
+        <h3>Written by Yuen Tung Sze</h3>
+        <p><span class="zh">Senior Product Management · Fine Jewellery · Southeast Asia。以產品架構、消費者行為及市場訊號研究 Luxury 的增長邏輯。</span><span class="en">Senior Product Management · Fine Jewellery · Southeast Asia. Researching luxury growth through product architecture, consumer behaviour and market signals.</span> <a href="./experience.html"><span class="zh">查看作者背景</span><span class="en">View credentials</span></a></p>
+      </aside>
+      <section class="related-reading">
+        <h3><span class="zh">延伸閱讀</span><span class="en">Related reading</span></h3>
+        <a href="./AI_impact_SEA_youth_employment_bilingual.html"><span class="zh">AI 會搶走誰的飯碗？東南亞青年就業的三種命運</span><span class="en">Who Will AI Displace? Three Employment Futures for SE Asia's Youth</span></a><br>
+        <a href="./portfolio.html#project-03"><span class="zh">案例：珠寶定價與毛利模擬</span><span class="en">Case study: Jewellery pricing & margin simulation</span></a>
+      </section>
+    </main>
+    <footer class="footer"><p>&copy; 2026 YT. <span class="zh">Luxury、Jewellery 與 Consumer Analysis</span><span class="en">Luxury, Jewellery &amp; Consumer Analysis</span></p></footer>
+    <script src="./assets/js/site.js"></script>
     <script>
         function toggleLang() {
             const html = document.documentElement;
@@ -311,6 +332,20 @@ Despite these challenges, solopreneurship is still worth trying because 'low tri
             document.documentElement.setAttribute("lang", pref);
             document.querySelector(".lang-btn").textContent = pref === "zh" ? "English" : "中文";
             updateTitle();
+            const toc = document.getElementById('articleToc');
+            if (toc) {
+                toc.innerHTML = `<p>${pref === 'zh' ? '本頁內容' : 'On this page'}</p>`;
+                let visibleIndex = 0;
+                document.querySelectorAll(`.article-body h2.${pref === 'zh' ? 'zh' : 'en'}`).forEach((heading) => {
+                    visibleIndex += 1;
+                    const id = `section-${visibleIndex}`;
+                    heading.id = id;
+                    const link = document.createElement('a');
+                    link.href = `#${id}`;
+                    link.textContent = heading.textContent.replace(/【|】/g, '');
+                    toc.appendChild(link);
+                });
+            }
         };
     </script>
 </body>

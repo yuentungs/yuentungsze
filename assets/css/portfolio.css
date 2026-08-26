@@ -50,8 +50,9 @@ button { cursor: pointer; }
 .wordmark { display: flex; align-items: baseline; gap: 10px; text-decoration: none; }
 .wordmark-mark { font-family: Georgia, serif; font-size: 1.6rem; font-weight: 700; letter-spacing: 1px; color: var(--primary-color); }
 .wordmark-copy { color: #888; font-size: .72rem; font-style: italic; letter-spacing: .02em; }
-.portfolio-nav { display: flex; align-items: center; gap: 1.55rem; }
-.portfolio-nav a { color: #555; text-decoration: none; font-weight: 500; font-size: .92rem; transition: color .2s var(--ease-out); }
+.portfolio-nav { display: flex; align-items: center; gap: 1.15rem; }
+.portfolio-nav a { color: #555; text-decoration: none; font-weight: 500; font-size: .84rem; transition: color .2s var(--ease-out); }
+.portfolio-nav-toggle { display: none; border: 1px solid var(--border-color); border-radius: 4px; padding: .42rem .68rem; color: var(--primary-color); background: transparent; font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 .portfolio-nav a:hover, .portfolio-nav a:focus-visible { color: var(--primary-color); }
 .language-toggle {
   min-width: 74px;
@@ -242,8 +243,13 @@ input[type=range]::-moz-range-thumb { width: 12px; height: 12px; border: 3px sol
 }
 
 @media (max-width: 768px) {
-  .header-inner { flex-direction: column; padding: .85rem 1rem; gap: .6rem; }
-  .portfolio-nav { flex-wrap: wrap; justify-content: center; gap: .5rem 1rem; }
+  .header-inner { position: relative; min-height: 58px; flex-direction: row; padding: .7rem 1rem; gap: .6rem; }
+  .portfolio-nav-toggle { display: inline-flex; margin-left: auto; }
+  .portfolio-nav { display: none; }
+  .portfolio-header.nav-open .portfolio-nav { position: absolute; top: 58px; left: 0; width: 100%; display: grid; gap: 0; padding: .55rem 1rem 1rem; border-bottom: 1px solid var(--border-color); background: var(--white); box-shadow: 0 12px 18px rgba(0,0,0,.07); }
+  .portfolio-header.nav-open .portfolio-nav a { padding: .68rem 0; border-bottom: 1px solid #edf0f2; font-size: .84rem; }
+  .portfolio-header.nav-open .portfolio-nav a:last-of-type { border-bottom: 0; }
+  .portfolio-header.nav-open .language-toggle { margin-top: .55rem; }
   .portfolio-nav a { font-size: .83rem; }
   .hero-casebook { margin: 1rem; padding: 3rem 1.5rem 0; }
   .hero-grid { gap: 1.5rem; }

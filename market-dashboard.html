@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>市場看板 | YT — Luxury & Jewellery Market Dashboard</title>
+  <meta name="description" content="YT 的東南亞珠寶市場訊號與 APAC 宏觀經濟看板，結合市場規模趨勢與 World Bank 數據工具。">
+  <link rel="canonical" href="https://yuentungs.github.io/yuentungsze/market-dashboard.html">
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+  <header>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a class="logo" href="./index.html" aria-label="YT Home">YT</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
+      <ul id="site-menu" class="nav-menu">
+        <li><a href="./insights.html"><span class="zh">洞察</span><span class="en">Insights</span></a></li>
+        <li><a href="./portfolio.html"><span class="zh">案例</span><span class="en">Case Studies</span></a></li>
+        <li><a href="./market-dashboard.html" aria-current="page"><span class="zh">市場看板</span><span class="en">Market Dashboard</span></a></li>
+        <li><a href="./experience.html"><span class="zh">關於作者</span><span class="en">About</span></a></li>
+        <li><a href="./services.html"><span class="zh">合作</span><span class="en">Work With Me</span></a></li>
+        <li><button class="lang-btn" onclick="toggleLang()">English</button></li>
+      </ul>
+    </nav>
+    <div class="progress-container"><div class="progress-bar" id="myBar"></div></div>
+  </header>
+
+  <main class="editorial-container">
+    <section class="editorial-hero">
+      <span class="eyebrow">Market evidence · data tools</span>
+      <div class="hero-text">
+        <h1 class="zh">市場訊號，<span class="editorial-title">轉化為決策。</span></h1>
+        <h1 class="en">Market signals,<br><span class="editorial-title">translated into decisions.</span></h1>
+        <p class="zh">以東南亞珠寶市場規模、APAC 宏觀指標及可互動的 World Bank 工具，建立產品與市場優先序的研究基礎。</p>
+        <p class="en">A research base for product and market prioritisation, combining SE Asia jewellery-market scale, APAC macro indicators, and an interactive World Bank tool.</p>
+      </div>
+    </section>
+
+    <section class="market-signal" aria-labelledby="signal-title">
+      <div>
+        <span class="section-kicker">Market signal</span>
+        <h2 id="signal-title" class="zh">2022–2026 東南亞珠寶市場規模趨勢</h2>
+        <h2 class="en">SE Asia jewellery market-size trend, 2022–2026</h2>
+        <div class="chart-frame"><canvas id="marketChart"></canvas></div>
+        <p class="chart-note zh">數據為市場趨勢預估，僅供參考，不構成投資建議。</p>
+        <p class="chart-note en">Figures are estimated market trends for illustrative purposes only and do not constitute investment advice.</p>
+      </div>
+      <aside class="data-panel">
+        <span class="section-kicker">Reading the signal</span>
+        <h3 class="zh">規模不是唯一答案</h3>
+        <h3 class="en">Scale is not the only answer</h3>
+        <p class="zh">市場規模可提示需求方向，但進入優先序仍須同時考慮財富密度、旅遊入口、黃金敏感度、客戶服務能力和產品價格梯。完整比較見 Case Studies。</p>
+        <p class="en">Market scale signals demand direction, but entry priority must also account for wealth density, tourism gateways, gold sensitivity, clienteling capability and the product-price ladder. See Case Studies for the full comparison.</p>
+        <a class="text-link" href="./portfolio.html#project-02"><span class="zh">閱讀東南亞市場案例</span><span class="en">Read the SEA market case</span></a>
+      </aside>
+    </section>
+
+    <section class="section-heading">
+      <div>
+        <span class="section-kicker">Data tool</span>
+        <h2 class="zh">亞太區宏觀經濟與珠寶消費潛力看板</h2>
+        <h2 class="en">APAC macroeconomic & jewellery-consumption dashboard</h2>
+      </div>
+    </section>
+    <section class="case-spotlight">
+      <div>
+        <div class="meta-row"><span>Python</span><span>Streamlit</span><span>World Bank API</span></div>
+        <p class="zh">這是一個專為珠寶市場開發設計的動態決策工具。透過串接 <strong>World Bank 真實 API</strong>，實現了對中國、香港、東南亞及澳日等 10 個核心經濟體的即時人口與 GDP 數據對比，幫助品牌精準鎖定高潛力市場。</p>
+        <p class="en">A dynamic decision-making tool for jewellery market expansion. By integrating <strong>World Bank real-time APIs</strong>, it enables data comparison across 10 key APAC economies, helping brands identify high-potential markets with precision.</p>
+      </div>
+      <div class="data-panel">
+        <h3 class="zh">即時比較市場條件</h3>
+        <h3 class="en">Compare market conditions live</h3>
+        <p class="zh">透過看板檢視人口、GDP 與其他宏觀變量，並將資料用於初步市場篩選。</p>
+        <p class="en">Review population, GDP and other macro variables for first-pass market screening.</p>
+        <a class="text-link" target="_blank" rel="noopener" href="https://jewelry-market-dashboard-bsdu6pwgsxxvwsteu9npjw.streamlit.app/"><span class="zh">開啟互動看板</span><span class="en">Open interactive dashboard</span></a>
+      </div>
+    </section>
+
+    <section class="section-heading">
+      <div>
+        <span class="section-kicker">Quick takes</span>
+        <h2 class="zh">2026 市場觀察</h2>
+        <h2 class="en">2026 market observations</h2>
+      </div>
+    </section>
+    <div class="insight-grid">
+      <article class="insight-card">
+        <span class="taxonomy-tag"><span class="zh">市場規模</span><span class="en">Market scale</span></span>
+        <h3 class="zh">東南亞市場成長</h3><h3 class="en">SE Asia market growth</h3>
+        <p class="zh"><strong>市場規模</strong>：受惠於印尼與越南中產階級崛起，東南亞珠寶市場規模在 2026 年已突破 136 億美元。</p>
+        <p class="en"><strong>Market Scale</strong>: Driven by the rise of the middle class in Indonesia and Vietnam, the SE Asia market has surpassed $13.6B in 2026.</p>
+      </article>
+      <article class="insight-card">
+        <span class="taxonomy-tag"><span class="zh">品牌價值</span><span class="en">Brand value</span></span>
+        <h3 class="zh">可被理解的稀有感</h3><h3 class="en">Legible rarity</h3>
+        <p class="zh"><strong>品牌價值</strong>：Cartier 憑藉其「藝術資產化」策略，轉售價值持續領先；Tiffany 則在數位原生代中佔據較高份額。</p>
+        <p class="en"><strong>Brand Value</strong>: Cartier leads in resale value through its "art-as-asset" strategy; Tiffany captures higher share among digital natives.</p>
+      </article>
+      <article class="insight-card">
+        <span class="taxonomy-tag"><span class="zh">成本結構</span><span class="en">Operating model</span></span>
+        <h3 class="zh">AI 與工序重組</h3><h3 class="en">AI and process redesign</h3>
+        <p class="zh"><strong>成本重組</strong>：AI 輔助設計與自動化排產使新品研發週期縮短 40%，大幅降低了品牌進入門檻。</p>
+        <p class="en"><strong>Cost Restructuring</strong>: AI-assisted design and automated scheduling have cut R&D cycles by 40%, lowering barriers to entry.</p>
+      </article>
+    </div>
+
+    <section class="author-cta">
+      <div>
+        <span class="section-kicker">Research author</span>
+        <h2>Yuen Tung Sze</h2>
+        <p class="zh">Senior Product Management · Fine Jewellery · Southeast Asia。研究聚焦產品架構、消費者行為、成本結構與市場訊號。</p>
+        <p class="en">Senior Product Management · Fine Jewellery · Southeast Asia. Research focuses on product architecture, consumer behaviour, cost structure and market signals.</p>
+      </div>
+      <div class="data-panel">
+        <h3 class="zh">以研究開始對話</h3><h3 class="en">Start with the research</h3>
+        <a class="text-link" href="./experience.html"><span class="zh">查看作者背景</span><span class="en">View credentials</span></a><br>
+        <a class="text-link" href="./services.html"><span class="zh">合作方式</span><span class="en">Work with me</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><p>© 2026 YT. <span class="zh">Luxury、Jewellery 與 Consumer Analysis</span><span class="en">Luxury, Jewellery & Consumer Analysis</span></p></footer>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+  <script src="./assets/js/site.js"></script>
+  <script>
+    function toggleLang() {
+      const html = document.documentElement; const btn = document.querySelector('.lang-btn');
+      const lang = html.getAttribute('lang') === 'zh' ? 'en' : 'zh';
+      html.setAttribute('lang', lang); btn.textContent = lang === 'zh' ? 'English' : '中文';
+      localStorage.setItem('pref-lang', lang); renderMarketChart(lang);
+    }
+    function renderMarketChart(lang) {
+      const ctx = document.getElementById('marketChart'); if (!ctx || !window.Chart) return;
+      if (window.marketChartInstance) window.marketChartInstance.destroy();
+      const isZh = lang === 'zh';
+      window.marketChartInstance = new Chart(ctx, { type: 'bar', data: { labels: ['2022','2023','2024','2025','2026'], datasets: [{ data: [8.9,9.8,10.9,12.1,13.6], backgroundColor: '#2d5f8b', borderRadius: 3, maxBarThickness: 64 }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, tooltip: { callbacks: { label: (item) => `${isZh ? '市場規模' : 'Market size'}: $${item.parsed.y}B` } } }, scales: { x: { grid: { display: false } }, y: { beginAtZero: true, title: { display: true, text: isZh ? '十億美元' : 'USD Billion' }, grid: { color: '#e7edf1' } } } } });
+    }
+    window.addEventListener('scroll', () => { const h = document.documentElement.scrollHeight - document.documentElement.clientHeight; document.getElementById('myBar').style.width = `${h ? (window.scrollY / h) * 100 : 0}%`; });
+    window.addEventListener('DOMContentLoaded', () => { const lang = localStorage.getItem('pref-lang') || 'zh'; document.documentElement.setAttribute('lang', lang); document.querySelector('.lang-btn').textContent = lang === 'zh' ? 'English' : '中文'; renderMarketChart(lang); });
+  </script>
+</body>
+</html>

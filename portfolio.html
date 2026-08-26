@@ -19,13 +19,15 @@
     <div class="header-inner">
       <a class="wordmark" href="./index.html" aria-label="YT Home">
         <span class="wordmark-mark">YT</span>
-        <span class="wordmark-copy">Luxury Product Strategy</span>
+        <span class="wordmark-copy">Luxury Research</span>
       </a>
-      <nav class="portfolio-nav" aria-label="Portfolio navigation">
-        <a class="home-link" href="./index.html"><span class="zh">首頁</span><span class="en">Home</span></a>
-        <a href="#project-01"><span class="zh">組合</span><span class="en">Assortment</span></a>
-        <a href="#project-02"><span class="zh">市場</span><span class="en">Markets</span></a>
-        <a href="#project-03"><span class="zh">定價</span><span class="en">Pricing</span></a>
+      <button class="portfolio-nav-toggle" type="button" aria-expanded="false" aria-controls="portfolio-menu" onclick="togglePortfolioNav()">Menu</button>
+      <nav id="portfolio-menu" class="portfolio-nav" aria-label="Primary navigation">
+        <a href="./insights.html"><span class="zh">洞察</span><span class="en">Insights</span></a>
+        <a class="home-link" href="./portfolio.html"><span class="zh">案例</span><span class="en">Case Studies</span></a>
+        <a href="./market-dashboard.html"><span class="zh">市場看板</span><span class="en">Market Dashboard</span></a>
+        <a href="./experience.html"><span class="zh">關於作者</span><span class="en">About</span></a>
+        <a href="./services.html"><span class="zh">合作</span><span class="en">Work With Me</span></a>
         <button class="language-toggle" type="button" onclick="toggleLanguage()" aria-label="Switch language">EN</button>
       </nav>
     </div>
@@ -359,6 +361,13 @@
     const money = (value) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(value);
     const signedPct = (value) => `${value > 0 ? '+' : value < 0 ? '−' : ''}${Math.abs(value).toFixed(1)}%`;
     const percent = (value) => `${(value * 100).toFixed(1)}%`;
+
+    function togglePortfolioNav() {
+      const header = document.querySelector('.portfolio-header');
+      const button = document.querySelector('.portfolio-nav-toggle');
+      const isOpen = header.classList.toggle('nav-open');
+      button.setAttribute('aria-expanded', String(isOpen));
+    }
 
     function toggleLanguage() {
       const html = document.documentElement;

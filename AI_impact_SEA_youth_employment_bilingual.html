@@ -26,23 +26,32 @@
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">YT</div>
-            <ul>
-                <li><a href="./index.html"><span class="zh">首頁</span><span class="en">Home</span></a></li>
-                <li><a href="./experience.html"><span class="zh">經歷</span><span class="en">Experience</span></a></li>
-                <li><a href="./insights.html"><span class="zh">分析</span><span class="en">Insights</span></a></li>
-                <li><a href="./services.html"><span class="zh">服務</span><span class="en">Services</span></a></li>
+        <nav class="site-nav" aria-label="Primary navigation">
+            <a class="logo" href="./index.html" aria-label="YT Home">YT</a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
+            <ul id="site-menu" class="nav-menu">
+                <li><a href="./insights.html" aria-current="page"><span class="zh">洞察</span><span class="en">Insights</span></a></li>
+                <li><a href="./portfolio.html"><span class="zh">案例</span><span class="en">Case Studies</span></a></li>
+                <li><a href="./market-dashboard.html"><span class="zh">市場看板</span><span class="en">Market Dashboard</span></a></li>
+                <li><a href="./experience.html"><span class="zh">關於作者</span><span class="en">About</span></a></li>
+                <li><a href="./services.html"><span class="zh">合作</span><span class="en">Work With Me</span></a></li>
                 <li><button class="lang-btn" onclick="toggleLang()">English</button></li>
             </ul>
         </nav>
-        <div class="progress-container">
-            <div class="progress-bar" id="myBar"></div>
-        </div>
+        <div class="progress-container"><div class="progress-bar" id="myBar"></div></div>
     </header>
-    <div class="container">
+    <main class="article-shell">
+      <section class="article-header">
+        <span class="eyebrow">Southeast Asia / Consumer Analysis</span>
+        <div class="article-meta"><span>6 min read</span><span>Updated 2026</span><span class="zh">中英雙語</span><span class="en">Bilingual</span></div>
         <h1 class="zh">AI 會搶走誰的飯碗? 東南亞青年就業的三種命運</h1>
         <h1 class="en">AI and the Future of Youth Employment in Southeast Asia: Three Fates</h1>
+        <p class="article-deck zh">以產業結構而不是單一區域標籤，理解 AI 對東南亞青年勞動力的分化影響。</p>
+        <p class="article-deck en">Understanding the differentiated impact of AI on SEA youth employment through industrial structure, rather than one regional label.</p>
+      </section>
+      <div class="article-layout">
+        <aside class="article-toc" id="articleToc" aria-label="Table of contents"></aside>
+        <article class="article-body">
         <div class="zh"><p>當地球另一端的科技公司在爭論 AI 會不會取代工程師時,東南亞數以千萬計靠重複性服務工作維生的年輕人,已經在直接面對這場衝擊。但「東南亞」從來不是單一故事——一個新加坡的 PMET(專業人士、經理、行政人員及技術人員)和一個菲律賓的 call centre 客服員,面對的是完全不同的風險和選項。與其把整個區域混為一談,不如按發展階段和產業結構分成三組來看：<strong>青年勞動力密集出口型</strong>(菲律賓 vs 越南——分別靠服務業與製造業出口)、<strong>製造業轉型型</strong>(馬來西亞 vs 泰國)，以及作為政策參考的<strong>高收入對照組</strong>(新加坡)。</p></div>
         <div class="en"><p>While tech companies on the other side of the globe debate whether AI will replace engineers, millions of young people in Southeast Asia who rely on repetitive service jobs are already directly facing this impact. However, "Southeast Asia" is never a single story—a PMET (Professionals, Managers, Executives, and Technicians) in Singapore and a call center agent in the Philippines face entirely different risks and options. Instead of lumping the entire region together, it's better to examine it in three groups based on development stages and industrial structures: <strong>youth labor-intensive export economies</strong> (Philippines vs. Vietnam—relying on service and manufacturing exports, respectively), <strong>manufacturing transformation economies</strong> (Malaysia vs. Thailand), and <strong>high-income benchmarks</strong> for policy reference (Singapore).</p></div>
 
@@ -194,8 +203,20 @@
         <p class="data-source zh">數據來源：IMF、World Bank(Global Economic Prospects, Jan 2026;Thailand Economic Monitor, Feb 2026)、亞洲開發銀行(ADB)、IBPAP、越南國家統計局(GSO)、新加坡人力部(MOM)、SkillsFuture Singapore、NTUC、Trading Economics</p>
         <p class="data-source en">數據來源：IMF、World Bank(Global Economic Prospects, Jan 2026;Thailand Economic Monitor, Feb 2026)、亞洲開發銀行(ADB)、IBPAP、越南國家統計局(GSO)、新加坡人力部(MOM)、SkillsFuture Singapore、NTUC、Trading Economics</p>
 
-    </div>
-    <footer class="footer"><p>&copy; 2026 YT. All Rights Reserved.</p></footer>
+        </article>
+      </div>
+      <aside class="article-author">
+        <h3>Written by Yuen Tung Sze</h3>
+        <p><span class="zh">Senior Product Management · Fine Jewellery · Southeast Asia。以市場結構、消費者行為與產品策略研究區域經濟的變化。</span><span class="en">Senior Product Management · Fine Jewellery · Southeast Asia. Researching regional change through market structure, consumer behaviour and product strategy.</span> <a href="./experience.html"><span class="zh">查看作者背景</span><span class="en">View credentials</span></a></p>
+      </aside>
+      <section class="related-reading">
+        <h3><span class="zh">延伸閱讀</span><span class="en">Related reading</span></h3>
+        <a href="./AI_Ecommerce_Solopreneur_Analysis_bilingual.html"><span class="zh">AI 與成本結構重組：重新審視 2026 年「一人公司」與電商生態</span><span class="en">AI & Cost Restructuring: Rethinking Solopreneurs & E-commerce</span></a><br>
+        <a href="./portfolio.html#project-02"><span class="zh">案例：東南亞市場優先序</span><span class="en">Case study: Southeast Asia market priority</span></a>
+      </section>
+    </main>
+    <footer class="footer"><p>&copy; 2026 YT. <span class="zh">Luxury、Jewellery 與 Consumer Analysis</span><span class="en">Luxury, Jewellery &amp; Consumer Analysis</span></p></footer>
+    <script src="./assets/js/site.js"></script>
     <script>
         function toggleLang() {
             const html = document.documentElement;
@@ -236,6 +257,20 @@
             document.documentElement.setAttribute("lang", pref);
             document.querySelector(".lang-btn").textContent = pref === "zh" ? "English" : "中文";
             updateTitle();
+            const toc = document.getElementById('articleToc');
+            if (toc) {
+                toc.innerHTML = `<p>${pref === 'zh' ? '本頁內容' : 'On this page'}</p>`;
+                let visibleIndex = 0;
+                document.querySelectorAll(`.article-body h2.${pref === 'zh' ? 'zh' : 'en'}`).forEach((heading) => {
+                    visibleIndex += 1;
+                    const id = `section-${visibleIndex}`;
+                    heading.id = id;
+                    const link = document.createElement('a');
+                    link.href = `#${id}`;
+                    link.textContent = heading.textContent;
+                    toc.appendChild(link);
+                });
+            }
         };
     </script>
 </body>
