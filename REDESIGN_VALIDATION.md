@@ -14,3 +14,5 @@
 | Chinese typography — Home | Computed styles confirm `JF Open Huninn` for the Chinese editorial title and `Noto Sans TC` for body copy. | Passed locally |
 | Chinese typography — Case Studies | Computed styles confirm `JF Open Huninn` for Chinese case titles and `Noto Sans TC` for analytical body copy. English editorial typography remains available after language switching. | Passed locally |
 | Chinese typography — Public Home | GitHub Pages computed styles confirm `JF Open Huninn` for the Chinese Hero title and `Noto Sans TC` for body copy from commit `45e2952`. | Passed publicly |
+| Upright titles — Home | Chinese and English Hero / case-spotlight titles render without terminal full stops, and title styling is upright. | Passed locally |
+| Upright titles — Case Studies | Product Portfolio, project titles, strategy recommendation and methodology heading render without terminal full stops or italic styling. | Passed locally |

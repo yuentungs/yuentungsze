@@ -24,6 +24,8 @@
 }
 
 * { box-sizing: border-box; }
+/* Keep case-study typography upright throughout. */
+em, i { font-style: normal !important; }
 html { scroll-behavior: smooth; background: var(--bg-color); }
 body {
   margin: 0;

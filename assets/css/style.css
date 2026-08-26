@@ -42,6 +42,8 @@ body {
 }
 a { color: inherit; }
 button, input { font: inherit; }
+/* Keep the research editorial calm and upright: no italic emphasis. */
+em, i, .data-support { font-style: normal !important; }
 
 /* Shared editorial navigation */
 header {
