@@ -9,3 +9,5 @@
 | Market Dashboard chart | Resolved canvas-id collision by storing the Chart.js instance as `marketChartInstance`; the 2022–2026 bar chart now renders correctly. | Passed locally |
 | Mobile Home (390px) | The header collapses to YT + Menu, while the editorial hero and Featured Insight remain readable without clipped text. | Passed locally |
 | Mobile Case Studies (390px) | The portfolio header collapses to wordmark + Menu and the casebook hero, role lens and case index preserve a readable single-column flow. | Passed locally |
+| Public Home | GitHub Pages serves the Insights-first editorial home, unified navigation, Featured Insight, case-study spotlight and Market Signal structure from commit `75beef7`. | Passed publicly |
+| Public Market Dashboard | GitHub Pages serves the standalone dashboard and the 2022–2026 market-size bar chart correctly from commit `75beef7`. | Passed publicly |
