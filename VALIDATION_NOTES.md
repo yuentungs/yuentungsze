@@ -12,3 +12,4 @@
 
 **Remaining validation:** verify slider event response, mobile layout and final GitHub Pages deployment.
 | Pricing slider event | Passed | Changing the English scenario from +10% price / −5% volume to +15% / −8% refreshed the display to 92 units, US$352,976 scenario contribution, 34.0% contribution rate and +20.1% contribution change. |
+| GitHub Pages deployment | Passed | Commit `80f8bde` was pushed to `main`. GitHub Pages reported `built`, and the public portfolio URL returned the new bilingual Luxury Product Portfolio with the three case links and active pricing controls. |
