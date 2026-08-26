@@ -1,3 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap");
+
+@font-face {
+  font-family: "JF Open Huninn";
+  src: url("../fonts/jf-openhuninn-2.1.ttf") format("truetype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
 :root {
   --ink: #14213d;
   --editorial-blue: #2d5f8b;
@@ -367,6 +377,17 @@ header {
 
 .footer { margin-top: 84px; padding: 34px 24px; background: var(--ink); color: rgba(255,255,255,.8); text-align: center; font-size: .82rem; }
 .footer p { margin: 0; }
+
+/* Chinese typography: Source Han Sans for reading, Open Huninn for editorial display. */
+html[lang^="zh"] body,
+html[lang^="zh"] .zh {
+  font-family: "Noto Sans TC", "Source Han Sans TC", "Source Han Sans", sans-serif;
+}
+html[lang^="zh"] :is(h1.zh, h2.zh, h3.zh, h4.zh, h5.zh, h6.zh, .hero-title.zh, .section-title.zh) {
+  font-family: "JF Open Huninn", "Noto Sans TC", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.015em;
+}
 
 [lang="en"] .zh { display: none !important; }
 [lang="zh"] .en { display: none !important; }
