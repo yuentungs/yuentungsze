@@ -244,8 +244,16 @@
         <div class="pricing-layout">
           <aside class="control-card">
             <h3><span class="zh">假設控制台</span><span class="en">Assumption console</span></h3>
-            <p class="zh">調整基準零售價、方案價格變動及需求變動。COGS 按每件固定，配送、零售及行銷按零售額比例計算。</p>
-            <p class="en">Adjust base retail price, scenario price change and volume change. COGS is fixed per piece; distribution, retail and marketing are modelled as revenue-linked.</p>
+            <p class="zh">調整基準件數、單件 COGS、基準零售價及方案變動。配送、零售及行銷按零售額比例計算。</p>
+            <p class="en">Adjust baseline units, unit COGS, base retail price and scenario moves. Distribution, retail and marketing are modelled as revenue-linked.</p>
+            <div class="control-group">
+              <label class="control-label" for="base-units-input"><span><span class="zh">基準件數</span><span class="en">Baseline units</span></span><output id="base-units-output">100 件</output></label>
+              <input id="base-units-input" type="range" min="25" max="500" step="5" value="100">
+            </div>
+            <div class="control-group">
+              <label class="control-label" for="unit-cogs"><span><span class="zh">單件 COGS</span><span class="en">Unit COGS</span></span><output id="unit-cogs-output">US$3,000</output></label>
+              <input id="unit-cogs" type="range" min="1000" max="8000" step="100" value="3000">
+            </div>
             <div class="control-group">
               <label class="control-label" for="base-price"><span><span class="zh">基準零售價</span><span class="en">Base retail price</span></span><output id="base-price-output">US$9,800</output></label>
               <input id="base-price" type="range" min="5000" max="20000" step="100" value="9800">
@@ -264,7 +272,7 @@
           <div>
             <div class="simulator-card" aria-live="polite">
               <div class="simulator-top">
-                <span class="simulator-label"><span class="zh">SKU contribution model · 100 件基準銷量</span><span class="en">SKU contribution model · 100-unit baseline</span></span>
+                <span id="simulator-label" class="simulator-label">SKU contribution model · 100 件基準銷量 · Unit COGS US$3,000</span>
                 <div class="simulator-headline">
                   <h3><span class="zh">Signature Necklace</span><span class="en">Signature Necklace</span></h3>
                   <span id="delta-pill" class="delta-pill"><span class="zh">方案貢獻 +18.2%</span><span class="en">Scenario contribution +18.2%</span></span>
@@ -298,7 +306,7 @@
                 <div class="result-stat"><span><span class="zh">貢獻變化</span><span class="en">Contribution change</span></span><strong id="contribution-change">+18.2%</strong></div>
               </div>
             </div>
-            <div class="model-annotation"><span class="zh"><strong>讀法：</strong>若價格上升速度高於流失的需求，加上部分成本在每件上固定，總貢獻可上升；但決策前仍須以價格彈性、客戶流失及品牌長期價值驗證。本模型為教學式 SKU simulation，不代表任何品牌的實際 P&amp;L。</span><span class="en"><strong>How to read it:</strong> when price rises faster than volume falls—and part of cost is fixed per piece—total contribution can grow. A real decision still requires elasticity, client-loss and long-term brand-value validation. This is an illustrative SKU simulation, not any brand’s actual P&amp;L.</span></div>
+            <div class="model-annotation"><span class="zh"><strong>讀法：</strong>可先設定基準件數和單件 COGS，再測試價格與需求變動。若價格上升速度高於流失的需求，加上部分成本在每件上固定，總貢獻可上升；但決策前仍須以價格彈性、客戶流失及品牌長期價值驗證。本模型為教學式 SKU simulation，不代表任何品牌的實際 P&amp;L。</span><span class="en"><strong>How to read it:</strong> set baseline units and unit COGS first, then test price and volume moves. When price rises faster than volume falls—and part of cost is fixed per piece—total contribution can grow. A real decision still requires elasticity, client-loss and long-term brand-value validation. This is an illustrative SKU simulation, not any brand’s actual P&amp;L.</span></div>
           </div>
         </div>
       </div>
@@ -362,10 +370,10 @@
       const basePrice = Number(document.getElementById('base-price').value);
       const priceChange = Number(document.getElementById('price-change').value) / 100;
       const volumeChange = Number(document.getElementById('volume-change').value) / 100;
-      const baseUnits = 100;
+      const baseUnits = Number(document.getElementById('base-units-input').value);
+      const cogsPerUnit = Number(document.getElementById('unit-cogs').value);
       const scenarioUnits = Math.max(0, Math.round(baseUnits * (1 + volumeChange)));
       const scenarioPrice = basePrice * (1 + priceChange);
-      const cogsPerUnit = basePrice * 0.31;
       const distributionRate = 0.05;
       const retailCostRate = 0.24;
       const marketingRate = 0.10;
@@ -385,9 +393,12 @@
       const scenario = calculate(scenarioPrice, scenarioUnits);
       const contributionChange = base.contribution ? ((scenario.contribution / base.contribution) - 1) * 100 : 0;
 
+      setText('base-units-output', `${baseUnits} ${locale() === 'zh' ? '件' : 'units'}`);
+      setText('unit-cogs-output', money(cogsPerUnit));
       setText('base-price-output', money(basePrice));
       setText('price-change-output', signedPct(priceChange * 100));
       setText('volume-change-output', signedPct(volumeChange * 100));
+      setText('simulator-label', locale() === 'zh' ? `SKU contribution model · ${baseUnits} 件基準銷量 · 單件 COGS ${money(cogsPerUnit)}` : `SKU contribution model · ${baseUnits}-unit baseline · Unit COGS ${money(cogsPerUnit)}`);
       setText('base-units', `${baseUnits} ${locale() === 'zh' ? '件' : 'units'}`);
       setText('scenario-units', `${scenarioUnits} ${locale() === 'zh' ? '件' : 'units'}`);
 
@@ -403,13 +414,15 @@
     }
 
     function resetSimulator() {
+      document.getElementById('base-units-input').value = 100;
+      document.getElementById('unit-cogs').value = 3000;
       document.getElementById('base-price').value = 9800;
       document.getElementById('price-change').value = 10;
       document.getElementById('volume-change').value = -5;
       updateSimulator();
     }
 
-    document.querySelectorAll('#base-price, #price-change, #volume-change').forEach(input => input.addEventListener('input', updateSimulator));
+    document.querySelectorAll('#base-units-input, #unit-cogs, #base-price, #price-change, #volume-change').forEach(input => input.addEventListener('input', updateSimulator));
     window.addEventListener('DOMContentLoaded', () => {
       const preferredLanguage = localStorage.getItem('portfolio-language');
       if (preferredLanguage) {
