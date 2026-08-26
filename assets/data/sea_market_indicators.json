@@ -1,0 +1,113 @@
+{
+  "captured_at_utc": "2026-08-26T03:33:02.387464Z",
+  "markets": {
+    "SGP": {
+      "market": "Singapore",
+      "gdp_per_capita_usd": {
+        "value": 98813.9788172877,
+        "year": 2025,
+        "source": "World Bank Open Data",
+        "indicator": "NY.GDP.PCAP.CD"
+      },
+      "population": {
+        "value": 6111175,
+        "year": 2025,
+        "source": "World Bank Open Data",
+        "indicator": "SP.POP.TOTL"
+      },
+      "tourism_arrivals": {
+        "value": 2742000,
+        "year": 2020,
+        "source": "World Bank Open Data",
+        "indicator": "ST.INT.ARVL"
+      },
+      "gdp_growth_pct": {
+        "value": 5.02588199508003,
+        "year": 2025,
+        "source": "World Bank Open Data",
+        "indicator": "NY.GDP.MKTP.KD.ZG"
+      }
+    },
+    "THA": {
+      "market": "Thailand",
+      "gdp_per_capita_usd": {
+        "value": 8056.56359761558,
+        "year": 2025,
+        "source": "World Bank Open Data",
+        "indicator": "NY.GDP.PCAP.CD"
+      },
+      "population": {
+        "value": 71619863,
+        "year": 2025,
+        "source": "World Bank Open Data",
+        "indicator": "SP.POP.TOTL"
+      },
+      "tourism_arrivals": {
+        "value": 39916000,
+        "year": 2019,
+        "source": "World Bank Open Data",
+        "indicator": "ST.INT.ARVL"
+      },
+      "gdp_growth_pct": {
+        "value": 2.44247444990198,
+        "year": 2025,
+        "source": "World Bank Open Data",
+        "indicator": "NY.GDP.MKTP.KD.ZG"
+      }
+    },
+    "MYS": {
+      "market": "Malaysia",
+      "gdp_per_capita_usd": {
+        "value": 13124.5554178269,
+        "year": 2025,
+        "source": "World Bank Open Data",
+        "indicator": "NY.GDP.PCAP.CD"
+      },
+      "population": {
+        "value": 35977838,
+        "year": 2025,
+        "source": "World Bank Open Data",
+        "indicator": "SP.POP.TOTL"
+      },
+      "tourism_arrivals": {
+        "value": 4333000,
+        "year": 2020,
+        "source": "World Bank Open Data",
+        "indicator": "ST.INT.ARVL"
+      },
+      "gdp_growth_pct": {
+        "value": 5.17127082911057,
+        "year": 2025,
+        "source": "World Bank Open Data",
+        "indicator": "NY.GDP.MKTP.KD.ZG"
+      }
+    },
+    "IDN": {
+      "market": "Indonesia",
+      "gdp_per_capita_usd": {
+        "value": 5059.62596411213,
+        "year": 2025,
+        "source": "World Bank Open Data",
+        "indicator": "NY.GDP.PCAP.CD"
+      },
+      "population": {
+        "value": 285721236,
+        "year": 2025,
+        "source": "World Bank Open Data",
+        "indicator": "SP.POP.TOTL"
+      },
+      "tourism_arrivals": {
+        "value": 4053000,
+        "year": 2020,
+        "source": "World Bank Open Data",
+        "indicator": "ST.INT.ARVL"
+      },
+      "gdp_growth_pct": {
+        "value": 5.10808904438025,
+        "year": 2025,
+        "source": "World Bank Open Data",
+        "indicator": "NY.GDP.MKTP.KD.ZG"
+      }
+    }
+  }
+}
