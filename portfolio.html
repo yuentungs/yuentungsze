@@ -244,8 +244,8 @@
         <div class="pricing-layout">
           <aside class="control-card">
             <h3><span class="zh">假設控制台</span><span class="en">Assumption console</span></h3>
-            <p class="zh">調整基準件數、單件 COGS、配送／零售成本率、基準零售價及方案變動。行銷按零售額比例計算。</p>
-            <p class="en">Adjust baseline units, unit COGS, distribution / retail cost rates, base retail price and scenario moves. Marketing remains revenue-linked.</p>
+            <p class="zh">調整基準件數、單件 COGS、配送成本率、包含行銷的零售成本率、基準零售價及方案變動。</p>
+            <p class="en">Adjust baseline units, unit COGS, distribution cost rate, retail cost rate including marketing, base retail price and scenario moves.</p>
             <div class="control-group">
               <label class="control-label" for="base-units-input"><span><span class="zh">基準件數</span><span class="en">Baseline units</span></span><output id="base-units-output">100 件</output></label>
               <input id="base-units-input" type="range" min="25" max="500" step="5" value="100">
@@ -259,8 +259,8 @@
               <input id="distribution-rate" type="range" min="0" max="20" step="0.5" value="5">
             </div>
             <div class="control-group">
-              <label class="control-label" for="retail-cost-rate"><span><span class="zh">零售成本率</span><span class="en">Retail cost rate</span></span><output id="retail-cost-rate-output">24.0%</output></label>
-              <input id="retail-cost-rate" type="range" min="0" max="40" step="1" value="24">
+              <label class="control-label" for="retail-cost-rate"><span><span class="zh">零售成本率（包括行銷）</span><span class="en">Retail cost rate (incl. marketing)</span></span><output id="retail-cost-rate-output">34.0%</output></label>
+              <input id="retail-cost-rate" type="range" min="0" max="50" step="1" value="34">
             </div>
             <div class="control-group">
               <label class="control-label" for="base-price"><span><span class="zh">基準零售價</span><span class="en">Base retail price</span></span><output id="base-price-output">US$9,800</output></label>
@@ -294,8 +294,7 @@
                   <div class="pnl-line"><span><span class="zh">毛利</span><span class="en">Gross margin</span></span><span id="base-gross-margin">US$680,000</span></div>
                   <div class="pnl-line rate-line"><span><span class="zh">毛利率</span><span class="en">Gross margin rate</span></span><span id="base-gross-margin-rate">69.4%</span></div>
                   <div class="pnl-line"><span><span class="zh">配送／支付</span><span class="en">Distribution / payment</span></span><span id="base-distribution">−US$49,000</span></div>
-                  <div class="pnl-line"><span><span class="zh">零售成本</span><span class="en">Retail cost</span></span><span id="base-retail-cost">−US$235,200</span></div>
-                  <div class="pnl-line"><span><span class="zh">行銷</span><span class="en">Marketing</span></span><span id="base-marketing">−US$98,000</span></div>
+                  <div class="pnl-line"><span><span class="zh">零售成本（包括行銷）</span><span class="en">Retail cost (incl. marketing)</span></span><span id="base-retail-cost">−US$333,200</span></div>
                   <div class="pnl-line total"><span><span class="zh">最終貢獻</span><span class="en">Final contribution</span></span><span id="base-contribution">US$294,000</span></div>
                 </div>
                 <div class="pnl-col">
@@ -305,8 +304,7 @@
                   <div class="pnl-line"><span><span class="zh">毛利</span><span class="en">Gross margin</span></span><span id="scenario-gross-margin">US$739,100</span></div>
                   <div class="pnl-line rate-line"><span><span class="zh">毛利率</span><span class="en">Gross margin rate</span></span><span id="scenario-gross-margin-rate">72.2%</span></div>
                   <div class="pnl-line"><span><span class="zh">配送／支付</span><span class="en">Distribution / payment</span></span><span id="scenario-distribution">−US$51,205</span></div>
-                  <div class="pnl-line"><span><span class="zh">零售成本</span><span class="en">Retail cost</span></span><span id="scenario-retail-cost">−US$245,784</span></div>
-                  <div class="pnl-line"><span><span class="zh">行銷</span><span class="en">Marketing</span></span><span id="scenario-marketing">−US$102,410</span></div>
+                  <div class="pnl-line"><span><span class="zh">零售成本（包括行銷）</span><span class="en">Retail cost (incl. marketing)</span></span><span id="scenario-retail-cost">−US$348,194</span></div>
                   <div class="pnl-line total"><span><span class="zh">最終貢獻</span><span class="en">Final contribution</span></span><span id="scenario-contribution">US$347,491</span></div>
                 </div>
               </div>
@@ -316,7 +314,7 @@
                 <div class="result-stat"><span><span class="zh">貢獻變化</span><span class="en">Contribution change</span></span><strong id="contribution-change">+18.2%</strong></div>
               </div>
             </div>
-            <div class="model-annotation"><span class="zh"><strong>讀法：</strong>先設定基準件數、單件 COGS、配送與零售成本率，再測試價格與需求變動。毛利率 =（零售收入 − COGS）÷ 零售收入；貢獻率則在毛利後再扣除配送、零售及行銷。本模型為教學式 SKU simulation，不代表任何品牌的實際 P&amp;L。</span><span class="en"><strong>How to read it:</strong> set baseline units, unit COGS, distribution and retail cost rates first, then test price and volume moves. Gross margin rate = (retail revenue − COGS) ÷ retail revenue; contribution rate deducts distribution, retail and marketing after gross margin. This is an illustrative SKU simulation, not any brand’s actual P&amp;L.</span></div>
+            <div class="model-annotation"><span class="zh"><strong>讀法：</strong>先設定基準件數、單件 COGS、配送成本率與包括行銷的零售成本率，再測試價格與需求變動。毛利率 =（零售收入 − COGS）÷ 零售收入；貢獻率則在毛利後再扣除配送及零售成本（包括行銷）。本模型為教學式 SKU simulation，不代表任何品牌的實際 P&amp;L。</span><span class="en"><strong>How to read it:</strong> set baseline units, unit COGS, distribution cost rate and retail cost rate including marketing first, then test price and volume moves. Gross margin rate = (retail revenue − COGS) ÷ retail revenue; contribution rate deducts distribution and retail cost, including marketing, after gross margin. This is an illustrative SKU simulation, not any brand’s actual P&amp;L.</span></div>
           </div>
         </div>
       </div>
@@ -386,7 +384,6 @@
       const retailCostRate = Number(document.getElementById('retail-cost-rate').value) / 100;
       const scenarioUnits = Math.max(0, Math.round(baseUnits * (1 + volumeChange)));
       const scenarioPrice = basePrice * (1 + priceChange);
-      const marketingRate = 0.10;
 
       const calculate = (price, units) => {
         const revenue = price * units;
@@ -394,9 +391,8 @@
         const grossMargin = revenue - cogs;
         const distribution = revenue * distributionRate;
         const retailCost = revenue * retailCostRate;
-        const marketing = revenue * marketingRate;
-        const contribution = grossMargin - distribution - retailCost - marketing;
-        return { revenue, cogs, grossMargin, distribution, retailCost, marketing, contribution, grossMarginRate: revenue ? grossMargin / revenue : 0, contributionRate: revenue ? contribution / revenue : 0 };
+        const contribution = grossMargin - distribution - retailCost;
+        return { revenue, cogs, grossMargin, distribution, retailCost, contribution, grossMarginRate: revenue ? grossMargin / revenue : 0, contributionRate: revenue ? contribution / revenue : 0 };
       };
 
       const base = calculate(basePrice, baseUnits);
@@ -415,8 +411,8 @@
       setText('scenario-units', `${scenarioUnits} ${locale() === 'zh' ? '件' : 'units'}`);
 
       const fields = [
-        ['base-revenue', base.revenue, false], ['base-cogs', base.cogs, true], ['base-gross-margin', base.grossMargin, false], ['base-distribution', base.distribution, true], ['base-retail-cost', base.retailCost, true], ['base-marketing', base.marketing, true], ['base-contribution', base.contribution, false],
-        ['scenario-revenue', scenario.revenue, false], ['scenario-cogs', scenario.cogs, true], ['scenario-gross-margin', scenario.grossMargin, false], ['scenario-distribution', scenario.distribution, true], ['scenario-retail-cost', scenario.retailCost, true], ['scenario-marketing', scenario.marketing, true], ['scenario-contribution', scenario.contribution, false]
+        ['base-revenue', base.revenue, false], ['base-cogs', base.cogs, true], ['base-gross-margin', base.grossMargin, false], ['base-distribution', base.distribution, true], ['base-retail-cost', base.retailCost, true], ['base-contribution', base.contribution, false],
+        ['scenario-revenue', scenario.revenue, false], ['scenario-cogs', scenario.cogs, true], ['scenario-gross-margin', scenario.grossMargin, false], ['scenario-distribution', scenario.distribution, true], ['scenario-retail-cost', scenario.retailCost, true], ['scenario-contribution', scenario.contribution, false]
       ];
       fields.forEach(([id, value, negative]) => setText(id, `${negative ? '−' : ''}${money(value)}`));
       setText('base-gross-margin-rate', percent(base.grossMarginRate));
@@ -431,7 +427,7 @@
       document.getElementById('base-units-input').value = 100;
       document.getElementById('unit-cogs').value = 3000;
       document.getElementById('distribution-rate').value = 5;
-      document.getElementById('retail-cost-rate').value = 24;
+      document.getElementById('retail-cost-rate').value = 34;
       document.getElementById('base-price').value = 9800;
       document.getElementById('price-change').value = 10;
       document.getElementById('volume-change').value = -5;
