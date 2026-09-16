@@ -17,7 +17,7 @@ social_block = '''\n    <section class="social-share" aria-label="Social media s
 for filename in articles:
     path = ROOT / filename
     text = path.read_text(encoding='utf-8')
-    needs_css = '.view-count' not in text
+    needs_css = '.view-count {' not in text
     if 'data-view-count' not in text:
         marker = '    <div class="article-layout">'
         view = '    <p class="view-count"><span class="zh">本機瀏覽次數：</span><span class="en">Views on this device: </span><span data-view-count>0</span></p>\n'
