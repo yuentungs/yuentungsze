@@ -29,7 +29,10 @@ for filename in articles:
                 text = text.replace(marker, social_block + marker, 1)
                 break
     if needs_css:
-        text = text.replace('  <style>', '  <style>' + view_css, 1)
+        if '  <style>' in text:
+            text = text.replace('  <style>', '  <style>' + view_css, 1)
+        else:
+            text = text.replace('</head>', '  <style>' + view_css + '  </style>\n</head>', 1)
     if 'yt-article-views-' not in text:
         text = text.replace('  <script src="./assets/js/site.js"></script>', '  <script src="./assets/js/site.js"></script>' + view_script, 1)
     path.write_text(text, encoding='utf-8')
