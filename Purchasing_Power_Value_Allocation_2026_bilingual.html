@@ -42,6 +42,7 @@
       <p class="article-deck en">From UNIQLO and luxury resale to blind boxes and travel: value is not synonymous with resale value. What has changed is that every purchase in a limited budget must answer “why this, and why now?”</p>
     </section>
 
+    <p class="view-count"><span class="zh">本機瀏覽次數：</span><span class="en">Views on this device: </span><span data-view-count>0</span></p>
     <div class="article-layout">
       <aside class="article-toc" id="articleToc" aria-label="Table of contents"></aside>
       <article class="article-body">
@@ -313,6 +314,13 @@
       </article>
     </div>
 
+
+    <section class="social-share" aria-label="Social media summary">
+      <h3 class="zh">社交媒體／LinkedIn 推廣摘要</h3>
+      <h3 class="en">Social media / LinkedIn summary</h3>
+      <p class="zh">AI 減速倡議不等於停止 AI。真正的問題是：當各國與企業都擔心對手先取得優勢時，誰願意先放慢？本文以 Simunovic 等人的先發制人實驗，分析恐懼、不確定性如何形成 AI 競賽僵局，並拆解倡議的受益者、市場反應，以及未來安全監管與美中競爭可能如何並行發展。</p>
+      <p class="en">AI pacing does not mean stopping AI. The harder question is: when every country and company fears that a rival may gain the advantage first, who is willing to slow down first? This article uses Simunovic et al.'s preemptive-strike experiment to explain how fear and uncertainty sustain the AI race, then examines who benefits, how markets reacted, and why safety regulation and US-China competition may advance in parallel.</p>
+    </section>
     <aside class="article-author">
       <h3>Written by Yuen Tung Sze</h3>
       <p><span class="zh">Senior Product Management · Fine Jewellery · Southeast Asia。以產品架構、消費者行為及市場訊號，研究 Luxury 的增長邏輯。</span><span class="en">Senior Product Management · Fine Jewellery · Southeast Asia. Researching luxury growth through product architecture, consumer behaviour, and market signals.</span> <a href="./experience.html"><span class="zh">查看作者背景</span><span class="en">View credentials</span></a></p>
@@ -326,6 +334,17 @@
 
   <footer class="footer"><p>&copy; 2026 YT. <span class="zh">Luxury、Jewellery 與 Consumer Analysis</span><span class="en">Luxury, Jewellery &amp; Consumer Analysis</span></p></footer>
   <script src="./assets/js/site.js"></script>
+  <script>
+    (() => {
+      const key = `yt-article-views-${location.pathname}`;
+      const current = Number(localStorage.getItem(key) || 0) + 1;
+      localStorage.setItem(key, String(current));
+      document.querySelectorAll('[data-view-count]').forEach((el) => {
+        el.textContent = current.toLocaleString();
+      });
+    })();
+  </script>
+
   <script>
     (() => {
       const html = document.documentElement;

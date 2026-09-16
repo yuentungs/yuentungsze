@@ -9,6 +9,12 @@
     <meta name="keywords" content="Solopreneur, Cost Structure, Shopify, Etsy, Amazon, AI Ecommerce, DTC Strategy, CAC, GMV">
     <link rel="stylesheet" href="./assets/css/style.css">
     <style>
+    .view-count { margin-top: 18px; color: #66717a; font-size: .82rem; letter-spacing: .03em; }
+    .social-share { width: min(var(--reading-width), 100%); margin: 42px auto 0; padding: 22px 24px; border: 1px solid var(--rule); background: #fbfaf7; }
+    .social-share h3 { margin: 0 0 12px; color: var(--ink); font: 700 1.1rem/1.3 "Helvetica Neue", Helvetica, Arial, sans-serif; }
+    .social-share p { margin: 0 0 14px; color: #56616b; font-size: .92rem; line-height: 1.7; }
+    .social-share p:last-child { margin-bottom: 0; }
+
         [lang="en"] .zh { display: none !important; }
         [lang="zh"] .en { display: none !important; }
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; line-height: 1.6; color: #333; background-color: #f9f9f9; }
@@ -56,7 +62,8 @@
         <p class="article-deck zh">從成本結構，而不是單一技術決定論，重新理解 AI、平台基礎設施與一人公司的競爭現實。</p>
         <p class="article-deck en">A reading of AI, platform infrastructure and solopreneur competition through cost structure rather than technological determinism.</p>
       </section>
-      <div class="article-layout">
+      <p class="view-count"><span class="zh">本機瀏覽次數：</span><span class="en">Views on this device: </span><span data-view-count>0</span></p>
+    <div class="article-layout">
         <aside class="article-toc" id="articleToc" aria-label="Table of contents"></aside>
         <article class="article-body">
 
@@ -280,6 +287,13 @@ Despite these challenges, solopreneurship is still worth trying because 'low tri
 
         </article>
       </div>
+
+    <section class="social-share" aria-label="Social media summary">
+      <h3 class="zh">社交媒體／LinkedIn 推廣摘要</h3>
+      <h3 class="en">Social media / LinkedIn summary</h3>
+      <p class="zh">AI 減速倡議不等於停止 AI。真正的問題是：當各國與企業都擔心對手先取得優勢時，誰願意先放慢？本文以 Simunovic 等人的先發制人實驗，分析恐懼、不確定性如何形成 AI 競賽僵局，並拆解倡議的受益者、市場反應，以及未來安全監管與美中競爭可能如何並行發展。</p>
+      <p class="en">AI pacing does not mean stopping AI. The harder question is: when every country and company fears that a rival may gain the advantage first, who is willing to slow down first? This article uses Simunovic et al.'s preemptive-strike experiment to explain how fear and uncertainty sustain the AI race, then examines who benefits, how markets reacted, and why safety regulation and US-China competition may advance in parallel.</p>
+    </section>
       <aside class="article-author">
         <h3>Written by Yuen Tung Sze</h3>
         <p><span class="zh">Senior Product Management · Fine Jewellery · Southeast Asia。以產品架構、消費者行為及市場訊號研究 Luxury 的增長邏輯。</span><span class="en">Senior Product Management · Fine Jewellery · Southeast Asia. Researching luxury growth through product architecture, consumer behaviour and market signals.</span> <a href="./experience.html"><span class="zh">查看作者背景</span><span class="en">View credentials</span></a></p>
@@ -292,6 +306,17 @@ Despite these challenges, solopreneurship is still worth trying because 'low tri
     </main>
     <footer class="footer"><p>&copy; 2026 YT. <span class="zh">Luxury、Jewellery 與 Consumer Analysis</span><span class="en">Luxury, Jewellery &amp; Consumer Analysis</span></p></footer>
     <script src="./assets/js/site.js"></script>
+  <script>
+    (() => {
+      const key = `yt-article-views-${location.pathname}`;
+      const current = Number(localStorage.getItem(key) || 0) + 1;
+      localStorage.setItem(key, String(current));
+      document.querySelectorAll('[data-view-count]').forEach((el) => {
+        el.textContent = current.toLocaleString();
+      });
+    })();
+  </script>
+
     <script>
         function toggleLang() {
             const html = document.documentElement;
