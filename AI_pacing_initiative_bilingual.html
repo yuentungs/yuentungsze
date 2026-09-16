@@ -22,6 +22,7 @@
     .article-body code { background: #f2f4f5; padding: .12em .3em; }
     .article-body a { color: var(--editorial-blue); }
     .article-body table { display: block; overflow-x: auto; }
+    .article-body h2 { scroll-margin-top: 96px; }
   </style>
 </head>
 <body>
@@ -35,7 +36,7 @@
         <li><a href="./market-dashboard.html"><span class="zh">市場看板</span><span class="en">Market Dashboard</span></a></li>
         <li><a href="./experience.html"><span class="zh">關於作者</span><span class="en">About</span></a></li>
         <li><a href="./services.html"><span class="zh">合作</span><span class="en">Work With Me</span></a></li>
-        <li><button class="lang-btn" onclick="toggleLang()">English</button></li>
+        <li><button class="lang-btn" type="button">English</button></li>
       </ul>
     </nav>
     <div class="progress-container"><div class="progress-bar" id="myBar"></div></div>
@@ -564,7 +565,7 @@
       function renderToc() {
         const language = activeLanguage();
         articleToc.innerHTML = `<p>${language === 'zh' ? '本頁內容' : 'On this page'}</p>`;
-        document.querySelectorAll(`.article-body h2.${language}`).forEach((heading, index) => {
+        document.querySelectorAll(`.article-body .${language} h2`).forEach((heading, index) => {
           const id = `section-${language}-${index + 1}`;
           heading.id = id;
           const link = document.createElement('a');

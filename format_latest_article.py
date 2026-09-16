@@ -3,6 +3,8 @@ from pathlib import Path
 path = Path('/home/ubuntu/yuentungsze/AI_pacing_initiative_bilingual.html')
 text = path.read_text(encoding='utf-8')
 text = text.replace('<span class="section-kicker">AI · Industry insight</span>', '<span class="eyebrow">AI &amp; Industry Insight / Market &amp; Policy</span>\n      <div class="article-meta"><span class="zh">12 分鐘閱讀</span><span class="en">12 min read</span><span>September 2026</span><span class="zh">中英雙語</span><span class="en">Bilingual</span></div>')
+text = text.replace('<button class="lang-btn" onclick="toggleLang()">English</button>', '<button class="lang-btn" type="button">English</button>')
+text = text.replace('    .article-body table { display: block; overflow-x: auto; }', '    .article-body table { display: block; overflow-x: auto; }\n    .article-body h2 { scroll-margin-top: 96px; }')
 text = text.replace('    <header class="article-header">', '    <section class="article-header">', 1)
 text = text.replace('    </header>\n    <p class="view-count">', '    </section>\n    <p class="view-count">', 1)
 old = '''    <div class="article-layout">
@@ -60,7 +62,7 @@ script = '''  <script>
       function renderToc() {
         const language = activeLanguage();
         articleToc.innerHTML = `<p>${language === 'zh' ? '本頁內容' : 'On this page'}</p>`;
-        document.querySelectorAll(`.article-body h2.${language}`).forEach((heading, index) => {
+        document.querySelectorAll(`.article-body .${language} h2`).forEach((heading, index) => {
           const id = `section-${language}-${index + 1}`;
           heading.id = id;
           const link = document.createElement('a');

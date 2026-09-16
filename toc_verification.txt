@@ -1,0 +1,7 @@
+AI pacing article TOC verification — 2026-09-16
+
+- Automatic TOC rendered 9 Chinese section links with generated anchors section-zh-1 through section-zh-9.
+- Clicking “一、Simunovic 等人的先發制人實驗” changed the URL hash to #section-zh-2.
+- Browser scrolled from the top to 826 pixels above viewport and positioned the target heading below the fixed navigation.
+- Language button rendered without the obsolete inline onclick handler.
+- Result: automatic TOC navigation works after selector change from `.article-body h2.${language}` to `.article-body .${language} h2` and addition of `scroll-margin-top: 96px`.
