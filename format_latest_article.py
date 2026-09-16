@@ -57,7 +57,7 @@ script = '''  <script>
       function updateDocumentTitle() {
         document.title = activeLanguage() === 'zh'
           ? 'AI 減速倡議：誰受益、市場如何理解、未來如何發展 | YT'
-          : 'The AI Pacing Initiative: Who Benefits, How the Market Interprets It, and What Comes Next | YT';
+          : 'The AI Pacing Initiative: Who Benefits, How Markets Read It and What Comes Next | YT';
       }
       function renderToc() {
         const language = activeLanguage();

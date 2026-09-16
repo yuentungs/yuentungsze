@@ -60,7 +60,7 @@ page = f'''<!DOCTYPE html>
     <header class="article-header">
       <span class="section-kicker">AI · Industry insight</span>
       <h1 class="zh">AI 減速倡議：誰受益、市場如何理解、未來如何發展</h1>
-      <h1 class="en">The AI Pacing Initiative: Who Benefits, How the Market Interprets It, and What Comes Next</h1>
+      <h1 class="en">The AI Pacing Initiative: Who Benefits, How Markets Read It and What Comes Next</h1>
       <p class="article-deck zh">從 Simunovic 等人的先發制人實驗，理解為什麼各國明知 AI 競賽有風險，仍然難以單方面減速。</p>
       <p class="article-deck en">Using Simunovic et al.'s preemptive-strike experiment to explain why countries struggle to slow AI competition unilaterally despite recognising its risks.</p>
     </header>
