@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>開源 AI 與閉源巨頭：模型商品化之後，真正的護城河在哪裡？ | YT Insights</title>
+  <meta name="description" content="分析開源、開放權重與閉源AI在模型性能、成本、雲端分發、安全治理與國家競爭中的博弈。">
+  <meta name="author" content="Yuen Tung Sze">
+  <meta property="og:title" content="開源 AI 與閉源巨頭：模型商品化之後，真正的護城河在哪裡？">
+  <meta property="og:description" content="Where value and control move as open-weight models commoditize the model layer.">
+  <meta property="og:type" content="article">
+  <link rel="canonical" href="https://yuentungs.github.io/yuentungsze/open_weight_ai_vs_closed_giants_bilingual.html">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <style>
+    .article-body ul, .article-body ol { margin: 0 0 22px 1.35rem; line-height: 1.8; }
+    .article-body blockquote { margin: 26px 0; padding: 16px 20px; border-left: 4px solid var(--muted-gold); background: #fbfaf7; color: #49535d; }
+    .article-body a { color: var(--editorial-blue); }
+    .article-body table { display: block; overflow-x: auto; }
+    .article-body h2 { scroll-margin-top: 96px; }
+    .view-count { margin-top: 18px; color: #66717a; font-size: .82rem; letter-spacing: .03em; }
+    .article-figure { margin: 34px 0; }
+    .article-figure img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); }
+    .article-figure figcaption { margin-top: 10px; color: var(--muted); font-size: .82rem; line-height: 1.6; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a class="logo" href="./index.html" aria-label="YT Home">YT</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
+      <ul id="site-menu" class="nav-menu">
+        <li><a href="./insights.html" aria-current="page"><span class="zh">洞察</span><span class="en">Insights</span></a></li>
+        <li><a href="./portfolio.html"><span class="zh">案例</span><span class="en">Case Studies</span></a></li>
+        <li><a href="./market-dashboard.html"><span class="zh">市場看板</span><span class="en">Market Dashboard</span></a></li>
+        <li><a href="./experience.html"><span class="zh">關於作者</span><span class="en">About</span></a></li>
+        <li><a href="./services.html"><span class="zh">合作</span><span class="en">Work With Me</span></a></li>
+        <li><button class="lang-btn" type="button">English</button></li>
+      </ul>
+    </nav>
+    <div class="progress-container"><div class="progress-bar" id="myBar"></div></div>
+  </header>
+  <main class="article-shell">
+    <section class="article-header">
+      <span class="eyebrow">AI &amp; Industry Insight / Open Models</span>
+      <div class="article-meta"><span class="zh">14 分鐘閱讀</span><span class="en">14 min read</span><span>September 2026</span><span class="zh">中英雙語</span><span class="en">Bilingual</span></div>
+      <h1 class="zh">開源 AI 與閉源巨頭：模型商品化之後，真正的護城河在哪裡？</h1>
+      <h1 class="en">Open-Weight AI vs. Closed Giants: Where the Moat Moves as Models Commoditize</h1>
+      <p class="article-deck zh">AI減速倡議的續篇：當開放權重逼近前沿，競爭焦點如何轉向算力、雲端、工作流、安全控制與主權AI。</p>
+      <p class="article-deck en">A sequel to the AI pacing analysis: as open weights approach the frontier, competition moves to compute, cloud distribution, workflows, safety controls and sovereign AI.</p>
+    </section>
+    <p class="view-count"><span class="zh">本機瀏覽次數：</span><span class="en">Views on this device: </span><span data-view-count>0</span></p>
+    <div class="article-layout">
+      <aside class="article-toc" id="articleToc" aria-label="Table of contents"></aside>
+      <article class="article-body">
+        <div class="zh"><h2>核心判斷</h2>
+<p>開源 AI 與閉源巨頭的競爭，不會以其中一方完全消滅另一方結束。更可能出現的結果是：<strong>開放權重模型把通用模型能力逐步商品化；閉源巨頭則把商業價值轉移到算力、雲端分發、企業工作流、專有資料整合和持續安全控制。</strong></p>
+<p>這場博弈也不是單純的技術競賽。它同時決定企業是否被單一供應商鎖定，監管是否提高市場進入門檻，以及國家能否在自己的法律、語言和資料邊界內運行 AI。</p>
+<blockquote>
+<p><strong>開放權重降低了取得模型的門檻，卻沒有消除算力和部署門檻；閉源服務保留了能力和控制優勢，卻必須面對價格下降與供應商鎖定的反作用力。</strong></p>
+</blockquote>
+<h2>一、先校正詞彙：可下載不等於真正開源</h2>
+<p>市場經常把可以下載權重的模型稱為「開源 AI」，但這個說法不夠準確。</p>
+<p>Open Source Initiative 的《Open Source AI Definition 1.0》要求一個開源 AI 系統同時滿足兩類條件。使用者首先要擁有為任何目的使用、研究、修改和分享系統的自由。開發者亦要提供可修改的必要材料，包括資料資訊、完整訓練與執行程式碼，以及模型參數或權重。<a href="https://opensource.org/ai/open-source-ai-definition" title="Open Source Initiative — The Open Source AI Definition 1.0">1</a></p>
+<p><strong>開放權重（open-weight）</strong>只代表訓練後的參數可以取得。使用者通常可以本地部署、量化或微調模型，但未必能取得完整訓練資料、資料處理流程和端到端訓練程式，也可能受到用途、規模或再分發限制。美國國家電信暨資訊管理局也把可廣泛下載的權重與模型架構、訓練程序和資料明確分開。<a href="https://www.ntia.gov/programs-and-initiatives/artificial-intelligence/open-model-weights-report" title="NTIA — Dual-Use Foundation Models with Widely Available Model Weights Report">2</a></p>
+<p>例如，Meta 的 Llama 3.1 可以下載和修改，但其社群授權包含歸屬、命名和使用政策；月活躍使用者超過7億的企業還需要另行申請授權。<a href="https://developer.meta.com/ai/llama3_1/license/" title="Meta — Llama 3.1 Community License Agreement">3</a> 因此，它更適合被稱為開放權重模型，而不是不附條件的開源 AI。</p>
+<p>這個區別直接影響商業判斷。<strong>可下載</strong>回答的是能否取得模型；<strong>可商用</strong>回答的是授權是否容許某類商業活動；<strong>真正開源</strong>則要求更廣泛的權利和完整工件。三者不能互相代替。</p>
+<table>
+<thead>
+<tr>
+<th>發布模式</th>
+<th>使用者實際取得</th>
+<th>主要優勢</th>
+<th>主要限制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>真正開源 AI</td>
+<td>權重、必要程式、資料資訊及廣泛修改與分享權</td>
+<td>可審計、可重建、可自由形成衍生生態</td>
+<td>前沿模型極少完整達到這一標準</td>
+</tr>
+<tr>
+<td>開放權重</td>
+<td>可下載參數，通常可本地部署和微調</td>
+<td>資料控制、客製化及供應商替換</td>
+<td>訓練流程可能不透明，授權可能有限制</td>
+</tr>
+<tr>
+<td>閉源服務</td>
+<td>API或產品介面，不交付模型資產</td>
+<td>快速部署、前沿能力、持續更新及安全控制</td>
+<td>按量收費、可見性有限、存在平台鎖定</td>
+</tr>
+</tbody>
+</table>
+<h2>二、開放權重正在壓低模型本身的稀缺性</h2>
+<p>閉源公司的第一層護城河是模型能力。但當相近能力透過開放權重快速擴散，這道護城河的維持時間就會縮短。</p>
+<p>Stanford AI Index 2025 顯示，在 Chatbot Arena 的人類偏好排名中，領先閉源模型與領先開放權重模型的差距，由2024年1月的8.04%縮小至2025年2月的1.70%。<a href="https://hai-production.s3.amazonaws.com/files/hai_ai_index_report_2025.pdf" title="Stanford HAI — Artificial Intelligence Index Report 2025">6</a> 這證明開放權重模型曾迅速逼近前沿。</p>
+<p>但「全面追平」同樣是過度推論。Stanford AI Index 2026 的同一序列顯示，到2026年3月，領先閉源模型得分為1,503，領先開放權重模型為1,454，差距重新擴大至約3.4%。<a href="https://hai.stanford.edu/assets/files/ai_index_report_2026.pdf" title="Stanford HAI — Artificial Intelligence Index Report 2026">7</a></p>
+<p>這組數據反映的不是固定排名，而是<strong>發布週期</strong>。閉源實驗室推出新一代模型後，差距可能擴大；開放生態透過蒸餾、微調、效率改進和新模型發布追上後，差距又會縮小。</p>
+<table>
+<thead>
+<tr>
+<th>時點</th>
+<th style="text-align: right;">領先閉源與開放權重模型的差距</th>
+<th>解讀</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2024年1月</td>
+<td style="text-align: right;">8.04%</td>
+<td>閉源前沿優勢明顯</td>
+</tr>
+<tr>
+<td>2025年2月</td>
+<td style="text-align: right;">1.70%</td>
+<td>開放權重快速逼近</td>
+</tr>
+<tr>
+<td>2026年3月</td>
+<td style="text-align: right;">約3.4%</td>
+<td>新一輪閉源發布再次拉開差距</td>
+</tr>
+</tbody>
+</table>
+<p>單一排行榜不能代表所有企業任務。程式開發、代理工作流、長上下文、亞洲語言、科學推理、延遲和安全表現都可能得出不同結果。真正重要的變化是：<strong>大量「足夠好」的工作負載已不再需要最昂貴的閉源前沿模型。</strong></p>
+<p>這會把競爭由「誰擁有模型」推向「誰能以最低成本把模型變成可靠產品」。</p>
+
+        <figure class="article-figure">
+          <img src="./assets/img/open-closed-frontier-gap-zh.png" alt="2024至2026年領先閉源與開放權重模型在Chatbot Arena的差距圖">
+          <figcaption>Stanford AI Index 的歷史數據顯示，開放權重曾快速逼近，但差距會隨模型發布週期再次擴大。</figcaption>
+        </figure>
+<h2>三、閉源巨頭正在把護城河移到模型之外</h2>
+<p>當模型能力變得較容易替代，閉源巨頭不會只靠每百萬 token 的價格維持優勢。它們會把模型嵌入更難替換的系統。</p>
+<p>第一層是<strong>算力和容量</strong>。訓練前沿模型需要晶片、電力、資料中心和分散式工程；服務大量企業客戶還需要穩定的推理容量。即使模型權重可以免費下載，部署大型模型仍可能需要多張 GPU、專業維運和安全基礎設施。</p>
+<p>第二層是<strong>分發</strong>。Microsoft 可以把模型能力放入 Azure、Microsoft 365和GitHub；Google可以結合Cloud、Workspace和Android；Amazon則可透過AWS、Bedrock和企業雲端關係分發多種模型。客戶購買的不只是模型，而是一套已經連接身份權限、資料庫、監控、合規和採購流程的服務。</p>
+<p>第三層是<strong>工作流鎖定</strong>。企業最深的轉換成本通常不在API呼叫本身，而在檢索增強生成（RAG）資料管線、提示詞、工具介面、離線評測、安全規則、審計紀錄和員工培訓。更換模型可以很快，重建整套流程卻不容易。</p>
+<p>OECD指出，AI市場的算力、資料、人才和雲端供應仍高度集中。雲端業務具有資本密集、規模經濟和切換成本。<a href="https://www.oecd.org/en/publications/artificial-intelligence-markets_d531d73f-en/full-report.html" title="OECD — Artificial Intelligence Markets: Recent Developments and Competition Issues">8</a> 同一研究亦顯示，2024年1月至2026年4月，語言模型開發者由9家增加至47家，活躍文字模型由22個增加至453個。<a href="https://www.oecd.org/en/publications/artificial-intelligence-markets_d531d73f-en/full-report.html" title="OECD — Artificial Intelligence Markets: Recent Developments and Competition Issues">8</a></p>
+<p>這兩個趨勢可以同時成立：<strong>模型供應增加，但關鍵基礎設施仍然集中。</strong></p>
+<h2>四、成本優勢取決於負載，而不是陣營</h2>
+<p>開放權重支持者經常引用 DeepSeek-V3 約557.6萬美元的訓練數字，證明前沿能力不一定需要巨額投入。但技術報告明確表示，這只是按H800 GPU小時計算的正式訓練成本，不包括之前的架構研究、演算法實驗、資料工作及失敗嘗試。<a href="https://arxiv.org/html/2412.19437v2" title="DeepSeek-V3 Technical Report">4</a></p>
+<p>Epoch AI 對前沿模型成本的研究顯示，若計入完整開發，人員可以佔29%至49%，硬體約佔47%至67%，能源約佔2%至6%。雲端租用與硬體折舊的估算口徑也會產生明顯不同的結果。<a href="https://epoch.ai/publications/how-much-does-it-cost-to-train-frontier-ai-models" title="Epoch AI — How Much Does It Cost to Train Frontier AI Models?">5</a></p>
+<p>推理價格則正在快速下降。Stanford AI Index 2025顯示，達到GPT-3.5級MMLU表現的API價格，由2022年11月每百萬token 20美元降至2024年10月0.07美元，下降超過280倍。<a href="https://hai-production.s3.amazonaws.com/files/hai_ai_index_report_2025.pdf" title="Stanford HAI — Artificial Intelligence Index Report 2025">6</a></p>
+<p>這對雙方都造成壓力。</p>
+<p>閉源供應商必須透過更強模型、企業保障、工具和工作流提高每名客戶的價值。開放權重供應商則不能只以「免費權重」建立商業模式，而要透過託管推理、私有部署、微調、連接器、服務水準協議和專業服務收費。</p>
+<p>對企業來說，正確問題不是「開放是否比閉源便宜」，而是：</p>
+<ul>
+<li>流量是否穩定，足以提高自有GPU利用率？</li>
+<li>敏感資料是否必須留在內部環境？</li>
+<li>團隊是否具備模型運維、安全和評測能力？</li>
+<li>任務是否真的需要最前沿能力？</li>
+<li>API費用以外，工程人力、閒置容量和風險成本是多少？</li>
+</ul>
+<p><strong>低流量、需求波動大的團隊通常更適合API；高流量、任務穩定且具備平台能力的企業，才較可能從自管開放權重取得總持有成本優勢。</strong></p>
+<h2>五、安全爭論其實是控制權與不可逆性的博弈</h2>
+<p>開放權重並非天然安全，也並非天然危險。它改變的是模型發布後的控制條件。</p>
+<p>權重公開後，外部研究者可以更深入測試偏差、漏洞和安全機制。企業也可以在不把資料交給外部供應商的情況下運行模型。這有利於透明度、本地隱私和獨立研究。<a href="https://www.ntia.gov/programs-and-initiatives/artificial-intelligence/open-model-weights-report" title="NTIA — Dual-Use Foundation Models with Widely Available Model Weights Report">2</a></p>
+<p>另一方面，模型一旦被大量下載，原開發者便難以收回副本、遠端修補安全機制或監察使用方式。閉源API可以封鎖帳戶、更新模型、監察異常流量和限制高風險功能；這些控制在離線權重環境中大幅減弱。</p>
+<p>RAND在2026年的研究發現，移除前沿開放權重模型的安全訓練高度可行；在其特定生物安全評估中，移除安全限制後的模型對至少一條現實威脅途徑提供了有限幫助。<a href="https://www.rand.org/pubs/research_reports/RRA5112-1.html" title="RAND — Open-Weight AI Models May Increase Biological Misuse Risks">11</a> 這項研究不能證明所有開放模型都會造成同等風險，但它說明高能力權重的公開具有不可逆性。</p>
+<p>因此，合理監管不應只看「開放」或「閉源」標籤，而要看模型的能力、威脅途徑、發布範圍和緩解措施。</p>
+<p>歐盟《人工智能法》採取的正是混合模式。一般用途AI模型若符合自由與開放原始碼條件，可以獲得部分文件義務例外；但著作權政策和訓練內容摘要仍然需要提供。具有系統性風險的模型即使公開權重，也仍需承擔模型評估、風險緩解、重大事件報告和網絡安全義務。<a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng" title="Regulation (EU) 2024/1689 — European Union Artificial Intelligence Act">10</a></p>
+<p>NIST的生成式AI風險管理框架也強調，不論發布模式，開發者和部署者都需要文件化上游依賴、進行部署前及持續評測、紅隊測試和事件管理。<a href="https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf" title="NIST AI 600-1 — Generative Artificial Intelligence Profile">9</a></p>
+<p>安全規則可能保護公共利益，也可能成為大型公司的監管護城河。若合規成本只有大型實驗室和雲端公司能承擔，市場會進一步集中。因此，監管需要同時保留獨立研究、外部評測和較小企業的合規路徑。</p>
+<h2>六、國家競爭把開放權重變成影響力工具</h2>
+<p>對美國公司而言，開放權重可以阻止市場完全落入另一家閉源平台。Meta免費擴散Llama，不需要直接靠模型API獲利，也能擴大自身技術生態、影響開發標準並降低對競爭者模型的依賴。<a href="https://developer.meta.com/ai/llama3_1/license/" title="Meta — Llama 3.1 Community License Agreement">3</a></p>
+<p>對中國而言，DeepSeek和Qwen等可商用模型降低了全球開發者採用中國技術的摩擦。模型可被蒸餾、本地部署和再開發，意味競爭不再只看原始模型的國籍，還要看其格式、工具和衍生生態是否成為全球標準。</p>
+<p>對發展中經濟體而言，開放權重提供了本地語言和主權部署的起點。新加坡的SEA-LION便以東南亞語言和區域文化為定位，並由國家計畫支持。<a href="https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches/press-releases/2023/sg-to-develop-southeast-asias-first-llm-ecosystem" title="IMDA — Singapore's National Multimodal LLM Programme and SEA-LION">13</a> 但它仍可能依賴Llama或Gemma等上游模型及其授權。</p>
+<p>UNCTAD指出，除少數大型發展中經濟體外，多數國家仍缺乏強大超級電腦或大型資料中心。<a href="https://unctad.org/system/files/official-document/tir2025_en.pdf" title="UNCTAD — Technology and Innovation Report 2025">12</a> 因此，下載權重不等於取得主權。</p>
+<blockquote>
+<p><strong>真正的主權AI，不是模型是否可以下載，而是一個國家能否在自己的法律和資料邊界內運行、評估、維護、替換並保護模型。</strong></p>
+</blockquote>
+<p>這還需要電力、晶片、資料治理、本地語言評測、人才、維護社群和多供應商替代能力。</p>
+<h2>七、誰會受益，誰會承受壓力</h2>
+<table>
+<thead>
+<tr>
+<th>參與者</th>
+<th>可能受益的原因</th>
+<th>主要壓力</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>大型雲端平台</td>
+<td>無論模型開放或閉源，都可以出售算力、託管、治理和工作流</td>
+<td>資本開支高，模型價格下降可能壓縮部分收入</td>
+</tr>
+<tr>
+<td>閉源前沿實驗室</td>
+<td>擁有最強能力、企業信任及持續控制</td>
+<td>開放權重逼近時，純API價格和差異化受壓</td>
+</tr>
+<tr>
+<td>開放權重供應商</td>
+<td>透過生態、私有部署、託管服務和在地化擴張</td>
+<td>權重免費使直接變現困難，仍需巨大算力</td>
+</tr>
+<tr>
+<td>企業買方</td>
+<td>模型選擇增加，議價能力和資料控制改善</td>
+<td>混合架構增加評測、治理與運維複雜度</td>
+</tr>
+<tr>
+<td>中小開發者</td>
+<td>可使用高能力模型建立垂直產品</td>
+<td>雲端、分發、資料和合規仍被大型平台控制</td>
+</tr>
+<tr>
+<td>發展中經濟體</td>
+<td>可從本地語言、公共服務和產業模型切入</td>
+<td>晶片、能源、人才和上游授權依賴仍然存在</td>
+</tr>
+</tbody>
+</table>
+<p>最大的受益者未必是發布最多權重的公司，而是控制<strong>算力、企業分發和部署工具</strong>的企業。開放權重擴大模型供應，反而可能增加對GPU、雲端推理、模型託管和安全服務的需求。</p>
+<p>最大的壓力則落在只依靠單一模型性能溢價、缺乏分發渠道和企業整合能力的中型模型公司。當前沿能力被快速追趕，它們既沒有大型雲端的成本優勢，也沒有開放社群的採用優勢。</p>
+<h2>八、三種未來路徑</h2>
+<table>
+<thead>
+<tr>
+<th>情境</th>
+<th>主要發展</th>
+<th>可能勝出者</th>
+<th>主要風險</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>模型商品化，混合路由成為常態</td>
+<td>敏感或高量任務轉向私有開放權重，複雜前沿任務使用多家閉源API</td>
+<td>模型路由、私有部署、評測和治理平台</td>
+<td>模型選擇增加，但鎖定轉移到雲端控制層和資料管線</td>
+</tr>
+<tr>
+<td>高風險前沿能力受控集中</td>
+<td>高能力模型採分階段發布、受控研究存取或API交付</td>
+<td>大型實驗室、雲端商及獨立安全評測機構</td>
+<td>「安全」可能變成排除競爭的理由</td>
+</tr>
+<tr>
+<td>主權AI與地緣政治碎片化</td>
+<td>各國投資本地語言、共享算力和替代模型生態</td>
+<td>有能力建設完整算力與治理堆疊的國家和區域</td>
+<td>標準分裂、成本上升，高風險權重跨境擴散</td>
+</tr>
+</tbody>
+</table>
+<p>最可能的基準情境是第一種與第三種同時發生。企業會採用混合模型路由；國家則要求關鍵資料和部分模型可以在本地運行。最前沿、高風險能力仍較可能集中在受控服務中。</p>
+<h2>九、最終判斷</h2>
+<p><strong>開放權重不會消滅閉源巨頭，但會迫使它們重新定義護城河。</strong> 當通用模型能力變得便宜和可替代，真正持久的優勢將由以下能力組成：</p>
+<ol>
+<li>取得並有效使用算力的能力；</li>
+<li>把模型嵌入企業工作流和分發渠道的能力；</li>
+<li>在客戶資料不被濫用的前提下完成整合與評測的能力；</li>
+<li>持續提供安全控制、可靠性和合規證據的能力；</li>
+<li>讓客戶保留模型、資料和部署選擇權的能力。</li>
+</ol>
+<p>因此，未來的勝負不是「開源對閉源」的單選題。閉源服務會繼續控制部分前沿能力和企業級可靠性；開放權重會成為供應商制衡、本地化和主權部署的重要工具。</p>
+<blockquote>
+<p><strong>模型層會更開放，基礎設施可能更集中；選擇看似增加，真正的控制權則轉移到算力、工作流、資料治理和安全標準。這才是開源AI與閉源巨頭博弈的核心。</strong></p>
+</blockquote>
+<h2>References</h2>
+<ol>
+<li><a href="https://opensource.org/ai/open-source-ai-definition">Open Source Initiative：《Open Source AI Definition 1.0》</a>——區分真正開源AI與僅開放權重的定義基準。</li>
+<li><a href="https://www.ntia.gov/programs-and-initiatives/artificial-intelligence/open-model-weights-report">美國NTIA：《Dual-Use Foundation Models with Widely Available Model Weights》</a>——開放權重的競爭、安全、隱私及政策取捨。</li>
+<li><a href="https://developer.meta.com/ai/llama3_1/license/">Meta：Llama 3.1 Community License</a>——Llama的使用、再分發及大型企業授權條件。</li>
+<li><a href="https://arxiv.org/html/2412.19437v2">DeepSeek-V3 Technical Report</a>——正式訓練GPU成本、模型規模及成本口徑限制。</li>
+<li><a href="https://epoch.ai/publications/how-much-does-it-cost-to-train-frontier-ai-models">Epoch AI：前沿模型訓練成本研究</a>——硬體、人員、能源及完整開發成本拆分。</li>
+<li><a href="https://hai-production.s3.amazonaws.com/files/hai_ai_index_report_2025.pdf">Stanford AI Index 2025</a>——2024至2025年開放／閉源Arena差距及推理價格下降數據。</li>
+<li><a href="https://hai.stanford.edu/assets/files/ai_index_report_2026.pdf">Stanford AI Index 2026</a>——2026年Arena差距及前沿模型競爭更新。</li>
+<li><a href="https://www.oecd.org/en/publications/artificial-intelligence-markets_d531d73f-en/full-report.html">OECD：《Artificial Intelligence Markets》</a>——AI市場集中、雲端切換成本與模型供應增長。</li>
+<li><a href="https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf">NIST AI 600-1</a>——生成式AI的文件化、評測、紅隊及持續治理基準。</li>
+<li><a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng">歐盟《人工智能法》</a>——一般用途模型、開放原始碼例外及系統性風險義務。</li>
+<li><a href="https://www.rand.org/pubs/research_reports/RRA5112-1.html">RAND：開放權重模型與生物濫用風險</a>——移除安全訓練及特定威脅途徑的實驗證據。</li>
+<li><a href="https://unctad.org/system/files/official-document/tir2025_en.pdf">UNCTAD：《Technology and Innovation Report 2025》</a>——發展中經濟體的算力、資料中心與創新能力限制。</li>
+<li><a href="https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches/press-releases/2023/sg-to-develop-southeast-asias-first-llm-ecosystem">新加坡IMDA：國家多模態LLM計畫與SEA-LION</a>——東南亞本地語言模型與主權AI案例。</li>
+</ol></div>
+        <div class="en"><h2>The bottom line</h2>
+<p>The contest between open AI and closed giants is unlikely to end with one side eliminating the other. A more plausible outcome is that <strong>open-weight models gradually commoditize general-purpose model capability, while closed companies move value toward compute, cloud distribution, enterprise workflows, proprietary data integration and continuous safety controls.</strong></p>
+<p>This is not merely a technical race. It will shape whether companies remain locked to a single supplier, whether regulation raises barriers to entry and whether countries can operate AI within their own legal, linguistic and data boundaries.</p>
+<blockquote>
+<p><strong>Open weights lower the barrier to obtaining a model, but not the barriers to compute and deployment. Closed services retain advantages in capability and control, but face relentless price pressure and resistance to supplier lock-in.</strong></p>
+</blockquote>
+<h2>1. A downloadable model is not necessarily open source</h2>
+<p>The market often calls any model with downloadable weights “open-source AI.” That is too imprecise for commercial or policy analysis.</p>
+<p>The Open Source Initiative’s Open Source AI Definition 1.0 applies two tests. Users must have the freedom to use, study, modify and share a system for any purpose. Developers must also provide the materials needed to make modifications, including data information, complete training and inference code, and model parameters or weights.<a href="https://opensource.org/ai/open-source-ai-definition" title="Open Source Initiative — The Open Source AI Definition 1.0">1</a></p>
+<p>An <strong>open-weight model</strong> provides access to trained parameters. A user can often deploy, quantize or fine-tune it locally, but may not receive the complete training data, data-processing pipeline or end-to-end training code. The licence may also restrict uses, scale or redistribution. The U.S. National Telecommunications and Information Administration similarly distinguishes widely available weights from model architecture, training procedures and data.<a href="https://www.ntia.gov/programs-and-initiatives/artificial-intelligence/open-model-weights-report" title="NTIA — Dual-Use Foundation Models with Widely Available Model Weights Report">2</a></p>
+<p>Meta’s Llama 3.1, for example, can be downloaded and modified. Its community licence nevertheless includes attribution, naming and acceptable-use conditions. Companies with more than 700 million monthly active users must seek a separate licence.<a href="https://developer.meta.com/ai/llama3_1/license/" title="Meta — Llama 3.1 Community License Agreement">3</a> It is therefore more accurate to describe Llama as open-weight than unconditionally open source.</p>
+<p>The distinction has practical consequences. <strong>Downloadable</strong> describes access. <strong>Commercially usable</strong> describes permission for particular business activities. <strong>Open source</strong> requires broader freedoms and a more complete set of artefacts. The terms are not interchangeable.</p>
+<table>
+<thead>
+<tr>
+<th>Release model</th>
+<th>What users obtain</th>
+<th>Main advantage</th>
+<th>Main limitation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Open-source AI</td>
+<td>Weights, essential code, data information and broad rights to modify and share</td>
+<td>Auditability, reproducibility and a freely extensible ecosystem</td>
+<td>Very few frontier systems fully meet this standard</td>
+</tr>
+<tr>
+<td>Open-weight AI</td>
+<td>Downloadable parameters, usually with local deployment and fine-tuning rights</td>
+<td>Data control, customization and supplier choice</td>
+<td>Training may remain opaque and licences may restrict use</td>
+</tr>
+<tr>
+<td>Closed service</td>
+<td>API or product access without delivery of model assets</td>
+<td>Fast deployment, frontier capability, updates and safety controls</td>
+<td>Usage fees, limited visibility and platform dependence</td>
+</tr>
+</tbody>
+</table>
+<h2>2. Open weights are reducing the scarcity value of models</h2>
+<p>The first moat around a closed company is model capability. When similar capability spreads quickly through open weights, the useful life of that moat shrinks.</p>
+<p>The Stanford AI Index 2025 found that the gap between the leading closed and open-weight models on Chatbot Arena narrowed from 8.04% in January 2024 to 1.70% in February 2025.<a href="https://hai-production.s3.amazonaws.com/files/hai_ai_index_report_2025.pdf" title="Stanford HAI — Artificial Intelligence Index Report 2025">6</a> Open-weight systems had moved much closer to the frontier.</p>
+<p>It would still be wrong to declare permanent parity. The Stanford AI Index 2026 reported that, by March 2026, the leading closed model scored 1,503 on the same historical series, compared with 1,454 for the leading open-weight model. The gap had widened again to about 3.4%.<a href="https://hai.stanford.edu/assets/files/ai_index_report_2026.pdf" title="Stanford HAI — Artificial Intelligence Index Report 2026">7</a></p>
+<p>The pattern reflects <strong>release cycles</strong>, not a permanent ranking. A new generation from a closed laboratory can widen the lead. Distillation, fine-tuning, efficiency gains and new releases from the open ecosystem can then narrow it.</p>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th style="text-align: right;">Gap between leading closed and open-weight models</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>January 2024</td>
+<td style="text-align: right;">8.04%</td>
+<td>A clear closed-frontier advantage</td>
+</tr>
+<tr>
+<td>February 2025</td>
+<td style="text-align: right;">1.70%</td>
+<td>Open weights rapidly approached the frontier</td>
+</tr>
+<tr>
+<td>March 2026</td>
+<td style="text-align: right;">About 3.4%</td>
+<td>A new closed release widened the gap again</td>
+</tr>
+</tbody>
+</table>
+<p>No single leaderboard represents every enterprise workload. Coding, agentic tasks, long context, Asian languages, scientific reasoning, latency and safety can produce different rankings. The commercially important shift is that <strong>many “good enough” tasks no longer require the most expensive closed frontier model.</strong></p>
+<p>Competition therefore moves from who owns a model to who can turn it into a reliable product at the lowest total cost.</p>
+
+        <figure class="article-figure">
+          <img src="./assets/img/open-closed-frontier-gap-en.png" alt="Gap between leading closed and open-weight models on Chatbot Arena, 2024 to 2026">
+          <figcaption>Stanford AI Index data show rapid convergence, followed by a renewed gap as release cycles change.</figcaption>
+        </figure>
+<h2>3. Closed giants are moving their moats beyond the model</h2>
+<p>As model capability becomes easier to substitute, closed suppliers cannot rely on per-token pricing alone. They are embedding models inside systems that are harder to replace.</p>
+<p>The first layer is <strong>compute and capacity</strong>. Training a frontier system requires chips, power, data centers and distributed engineering. Serving enterprises at scale requires dependable inference capacity. A free set of weights can still require multiple GPUs, specialist operations and security infrastructure.</p>
+<p>The second layer is <strong>distribution</strong>. Microsoft can place AI inside Azure, Microsoft 365 and GitHub. Google can combine Cloud, Workspace and Android. Amazon can distribute multiple models through AWS, Bedrock and existing enterprise relationships. Customers are buying more than a model. They are buying a service already connected to identity, databases, monitoring, compliance and procurement.</p>
+<p>The third layer is <strong>workflow lock-in</strong>. The deepest switching costs often sit outside the API call: retrieval-augmented-generation pipelines, prompts, tool interfaces, offline evaluations, security rules, audit records and employee training. Replacing a model can be quick; rebuilding the operating system around it is not.</p>
+<p>The OECD finds that compute, data, talent and cloud supply remain highly concentrated. Cloud markets are capital intensive and benefit from economies of scale, scope and switching costs.<a href="https://www.oecd.org/en/publications/artificial-intelligence-markets_d531d73f-en/full-report.html" title="OECD — Artificial Intelligence Markets: Recent Developments and Competition Issues">8</a> The same report says the number of language-model developers increased from nine in January 2024 to 47 in April 2026, while active text-to-text models rose from 22 to 453.<a href="https://www.oecd.org/en/publications/artificial-intelligence-markets_d531d73f-en/full-report.html" title="OECD — Artificial Intelligence Markets: Recent Developments and Competition Issues">8</a></p>
+<p>Both trends can be true: <strong>model supply is expanding while critical infrastructure remains concentrated.</strong></p>
+<h2>4. Cost depends on the workload, not the camp</h2>
+<p>Supporters of open weights often cite the estimated $5.576 million training cost for DeepSeek-V3 as proof that frontier capability need not require enormous spending. The technical report explicitly says this figure covers the official training run calculated from H800 GPU hours. It excludes earlier architecture research, algorithm experiments, data work and failed trials.<a href="https://arxiv.org/html/2412.19437v2" title="DeepSeek-V3 Technical Report">4</a></p>
+<p>Epoch AI’s research on frontier-model costs shows that personnel can account for 29% to 49% of full development costs, hardware for roughly 47% to 67%, and energy for about 2% to 6%. Estimates also vary materially depending on whether analysts use cloud-rental prices or hardware depreciation.<a href="https://epoch.ai/publications/how-much-does-it-cost-to-train-frontier-ai-models" title="Epoch AI — How Much Does It Cost to Train Frontier AI Models?">5</a></p>
+<p>Inference prices are falling rapidly. The Stanford AI Index 2025 found that the API cost of reaching GPT-3.5-level MMLU performance fell from $20 per million tokens in November 2022 to $0.07 in October 2024—a decline of more than 280 times.<a href="https://hai-production.s3.amazonaws.com/files/hai_ai_index_report_2025.pdf" title="Stanford HAI — Artificial Intelligence Index Report 2025">6</a></p>
+<p>That puts pressure on both sides.</p>
+<p>Closed suppliers must use stronger models, enterprise guarantees, tools and workflows to raise the value of each customer relationship. Open-weight companies cannot build a business around “free weights” alone. They need revenue from hosted inference, private deployment, fine-tuning, connectors, service-level agreements and professional services.</p>
+<p>For enterprises, the relevant question is not whether open is inherently cheaper. It is whether traffic is stable enough to keep owned GPUs busy; whether sensitive data must remain inside a controlled environment; whether the team can operate, secure and evaluate models; whether the task needs frontier capability; and how engineering, idle capacity and risk change the total cost.</p>
+<p><strong>APIs often make sense for low or volatile demand. Self-hosted open weights are more likely to win on total cost when workloads are large and stable and the organization already has platform expertise.</strong></p>
+<h2>5. The safety argument is a contest over control and irreversibility</h2>
+<p>Open weights are neither inherently safe nor inherently dangerous. They change the conditions under which models can be governed after release.</p>
+<p>Public weights let outside researchers examine weaknesses and safety mechanisms more deeply. They also let companies run models without sending sensitive data to an external supplier. Those are genuine benefits for transparency, privacy and independent research.<a href="https://www.ntia.gov/programs-and-initiatives/artificial-intelligence/open-model-weights-report" title="NTIA — Dual-Use Foundation Models with Widely Available Model Weights Report">2</a></p>
+<p>Once weights have been widely downloaded, however, the original developer can no longer reliably retrieve copies, patch safeguards remotely or observe how the model is used. A closed API can block accounts, update models, monitor anomalous traffic and restrict high-risk capabilities. Those controls weaken substantially in an offline-weight environment.</p>
+<p>RAND reported in 2026 that removing safety training from frontier open-weight models was highly feasible. In its specific biological-security evaluation, a model with safeguards removed provided limited assistance along at least one realistic threat pathway.<a href="https://www.rand.org/pubs/research_reports/RRA5112-1.html" title="RAND — Open-Weight AI Models May Increase Biological Misuse Risks">11</a> The study does not show that every open model creates the same risk. It does demonstrate why the release of a highly capable set of weights can be irreversible.</p>
+<p>Regulation should therefore focus on capability, threat pathways, release scope and tested mitigations rather than treating “open” or “closed” as sufficient evidence.</p>
+<p>The European Union’s AI Act takes a hybrid approach. A general-purpose model that qualifies as free and open source may receive limited exceptions from some documentation duties. Copyright policies and training-content summaries still apply. A model with systemic risk remains subject to evaluation, risk mitigation, serious-incident reporting and cybersecurity obligations even when weights are public.<a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng" title="Regulation (EU) 2024/1689 — European Union Artificial Intelligence Act">10</a></p>
+<p>NIST’s generative-AI risk profile similarly calls for documentation of upstream dependencies, pre-deployment and continuous evaluation, red-team testing and incident management across release models.<a href="https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf" title="NIST AI 600-1 — Generative Artificial Intelligence Profile">9</a></p>
+<p>Safety rules can protect the public, but they can also become a regulatory moat for incumbents. If only the largest laboratories and cloud companies can afford compliance, concentration will increase. A defensible regime must preserve routes for independent research, outside evaluation and proportionate compliance by smaller developers.</p>
+<h2>6. National competition is turning open weights into an instrument of influence</h2>
+<p>For an American company, open weights can prevent the market from consolidating entirely around another firm’s closed platform. Meta does not need to make Llama primarily an API business to benefit from wider adoption. It can expand its technical ecosystem, influence development standards and reduce dependence on rival model providers.<a href="https://developer.meta.com/ai/llama3_1/license/" title="Meta — Llama 3.1 Community License Agreement">3</a></p>
+<p>For China, commercially usable systems such as DeepSeek and Qwen reduce the friction for global developers to adopt Chinese technology. Because models can be distilled, deployed locally and adapted, competition is no longer only about the nationality of the original model. It is also about whose formats, tools and derivative ecosystem become defaults.</p>
+<p>For developing economies, open weights create a starting point for local-language systems and sovereign deployment. Singapore’s SEA-LION initiative is explicitly oriented toward Southeast Asian languages and regional context, with support from a national AI program.<a href="https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches/press-releases/2023/sg-to-develop-southeast-asias-first-llm-ecosystem" title="IMDA — Singapore's National Multimodal LLM Programme and SEA-LION">13</a> Yet individual versions may still depend on upstream systems such as Llama or Gemma and their licences.</p>
+<p>UNCTAD notes that, outside a small number of large developing economies, most countries still lack powerful supercomputers or large data centers.<a href="https://unctad.org/system/files/official-document/tir2025_en.pdf" title="UNCTAD — Technology and Innovation Report 2025">12</a> Downloading weights is not the same as acquiring sovereignty.</p>
+<blockquote>
+<p><strong>Sovereign AI is not defined by whether a model can be downloaded. It is the ability to operate, evaluate, maintain, replace and secure AI within a country’s own legal and data boundaries.</strong></p>
+</blockquote>
+<p>That requires power, chips, data governance, local-language evaluation, talent, maintenance communities and alternative suppliers.</p>
+<h2>7. The likely winners and losers</h2>
+<table>
+<thead>
+<tr>
+<th>Participant</th>
+<th>Why it may benefit</th>
+<th>Main pressure</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Large cloud platforms</td>
+<td>They can sell compute, hosting, governance and workflows regardless of model ownership</td>
+<td>Heavy capital spending and falling model prices</td>
+</tr>
+<tr>
+<td>Closed frontier laboratories</td>
+<td>Leading capability, enterprise trust and continuous controls</td>
+<td>Open-weight convergence compresses API prices and differentiation</td>
+</tr>
+<tr>
+<td>Open-weight suppliers</td>
+<td>Ecosystems, private deployment, hosting and localization create reach</td>
+<td>Free weights are hard to monetize directly and still require compute</td>
+</tr>
+<tr>
+<td>Enterprise buyers</td>
+<td>More choice improves bargaining power and data control</td>
+<td>Hybrid systems add evaluation, governance and operational complexity</td>
+</tr>
+<tr>
+<td>Smaller developers</td>
+<td>Strong models can support vertical products</td>
+<td>Cloud, distribution, data and compliance remain concentrated</td>
+</tr>
+<tr>
+<td>Developing economies</td>
+<td>Local-language, public-service and industry models offer entry points</td>
+<td>Chips, power, talent and upstream licences remain constraints</td>
+</tr>
+</tbody>
+</table>
+<p>The largest beneficiary may not be the company releasing the most weights. It may be the company controlling <strong>compute, enterprise distribution and deployment tools</strong>. More model supply can increase demand for GPUs, cloud inference, model hosting and security services.</p>
+<p>The greatest pressure will fall on mid-sized model companies that rely on a temporary performance premium but lack cloud economics, enterprise distribution or a broad open community. When capability is quickly matched, they possess neither the cost advantage of hyperscalers nor the adoption advantage of open ecosystems.</p>
+<h2>8. Three paths from here</h2>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>What changes</th>
+<th>Likely winners</th>
+<th>Main risk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Models commoditize and hybrid routing becomes normal</td>
+<td>Sensitive or high-volume tasks move to private open weights; complex frontier tasks use several closed APIs</td>
+<td>Model-routing, private-deployment, evaluation and governance platforms</td>
+<td>Lock-in moves from models to cloud control planes and data pipelines</td>
+</tr>
+<tr>
+<td>High-risk frontier capability becomes more controlled</td>
+<td>Staged release, controlled research access or APIs dominate at the frontier</td>
+<td>Large laboratories, cloud providers and independent safety evaluators</td>
+<td>“Safety” becomes a justification for excluding competitors</td>
+</tr>
+<tr>
+<td>Sovereign AI and geopolitical fragmentation expand</td>
+<td>Governments invest in local languages, shared compute and alternative model ecosystems</td>
+<td>Countries and regions able to build complete compute and governance stacks</td>
+<td>Fragmented standards, higher costs and irreversible cross-border diffusion</td>
+</tr>
+</tbody>
+</table>
+<p>The most plausible baseline combines the first and third scenarios. Companies will route work across several model types, while governments require critical data and some models to operate locally. The highest-risk frontier capabilities are still likely to remain concentrated in controlled services.</p>
+<h2>9. Final assessment</h2>
+<p><strong>Open weights will not eliminate the closed giants, but they will force those companies to redefine their moats.</strong> As general model capability becomes cheaper and more substitutable, durable advantage will depend on five things: efficient access to compute; enterprise workflow and distribution; responsible integration of customer data; continuous evidence of reliability, security and compliance; and the ability to give customers meaningful choice over models, data and deployment.</p>
+<p>The future is not a binary choice between open and closed. Closed services will continue to control some frontier capabilities and enterprise-grade reliability. Open weights will become an important instrument for supplier discipline, localization and sovereign deployment.</p>
+<blockquote>
+<p><strong>The model layer will become more open while infrastructure may become more concentrated. Choice will appear to expand, but effective control will migrate to compute, workflows, data governance and safety standards. That is the central contest between open AI and the closed giants.</strong></p>
+</blockquote>
+<h2>References</h2>
+<ol>
+<li><a href="https://opensource.org/ai/open-source-ai-definition">Open Source Initiative, Open Source AI Definition 1.0</a>—the definitional basis for distinguishing open-source AI from open weights.</li>
+<li><a href="https://www.ntia.gov/programs-and-initiatives/artificial-intelligence/open-model-weights-report">U.S. NTIA, Dual-Use Foundation Models with Widely Available Model Weights</a>—competition, safety, privacy and policy trade-offs.</li>
+<li><a href="https://developer.meta.com/ai/llama3_1/license/">Meta, Llama 3.1 Community License</a>—conditions governing use, redistribution and very large commercial users.</li>
+<li><a href="https://arxiv.org/html/2412.19437v2">DeepSeek-V3 Technical Report</a>—official training-compute estimate, model scale and exclusions from the cost figure.</li>
+<li><a href="https://epoch.ai/publications/how-much-does-it-cost-to-train-frontier-ai-models">Epoch AI, How Much Does It Cost to Train Frontier AI Models?</a>—hardware, personnel, energy and full-development cost estimates.</li>
+<li><a href="https://hai-production.s3.amazonaws.com/files/hai_ai_index_report_2025.pdf">Stanford AI Index 2025</a>—2024–25 open/closed Arena gap and inference-price decline.</li>
+<li><a href="https://hai.stanford.edu/assets/files/ai_index_report_2026.pdf">Stanford AI Index 2026</a>—updated 2026 Arena gap and frontier competition.</li>
+<li><a href="https://www.oecd.org/en/publications/artificial-intelligence-markets_d531d73f-en/full-report.html">OECD, Artificial Intelligence Markets</a>—market concentration, cloud switching costs and model-supply growth.</li>
+<li><a href="https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf">NIST AI 600-1</a>—documentation, evaluation, red-teaming and continuous governance practices.</li>
+<li><a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj/eng">European Union Artificial Intelligence Act</a>—general-purpose models, limited open-source exceptions and systemic-risk duties.</li>
+<li><a href="https://www.rand.org/pubs/research_reports/RRA5112-1.html">RAND, Open-Weight AI Models May Increase Biological Misuse Risks</a>—evidence on safeguard removal and a specific threat pathway.</li>
+<li><a href="https://unctad.org/system/files/official-document/tir2025_en.pdf">UNCTAD, Technology and Innovation Report 2025</a>—compute, data-center and innovation constraints in developing economies.</li>
+<li><a href="https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches/press-releases/2023/sg-to-develop-southeast-asias-first-llm-ecosystem">Singapore IMDA, National Multimodal LLM Programme and SEA-LION</a>—a regional-language and sovereign-AI case.</li>
+</ol></div>
+      </article>
+    </div>
+    <aside class="article-author">
+      <h3>Written by Yuen Tung Sze</h3>
+      <p><span class="zh">Senior Product Management · Fine Jewellery · Southeast Asia。以產品架構、消費者行為及市場訊號研究產業變化。</span><span class="en">Senior Product Management · Fine Jewellery · Southeast Asia. Researching industry change through product architecture, consumer behaviour and market signals.</span> <a href="./experience.html"><span class="zh">查看作者背景</span><span class="en">View credentials</span></a></p>
+    </aside>
+    <section class="related-reading">
+      <h3><span class="zh">延伸閱讀</span><span class="en">Related reading</span></h3>
+      <a href="./AI_pacing_initiative_bilingual.html"><span class="zh">AI 減速倡議：誰受益、市場如何理解、未來如何發展</span><span class="en">The AI Pacing Initiative: Who Benefits, How Markets Read It and What Comes Next</span></a><br>
+      <a href="./AI_Ecommerce_Solopreneur_Analysis_bilingual.html"><span class="zh">AI 與成本結構重組：重新審視「一人公司」與電商生態</span><span class="en">AI &amp; Cost Restructuring: Rethinking Solopreneurs &amp; E-commerce</span></a>
+    </section>
+  </main>
+  <footer class="footer"><p>© 2026 YT. <span class="zh">Luxury、Jewellery 與 Consumer Analysis</span><span class="en">Luxury, Jewellery &amp; Consumer Analysis</span></p></footer>
+  <script src="./assets/js/site.js"></script>
+  <script>
+    (() => {
+      const key = `yt-article-views-${location.pathname}`;
+      const current = Number(localStorage.getItem(key) || 0) + 1;
+      localStorage.setItem(key, String(current));
+      document.querySelectorAll('[data-view-count]').forEach(el => { el.textContent = current.toLocaleString(); });
+    })();
+  </script>
+  <script>
+    (() => {
+      const html = document.documentElement;
+      const langButton = document.querySelector('.lang-btn');
+      const toc = document.getElementById('articleToc');
+      const activeLanguage = () => html.getAttribute('lang') === 'en' ? 'en' : 'zh';
+      function renderToc() {
+        const language = activeLanguage();
+        toc.innerHTML = `<p>${language === 'zh' ? '本頁內容' : 'On this page'}</p>`;
+        document.querySelectorAll(`.article-body .${language} h2`).forEach((heading, index) => {
+          heading.id = `section-${language}-${index + 1}`;
+          const link = document.createElement('a');
+          link.href = `#${heading.id}`;
+          link.textContent = heading.textContent;
+          toc.appendChild(link);
+        });
+      }
+      function setLanguage(language) {
+        html.setAttribute('lang', language);
+        localStorage.setItem('pref-lang', language);
+        langButton.textContent = language === 'zh' ? 'English' : '中文';
+        document.title = language === 'zh'
+          ? '開源 AI 與閉源巨頭：模型商品化之後，真正的護城河在哪裡？ | YT'
+          : 'Open-Weight AI vs. Closed Giants: Where the Moat Moves | YT';
+        renderToc();
+      }
+      langButton.addEventListener('click', () => setLanguage(activeLanguage() === 'zh' ? 'en' : 'zh'));
+      window.addEventListener('scroll', () => {
+        const h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        document.getElementById('myBar').style.width = `${h ? (window.scrollY / h) * 100 : 0}%`;
+      });
+      setLanguage(localStorage.getItem('pref-lang') === 'en' ? 'en' : 'zh');
+    })();
+  </script>
+</body>
+</html>

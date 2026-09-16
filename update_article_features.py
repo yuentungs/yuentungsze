@@ -5,6 +5,7 @@ articles = [
     'AI_Ecommerce_Solopreneur_Analysis_bilingual.html',
     'AI_impact_SEA_youth_employment_bilingual.html',
     'AI_pacing_initiative_bilingual.html',
+    'open_weight_ai_vs_closed_giants_bilingual.html',
     'Purchasing_Power_Value_Allocation_2026_bilingual.html',
 ]
 
