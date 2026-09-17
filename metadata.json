@@ -1,0 +1,8 @@
+{
+  "name": "YT | Luxury, Jewellery & Consumer Analysis",
+  "description": "Yuen Tung Sze 的 Luxury、Jewellery 與 Consumer Analysis 研究平台，涵蓋購買力、消費者價值分配、東南亞市場、產品策略與 AI 營運模式。",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
