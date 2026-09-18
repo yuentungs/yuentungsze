@@ -19,9 +19,21 @@
     });
   }
 
+  function initChatboxScript() {
+    if (window.__ytChatInitialized || document.querySelector('script[src*="chatbox.js"]')) return;
+    const script = document.createElement('script');
+    script.src = './assets/js/chatbox.js';
+    script.defer = true;
+    document.body.appendChild(script);
+  }
+
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initEditorialNavigation);
+    document.addEventListener('DOMContentLoaded', () => {
+      initEditorialNavigation();
+      initChatboxScript();
+    });
   } else {
     initEditorialNavigation();
+    initChatboxScript();
   }
 })();
