@@ -10,9 +10,12 @@
   const MODEL_KEY = 'yt_gemini_selected_mode';
   const BACKEND_URL_KEY = 'yt_gemini_backend_url';
 
-  // If hosted on GitHub Pages (or external static host without node backend), allow setting custom backend API or alert clearly
+  // Cloud Run production backend URL for cross-origin deployment (e.g. GitHub Pages)
+  const CLOUD_RUN_DEFAULT_BACKEND = 'https://ais-dev-khtjzl7kqdlsvzx4wcg2dk-696218522544.europe-west2.run.app';
+
+  // If hosted on GitHub Pages, default automatically to the live backend URL
   const isGitHubPages = window.location.hostname.includes('github.io');
-  let customBackendUrl = localStorage.getItem(BACKEND_URL_KEY) || '';
+  let customBackendUrl = localStorage.getItem(BACKEND_URL_KEY) || (isGitHubPages ? CLOUD_RUN_DEFAULT_BACKEND : '');
 
   let messages = [];
   let isRequestPending = false;
@@ -148,7 +151,7 @@
               <span class="zh">YT 商業研究助理</span>
               <span class="en">YT Research Analyst</span>
             </span>
-            <span class="yt-chat-subtitle">Gemini · Luxury, Jewellery &amp; SEA</span>
+            <span class="yt-chat-subtitle">Gemini 3.1 Flash Lite · Luxury &amp; SEA Strategy</span>
           </div>
         </div>
         <div class="yt-chat-header-actions">
@@ -166,22 +169,6 @@
           </button>
         </div>
       </header>
-
-      <!-- Model Task Selection -->
-      <div class="yt-chat-mode-bar">
-        <div class="yt-chat-mode-label">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"></path>
-          </svg>
-          <span class="zh">運算模型</span>
-          <span class="en">Model</span>
-        </div>
-        <select id="yt-chat-mode-select" class="yt-chat-mode-select" aria-label="Select AI Model">
-          <option value="gemini-3.5-flash" selected>Gemini 3.5 Flash (General / 常規任務)</option>
-          <option value="gemini-3.1-flash-lite">Gemini 3.1 Flash Lite (Fast / 快速響應)</option>
-          <option value="gemini-3.1-pro-preview">Gemini 3.1 Pro (Complex / 深度推理)</option>
-        </select>
-      </div>
 
       <!-- Messages Thread -->
       <div class="yt-chat-thread" id="yt-chat-thread">
@@ -254,17 +241,7 @@
     const form = document.getElementById('yt-chat-form');
     const input = document.getElementById('yt-chat-input');
     const sendBtn = document.getElementById('yt-chat-send-btn');
-    const modeSelect = document.getElementById('yt-chat-mode-select');
     const thread = document.getElementById('yt-chat-thread');
-
-    // Restore saved model selection
-    const savedModel = localStorage.getItem(MODEL_KEY);
-    if (savedModel && modeSelect) {
-      modeSelect.value = savedModel;
-    }
-    modeSelect?.addEventListener('change', () => {
-      localStorage.setItem(MODEL_KEY, modeSelect.value);
-    });
 
     function toggleChat(forceOpen) {
       const isCurrentlyOpen = chatbox.classList.contains('is-visible');
@@ -455,7 +432,7 @@
 
     showTypingIndicator();
 
-    const selectedModel = modeSelect ? modeSelect.value : 'gemini-3.5-flash';
+    const FIXED_MODEL_LABEL = 'Gemini 3.1 Flash Lite';
 
     async function sendRequest() {
       try {
@@ -463,25 +440,7 @@
         if (customBackendUrl) {
           apiUrl = customBackendUrl.replace(/\/$/, '') + '/api/chat';
         } else if (isGitHubPages) {
-          // Check if current host has no backend server
-          const testCheck = await fetch(apiUrl, { method: 'HEAD' }).catch(() => null);
-          if (!testCheck || testCheck.status === 404) {
-            const promptHost = window.prompt(
-              '偵測到此網站託管於 GitHub Pages 靜態環境。請輸入您的後端伺服器 URL (例如 Cloud Run 或 Node.js 伺服器網址)，以啟用 AI 助理：\n\n' +
-              'Detected GitHub Pages static hosting. Please enter your backend API URL (e.g. deployed Cloud Run service URL):',
-              customBackendUrl || ''
-            );
-            if (promptHost) {
-              customBackendUrl = promptHost.trim();
-              localStorage.setItem(BACKEND_URL_KEY, customBackendUrl);
-              apiUrl = customBackendUrl.replace(/\/$/, '') + '/api/chat';
-            } else {
-              removeTypingIndicator();
-              isRequestPending = false;
-              showErrorUI('GitHub Pages 為純前端靜態託管，AI 對話需連線至後端服務。您可以部屬後端至 Cloud Run 或自訂伺服器。', null);
-              return;
-            }
-          }
+          apiUrl = CLOUD_RUN_DEFAULT_BACKEND + '/api/chat';
         }
 
         const response = await fetch(apiUrl, {
@@ -491,7 +450,6 @@
           },
           body: JSON.stringify({
             messages: messages,
-            model: selectedModel,
           }),
         });
 
@@ -512,9 +470,9 @@
         }
 
         const reply = data.reply;
-        const assistantMsg = { role: 'assistant', content: reply, model: data.model || selectedModel };
+        const assistantMsg = { role: 'assistant', content: reply, model: FIXED_MODEL_LABEL };
         messages.push(assistantMsg);
-        appendMessageUI('assistant', reply, data.model || selectedModel);
+        appendMessageUI('assistant', reply, FIXED_MODEL_LABEL);
 
         try {
           sessionStorage.setItem(STORAGE_KEY, JSON.stringify(messages));

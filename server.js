@@ -11,6 +11,17 @@ const PORT = 3000;
 
 app.use(express.json());
 
+// Enable CORS so external static sites (like GitHub Pages) can call the AI chat API
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  if (req.method === 'OPTIONS') {
+    return res.sendStatus(200);
+  }
+  next();
+});
+
 let aiClient = null;
 function getGenAI() {
   const apiKey = process.env.GEMINI_API_KEY;
@@ -53,58 +64,117 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok' });
 });
 
+// Rate Limiting & Quota Management:
+// Google AI Studio Free Tier for Gemini 3.1 Flash Lite: 1,500 requests/day & 1,000,000 tokens/day.
+// User requested strict cap at 10% of free tier:
+// Max 150 requests/day and max 100,000 tokens/day.
+const DAILY_LIMITS = {
+  MAX_REQUESTS: 150,       // 10% of 1,500 RPD
+  MAX_OUTPUT_TOKENS: 600,  // Cap each response to 600 tokens (~400 words) to save tokens
+  MAX_DAILY_TOKENS: 100000 // 10% of 1,000,000 tokens/day
+};
+
+let dailyTracker = {
+  date: new Date().toISOString().slice(0, 10),
+  requestCount: 0,
+  estimatedTokens: 0,
+};
+
+function checkAndIncrementQuota(incomingContentLength) {
+  const today = new Date().toISOString().slice(0, 10);
+  if (dailyTracker.date !== today) {
+    // New day reset
+    dailyTracker.date = today;
+    dailyTracker.requestCount = 0;
+    dailyTracker.estimatedTokens = 0;
+  }
+
+  if (dailyTracker.requestCount >= DAILY_LIMITS.MAX_REQUESTS) {
+    return {
+      allowed: false,
+      reason: '今日 AI 助手諮詢配額已達設定上限（免費額度 10% 保險機制）。配額將於午夜（UTC）自動重置，或請直接透過 Email (yuentungsze@gmail.com) 與 YT 聯繫！'
+    };
+  }
+
+  if (dailyTracker.estimatedTokens >= DAILY_LIMITS.MAX_DAILY_TOKENS) {
+    return {
+      allowed: false,
+      reason: '今日 AI Token 消耗已達安全設定上限（免費額度 10%）。將於明日自動重置。'
+    };
+  }
+
+  // Allow and tentatively count
+  dailyTracker.requestCount += 1;
+  // Estimate input tokens (~4 chars per token) + max output
+  const estInputTokens = Math.ceil(incomingContentLength / 3.5);
+  dailyTracker.estimatedTokens += estInputTokens + 400;
+
+  return { allowed: true, currentUsage: dailyTracker.requestCount };
+}
+
 app.post('/api/chat', async (req, res) => {
   try {
-    const { messages, mode, model: customModel } = req.body;
+    const { messages } = req.body;
     if (!messages || !Array.isArray(messages) || messages.length === 0) {
       return res.status(400).json({ error: 'Messages array is required.' });
     }
 
-    // Model selection based on task intent
-    // gemini-3.1-pro-preview for complex tasks, gemini-3.5-flash for general tasks, gemini-3.1-flash-lite for fast tasks
-    let selectedModel = 'gemini-3.5-flash';
-    if (customModel) {
-      selectedModel = customModel;
-    } else if (mode === 'fast') {
-      selectedModel = 'gemini-3.1-flash-lite';
-    } else if (mode === 'complex' || mode === 'pro') {
-      selectedModel = 'gemini-3.1-pro-preview';
+    // Measure request size for quota tracking
+    const totalChars = messages.reduce((acc, m) => acc + (m.content ? m.content.length : 0), 0);
+    const quotaCheck = checkAndIncrementQuota(totalChars);
+    if (!quotaCheck.allowed) {
+      return res.status(429).json({ error: quotaCheck.reason });
     }
+
+    // Strictly lock to the most cost-efficient & lightest model: gemini-3.1-flash-lite
+    // Fallback if needed: gemini-2.5-flash
+    const FIXED_MODEL = 'gemini-3.1-flash-lite';
+    const FALLBACK_MODEL = 'gemini-2.5-flash';
 
     const ai = getGenAI();
 
+    // Prune context to prevent token accumulation (keep only recent 4 messages)
+    const recentMessages = messages.slice(-4);
+
     // Map conversation history to contents format
-    const contents = messages.map((m) => ({
+    const contents = recentMessages.map((m) => ({
       role: m.role === 'assistant' || m.role === 'model' ? 'model' : 'user',
       parts: [{ text: m.content || '' }],
     }));
 
     let response;
+    let usedModel = FIXED_MODEL;
     try {
       response = await ai.models.generateContent({
-        model: selectedModel,
+        model: FIXED_MODEL,
         contents,
         config: {
           systemInstruction: SYSTEM_INSTRUCTION,
-          temperature: 0.7,
+          temperature: 0.6,
+          maxOutputTokens: DAILY_LIMITS.MAX_OUTPUT_TOKENS, // Strictly capped to 600 tokens
         },
       });
     } catch (modelErr) {
-      console.warn(`Model ${selectedModel} failed or throttled, trying fallback model:`, modelErr?.message || modelErr);
-      const fallbackModel = selectedModel === 'gemini-3.1-flash-lite' ? 'gemini-2.5-flash' : 'gemini-3.1-flash-lite';
+      console.warn(`Model ${FIXED_MODEL} failed, using fallback ${FALLBACK_MODEL}:`, modelErr?.message || modelErr);
       response = await ai.models.generateContent({
-        model: fallbackModel,
+        model: FALLBACK_MODEL,
         contents,
         config: {
           systemInstruction: SYSTEM_INSTRUCTION,
-          temperature: 0.7,
+          temperature: 0.6,
+          maxOutputTokens: DAILY_LIMITS.MAX_OUTPUT_TOKENS,
         },
       });
-      selectedModel = fallbackModel;
+      usedModel = FALLBACK_MODEL;
     }
 
     const reply = response.text;
-    res.json({ reply, model: selectedModel });
+    res.json({
+      reply,
+      model: usedModel,
+      dailyQuotaUsed: dailyTracker.requestCount,
+      dailyQuotaMax: DAILY_LIMITS.MAX_REQUESTS
+    });
   } catch (error) {
     console.error('Chat API error:', error);
     let rawMsg = error instanceof Error ? error.message : 'Unknown server error';
